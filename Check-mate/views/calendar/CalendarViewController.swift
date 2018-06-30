@@ -16,7 +16,7 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var ToayLabel: UILabel!
     
     
-    let Months = ["July", "Febraury", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    let Months = ["January", "Febraury", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     let DaysOfMonth = ["M", "T", "W", "T", "F", "S", "S"]
     var DaysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     

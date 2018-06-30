@@ -9,6 +9,15 @@
 import UIKit
 
 class MonthViewController: UIViewController {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +30,10 @@ class MonthViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func navBackClicked(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -31,5 +44,7 @@ class MonthViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }

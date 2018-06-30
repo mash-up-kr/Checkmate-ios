@@ -123,6 +123,9 @@
                                             <constraint firstAttribute="width" constant="48" id="ycG-O9-vfR"/>
                                         </constraints>
                                         <state key="normal" image="navBack"/>
+                                        <connections>
+                                            <action selector="navBackClicked:" destination="kkC-AO-6m6" eventType="touchUpInside" id="NSg-nd-PUS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.18823529411764706" green="0.30980392156862746" blue="0.99607843137254903" alpha="1" colorSpace="deviceRGB"/>

@@ -214,4 +214,26 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Calendar", for: indexPath as IndexPath) as! DateCollectionViewCell
+        
+        self.performSegue(withIdentifier: "DetailSegue", sender: indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailSegue" {
+            if let destinationVC = segue.destination as? CalendarDetailViewController {
+                guard let indexPath = sender as? IndexPath else { return }
+                
+                guard let cell = Calendar.cellForItem(at: indexPath) as? DateCollectionViewCell else {
+                    return
+                }
+                
+                destinationVC.Month = currentMonth
+                destinationVC.Day = cell.DateLabel.text!
+                destinationVC.Price = cell.PriceLabel.text!
+            }
+        }
+    }
 }

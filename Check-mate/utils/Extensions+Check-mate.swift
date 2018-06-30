@@ -22,3 +22,14 @@ extension UIStoryboard {
         return vc2
     }
 }
+
+extension UIView {
+    func loadNib(_ nibName: String) {
+        guard let view = Bundle.main.loadNibNamed(nibName, owner: self, options: nil)?.first as? UIView else {
+            fatalError("There is no nib whose name is '\(nibName)'")
+        }
+        
+        view.frame = bounds
+        addSubview(view)
+    }
+}

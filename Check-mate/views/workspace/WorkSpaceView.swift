@@ -14,6 +14,7 @@ class WorkSpaceView: UIView {
     @IBOutlet weak var addBtn: UIButton!
 
     var addBtnCallback: (() -> Void)?
+    var detailCallback: (() -> Void)?
 
     private var mIsLastCardView = false
     var isLastCardView: Bool {
@@ -40,9 +41,15 @@ class WorkSpaceView: UIView {
         self.loadNib(String(describing: WorkSpaceView.self))
 
         rootView.layer.cornerRadius = 10
+
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(detailClicked)))
     }
 
     @IBAction func addBtnClicked(_ sender: Any) {
         addBtnCallback?()
+    }
+
+    @IBAction func detailClicked() {
+        detailCallback?()
     }
 }

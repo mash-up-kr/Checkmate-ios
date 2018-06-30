@@ -30,8 +30,13 @@ class WorkSpaceViewController: UIViewController {
     }
 
     func addBtnClicked() {
-        let vc = UIStoryboard.instantiate(WorkSpaceAddNavigationController.self, storyboardName: "WorkSpaceAddViewController")
+        let vc = UIStoryboard.instantiate(WorkSpaceAddNavigationController.self)
         self.navigationController?.tabBarController?.present(vc, animated: true)
+    }
+
+    func detailClicked() {
+        let vc = UIStoryboard.instantiate(WorkSpaceDetailViewController.self, storyboardName: "WorkSpaceNavigationController")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     /*
@@ -59,6 +64,7 @@ extension WorkSpaceViewController: UITableViewDataSource {
         
         cell.isLastCell = indexPath.row == workSpaces.count
         cell.workSpaceView.addBtnCallback = addBtnClicked
+        cell.workSpaceView.detailCallback = detailClicked
 
         return cell
     }

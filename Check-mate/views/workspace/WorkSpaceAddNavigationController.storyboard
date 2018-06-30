@@ -13,7 +13,7 @@
         <!--WorkSpaceAdd-->
         <scene sceneID="74C-e0-xHc">
             <objects>
-                <viewController storyboardIdentifier="WorkSpaceAddViewController" title="WorkSpaceAdd" useStoryboardIdentifierAsRestorationIdentifier="YES" id="67j-Zt-kSU" customClass="WorkSpaceAddViewController" customModule="Check_mate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WorkSpaceAddViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="67j-Zt-kSU" customClass="WorkSpaceAddViewController" customModule="Check_mate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H5X-OA-aoU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

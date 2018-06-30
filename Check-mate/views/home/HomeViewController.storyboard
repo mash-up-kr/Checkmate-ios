@@ -26,14 +26,6 @@
                                     <action selector="monthClicked" destination="QNe-Yn-L09" eventType="touchUpInside" id="Z09-9J-ekm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ki1-3S-XoM">
-                                <rect key="frame" x="149" y="205" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Calendar"/>
-                                <connections>
-                                    <action selector="calendarClicned" destination="QNe-Yn-L09" eventType="touchUpInside" id="cw7-TV-hjw"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="STD-ZN-mvS"/>

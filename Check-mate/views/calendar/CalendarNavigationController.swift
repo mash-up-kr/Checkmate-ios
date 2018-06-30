@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  CalendarNavigationController.swift
 //  Check-mate
 //
 //  Created by Noverish Harold on 2018. 6. 30..
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class CalendarNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +32,4 @@ class HomeViewController: UIViewController {
     }
     */
 
-    
-    @IBAction func monthClicked() {
-        let vc = UIStoryboard.instantiate(MonthViewController.self, storyboardName: "MonthViewController")
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
 }

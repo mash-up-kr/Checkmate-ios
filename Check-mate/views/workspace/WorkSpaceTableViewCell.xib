@@ -19,15 +19,15 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nL7-bz-jn4" customClass="WorkSpaceView" customModule="Check_mate" customModuleProvider="target">
-                        <rect key="frame" x="12" y="12" width="409" height="194.5"/>
+                        <rect key="frame" x="28" y="20" width="377" height="178.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="nL7-bz-jn4" firstAttribute="top" secondItem="7Ow-v4-SvK" secondAttribute="top" constant="12" id="3fC-aK-6jA"/>
-                    <constraint firstAttribute="trailing" secondItem="nL7-bz-jn4" secondAttribute="trailing" constant="12" id="5ww-wK-Usl"/>
-                    <constraint firstItem="nL7-bz-jn4" firstAttribute="leading" secondItem="7Ow-v4-SvK" secondAttribute="leading" constant="12" id="MCr-kZ-srk"/>
-                    <constraint firstAttribute="bottom" secondItem="nL7-bz-jn4" secondAttribute="bottom" constant="12" id="kiP-rM-Opf"/>
+                    <constraint firstItem="nL7-bz-jn4" firstAttribute="top" secondItem="7Ow-v4-SvK" secondAttribute="top" constant="20" id="3fC-aK-6jA"/>
+                    <constraint firstAttribute="trailing" secondItem="nL7-bz-jn4" secondAttribute="trailing" constant="28" id="5ww-wK-Usl"/>
+                    <constraint firstItem="nL7-bz-jn4" firstAttribute="leading" secondItem="7Ow-v4-SvK" secondAttribute="leading" constant="28" id="MCr-kZ-srk"/>
+                    <constraint firstAttribute="bottom" secondItem="nL7-bz-jn4" secondAttribute="bottom" constant="20" id="kiP-rM-Opf"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

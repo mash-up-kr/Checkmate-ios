@@ -30,8 +30,8 @@ class WorkSpaceViewController: UIViewController {
     }
 
     func addBtnClicked() {
-        let vc = UIStoryboard.instantiate(WorkSpaceAddNavigationController.self)
-        self.navigationController?.tabBarController?.present(vc, animated: true)
+        let vc = UIStoryboard.instantiate(WorkSpaceAddViewController.self)
+        self.present(vc, animated: true)
     }
 
     func detailClicked() {
@@ -72,6 +72,6 @@ extension WorkSpaceViewController: UITableViewDataSource {
 
 extension WorkSpaceViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200 + (indexPath.row == workSpaces.count ? 0 : WorkSpaceTableViewCell.workSpaceViewBottomOrigin)
+        return 200 + (indexPath.row == workSpaces.count ? WorkSpaceTableViewCell.workSpaceViewBottomOrigin : 0)
     }
 }

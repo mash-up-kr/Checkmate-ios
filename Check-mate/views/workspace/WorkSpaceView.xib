@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WorkSpaceView" customModule="Check_mate" customModuleProvider="target">
             <connections>
-                <outlet property="addBtn" destination="FUQ-Wy-egA" id="4MC-WR-xD6"/>
+                <outlet property="addBtn" destination="glS-IT-la0" id="O7C-Dd-3Dy"/>
                 <outlet property="rootView" destination="Pd6-VT-2jf" id="z1o-eK-jd9"/>
             </connections>
         </placeholder>
@@ -22,33 +22,59 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pd6-VT-2jf" userLabel="Root">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
+                    <rect key="frame" x="4" y="4" width="367" height="182"/>
                     <subviews>
-                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUQ-Wy-egA">
-                            <rect key="frame" x="172" y="80" width="30" height="30"/>
-                            <state key="normal" title="Add"/>
-                            <connections>
-                                <action selector="addBtnClicked:" destination="-1" eventType="touchUpInside" id="b9w-iF-69S"/>
-                            </connections>
-                        </button>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="glS-IT-la0" userLabel="Add Btn">
+                            <rect key="frame" x="91" y="49.5" width="186" height="83"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="workSpaceAdd" translatesAutoresizingMaskIntoConstraints="NO" id="jRP-sA-ihU">
+                                    <rect key="frame" x="62.5" y="0.0" width="60" height="60"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="ChM-mg-gpm"/>
+                                        <constraint firstAttribute="width" constant="60" id="imS-MZ-Ta8"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새로운 아르바이트 등록하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRc-ZL-zr0">
+                                    <rect key="frame" x="0.0" y="66" width="186" height="17"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="17" id="9mi-xJ-L5A"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="17"/>
+                                    <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="dRc-ZL-zr0" secondAttribute="bottom" id="9sD-KC-PWO"/>
+                                <constraint firstItem="jRP-sA-ihU" firstAttribute="top" secondItem="glS-IT-la0" secondAttribute="top" id="9tU-hy-RSu"/>
+                                <constraint firstItem="dRc-ZL-zr0" firstAttribute="leading" secondItem="glS-IT-la0" secondAttribute="leading" id="MML-4W-ShF"/>
+                                <constraint firstItem="dRc-ZL-zr0" firstAttribute="top" secondItem="jRP-sA-ihU" secondAttribute="bottom" constant="6" id="SaK-QO-epF"/>
+                                <constraint firstAttribute="trailing" secondItem="dRc-ZL-zr0" secondAttribute="trailing" id="YP0-j4-oKt"/>
+                                <constraint firstItem="jRP-sA-ihU" firstAttribute="centerX" secondItem="glS-IT-la0" secondAttribute="centerX" id="you-FX-rWa"/>
+                            </constraints>
+                        </view>
                     </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.50980392156862742" green="0.69411764705882351" blue="1" alpha="1" colorSpace="deviceRGB"/>
                     <constraints>
-                        <constraint firstItem="FUQ-Wy-egA" firstAttribute="centerY" secondItem="Pd6-VT-2jf" secondAttribute="centerY" id="4Cv-Nl-prX"/>
-                        <constraint firstItem="FUQ-Wy-egA" firstAttribute="centerX" secondItem="Pd6-VT-2jf" secondAttribute="centerX" id="Jw3-wL-wr8"/>
+                        <constraint firstItem="glS-IT-la0" firstAttribute="centerY" secondItem="Pd6-VT-2jf" secondAttribute="centerY" id="lTL-NN-MjK"/>
+                        <constraint firstItem="glS-IT-la0" firstAttribute="centerX" secondItem="Pd6-VT-2jf" secondAttribute="centerX" id="mbH-x1-5Rc"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Pd6-VT-2jf" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="0aP-BV-GJx"/>
-                <constraint firstItem="Pd6-VT-2jf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="9ve-mZ-Xgd"/>
-                <constraint firstItem="Pd6-VT-2jf" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="HZ7-D1-ksZ"/>
-                <constraint firstItem="Pd6-VT-2jf" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="qtP-SP-Mv4"/>
+                <constraint firstItem="Pd6-VT-2jf" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-4" id="0aP-BV-GJx"/>
+                <constraint firstItem="Pd6-VT-2jf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="4" id="9ve-mZ-Xgd"/>
+                <constraint firstItem="Pd6-VT-2jf" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="-4" id="HZ7-D1-ksZ"/>
+                <constraint firstItem="Pd6-VT-2jf" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="4" id="qtP-SP-Mv4"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="33.5" y="-185"/>
         </view>
     </objects>
+    <resources>
+        <image name="workSpaceAdd" width="60" height="60"/>
+    </resources>
 </document>

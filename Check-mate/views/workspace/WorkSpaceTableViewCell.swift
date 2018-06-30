@@ -9,24 +9,26 @@
 import UIKit
 
 class WorkSpaceTableViewCell: UITableViewCell {
-    static let CELL_INSET = CGFloat(12)
 
-    @IBOutlet var workSpaceView: WorkSpaceView!
+    static var workSpaceViewBottomOrigin: CGFloat = 0.0
+
+    @IBOutlet weak var workSpaceView: WorkSpaceView!
+    @IBOutlet weak var workSpaceViewBottom: NSLayoutConstraint!
+
+    var isLastCell: Bool {
+        get {
+            return workSpaceView.isLastCardView
+        }
+        set(b) {
+            workSpaceViewBottom.constant = b ? WorkSpaceTableViewCell.workSpaceViewBottomOrigin : 0.0
+            workSpaceView.isLastCardView = b
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
 
-    }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-        if workSpaceView != nil {
-            let isLastCell = workSpaceView.isLastCardView
-            var f = self.bounds
-            f.size.height -= isLastCell ? 0 : WorkSpaceTableViewCell.CELL_INSET
-            workSpaceView.frame = f
-        }
+        WorkSpaceTableViewCell.workSpaceViewBottomOrigin = workSpaceViewBottom.constant
     }
 }

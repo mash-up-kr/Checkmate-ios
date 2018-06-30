@@ -13,6 +13,8 @@ class WorkSpaceView: UIView {
     @IBOutlet weak var rootView: UIView!
     @IBOutlet weak var addBtn: UIButton!
 
+    var addBtnCallback: (() -> Void)?
+
     private var mIsLastCardView = false
     var isLastCardView: Bool {
         get {
@@ -38,5 +40,9 @@ class WorkSpaceView: UIView {
         self.loadNib(String(describing: WorkSpaceView.self))
 
         rootView.layer.cornerRadius = 10
+    }
+
+    @IBAction func addBtnClicked(_ sender: Any) {
+        addBtnCallback?()
     }
 }

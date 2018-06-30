@@ -21,7 +21,7 @@ class WorkSpaceViewController: UIViewController {
 
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(WorkSpaceTableViewCell.self, forCellReuseIdentifier: CELL_ID)
+        tableView.register(UINib(nibName: "WorkSpaceTableViewCell", bundle: nil), forCellReuseIdentifier: CELL_ID)
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +29,10 @@ class WorkSpaceViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func addBtnClicked() {
+        let vc = UIStoryboard.instantiate(WorkSpaceAddNavigationController.self, storyboardName: "WorkSpaceAddViewController")
+        self.navigationController?.tabBarController?.present(vc, animated: true)
+    }
 
     /*
     // MARK: - Navigation
@@ -52,13 +56,9 @@ extension WorkSpaceViewController: UITableViewDataSource {
                 as? WorkSpaceTableViewCell else {
             return UITableViewCell()
         }
-
-        if cell.workSpaceView == nil {
-            cell.workSpaceView = WorkSpaceView(frame: cell.bounds)
-            cell.contentView.addSubview(cell.workSpaceView)
-        }
-
-        cell.workSpaceView.isLastCardView = indexPath.row == workSpaces.count
+        
+        cell.isLastCell = indexPath.row == workSpaces.count
+        cell.workSpaceView.addBtnCallback = addBtnClicked
 
         return cell
     }
@@ -66,6 +66,6 @@ extension WorkSpaceViewController: UITableViewDataSource {
 
 extension WorkSpaceViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200 + (indexPath.row == workSpaces.count ? 0 : WorkSpaceTableViewCell.CELL_INSET)
+        return 200 + (indexPath.row == workSpaces.count ? 0 : WorkSpaceTableViewCell.workSpaceViewBottomOrigin)
     }
 }

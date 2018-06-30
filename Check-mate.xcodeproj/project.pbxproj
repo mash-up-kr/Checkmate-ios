@@ -29,9 +29,14 @@
 		27A55C8820E7A10A0036BFB1 /* WorkSpaceNavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27A55C8720E7A10A0036BFB1 /* WorkSpaceNavigationController.storyboard */; };
 		27A55C8A20E7A11D0036BFB1 /* WorkSpaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A55C8920E7A11D0036BFB1 /* WorkSpaceViewController.swift */; };
 		27A55C8C20E7A1240036BFB1 /* WorkSpaceViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27A55C8B20E7A1240036BFB1 /* WorkSpaceViewController.storyboard */; };
+<<<<<<< HEAD
 		BE2F09D920E7A64F00CEA36E /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F09D820E7A64F00CEA36E /* DateCollectionViewCell.swift */; };
 		BE2F09DB20E7A66400CEA36E /* CalendarVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F09DA20E7A66400CEA36E /* CalendarVars.swift */; };
 		BE2F09DD20E7B05800CEA36E /* CalendarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F09DC20E7B05800CEA36E /* CalendarDetailViewController.swift */; };
+=======
+		76429FC720E7A7E300B16DD4 /* SetWorkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76429FC620E7A7E300B16DD4 /* SetWorkButton.swift */; };
+		76429FCB20E7AD1500B16DD4 /* CircularGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76429FCA20E7AD1400B16DD4 /* CircularGraph.swift */; };
+>>>>>>> master
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +69,8 @@
 		BE2F09D820E7A64F00CEA36E /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE2F09DA20E7A66400CEA36E /* CalendarVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVars.swift; sourceTree = "<group>"; };
 		BE2F09DC20E7B05800CEA36E /* CalendarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewController.swift; sourceTree = "<group>"; };
+		76429FC620E7A7E300B16DD4 /* SetWorkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkButton.swift; sourceTree = "<group>"; };
+		76429FCA20E7AD1400B16DD4 /* CircularGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularGraph.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,10 +132,12 @@
 		27A55C5920E794E20036BFB1 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				76429FCA20E7AD1400B16DD4 /* CircularGraph.swift */,
 				27A55C6420E797270036BFB1 /* HomeNavigationController.swift */,
 				27A55C6620E7972F0036BFB1 /* HomeNavigationController.storyboard */,
 				27A55C6820E797410036BFB1 /* HomeViewController.swift */,
 				27A55C7620E79B980036BFB1 /* HomeViewController.storyboard */,
+				76429FC620E7A7E300B16DD4 /* SetWorkButton.swift */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -301,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76429FC720E7A7E300B16DD4 /* SetWorkButton.swift in Sources */,
 				27A55C6520E797270036BFB1 /* HomeNavigationController.swift in Sources */,
 				27A55C7D20E79FF70036BFB1 /* TabBarController.swift in Sources */,
 				27A55C7120E797AF0036BFB1 /* MonthViewController.swift in Sources */,
@@ -313,6 +323,7 @@
 				27A55C8620E7A1020036BFB1 /* WorkSpaceNavigationController.swift in Sources */,
 				BE2F09DB20E7A66400CEA36E /* CalendarVars.swift in Sources */,
 				27A55C6920E797410036BFB1 /* HomeViewController.swift in Sources */,
+				76429FCB20E7AD1500B16DD4 /* CircularGraph.swift in Sources */,
 				27A55C8A20E7A11D0036BFB1 /* WorkSpaceViewController.swift in Sources */,
 				27A55C7A20E79C310036BFB1 /* Extensions+Check-mate.swift in Sources */,
 			);

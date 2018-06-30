@@ -29,6 +29,8 @@
 		27A55C8820E7A10A0036BFB1 /* WorkSpaceNavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27A55C8720E7A10A0036BFB1 /* WorkSpaceNavigationController.storyboard */; };
 		27A55C8A20E7A11D0036BFB1 /* WorkSpaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A55C8920E7A11D0036BFB1 /* WorkSpaceViewController.swift */; };
 		27A55C8C20E7A1240036BFB1 /* WorkSpaceViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27A55C8B20E7A1240036BFB1 /* WorkSpaceViewController.storyboard */; };
+		BE2F09D920E7A64F00CEA36E /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F09D820E7A64F00CEA36E /* DateCollectionViewCell.swift */; };
+		BE2F09DB20E7A66400CEA36E /* CalendarVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F09DA20E7A66400CEA36E /* CalendarVars.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		27A55C8B20E7A1240036BFB1 /* WorkSpaceViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorkSpaceViewController.storyboard; sourceTree = "<group>"; };
 		47C713CA9592953B4F324282 /* Pods-Check-mate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check-mate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Check-mate/Pods-Check-mate.debug.xcconfig"; sourceTree = "<group>"; };
 		54D76EF7D1B419B9D1AB895C /* Pods-Check-mate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check-mate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Check-mate/Pods-Check-mate.release.xcconfig"; sourceTree = "<group>"; };
+		BE2F09D820E7A64F00CEA36E /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE2F09DA20E7A66400CEA36E /* CalendarVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVars.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,8 @@
 				27A55C8220E7A0510036BFB1 /* CalendarNavigationController.storyboard */,
 				27A55C6020E796FC0036BFB1 /* CalendarViewController.swift */,
 				27A55C6220E797040036BFB1 /* CalendarViewController.storyboard */,
+				BE2F09D820E7A64F00CEA36E /* DateCollectionViewCell.swift */,
+				BE2F09DA20E7A66400CEA36E /* CalendarVars.swift */,
 			);
 			path = calendar;
 			sourceTree = "<group>";
@@ -296,10 +302,12 @@
 				27A55C7D20E79FF70036BFB1 /* TabBarController.swift in Sources */,
 				27A55C7120E797AF0036BFB1 /* MonthViewController.swift in Sources */,
 				27A55C6120E796FC0036BFB1 /* CalendarViewController.swift in Sources */,
+				BE2F09D920E7A64F00CEA36E /* DateCollectionViewCell.swift in Sources */,
 				276BAF1120E7924C0063D8B4 /* ViewController.swift in Sources */,
 				27A55C8120E7A0440036BFB1 /* CalendarNavigationController.swift in Sources */,
 				276BAF0F20E7924C0063D8B4 /* AppDelegate.swift in Sources */,
 				27A55C8620E7A1020036BFB1 /* WorkSpaceNavigationController.swift in Sources */,
+				BE2F09DB20E7A66400CEA36E /* CalendarVars.swift in Sources */,
 				27A55C6920E797410036BFB1 /* HomeViewController.swift in Sources */,
 				27A55C8A20E7A11D0036BFB1 /* WorkSpaceViewController.swift in Sources */,
 				27A55C7A20E79C310036BFB1 /* Extensions+Check-mate.swift in Sources */,

@@ -13,8 +13,11 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var Calendar: UICollectionView!
     @IBOutlet weak var MonthLabel: UILabel!
     
-    let Months = ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
-    let DaysOfMonth = ["월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일"]
+    @IBOutlet weak var ToayLabel: UILabel!
+    
+    
+    let Months = ["January", "Febraury", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    let DaysOfMonth = ["M", "T", "W", "T", "F", "S", "S"]
     var DaysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     
     var currentMonth = String()
@@ -33,13 +36,24 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
         // Do any additional setup after loading the view, typically from a nib.
         
         currentMonth = Months[month]
-        MonthLabel.text = "\(currentMonth)"
+        MonthLabel.text = "\(currentMonth) \(year)"
+        ToayLabel.text = "\(day)"
         
         if weekday == 0 {
             weekday = 7
         }
         
         GetStartDateDayPosition()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        super.viewWillDisappear(animated)
     }
     
     @IBAction func Next(_ sender: Any) {
@@ -65,7 +79,7 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
             GetStartDateDayPosition()
             
             currentMonth = Months[month]
-            MonthLabel.text = "\(currentMonth)"
+            MonthLabel.text = "\(currentMonth) \(year)"
             Calendar.reloadData()
             
         default:
@@ -76,7 +90,7 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
             month += 1
             
             currentMonth = Months[month]
-            MonthLabel.text = "\(currentMonth)"
+            MonthLabel.text = "\(currentMonth) \(year)"
             Calendar.reloadData()
         }
     }
@@ -103,7 +117,7 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
             GetStartDateDayPosition()
             
             currentMonth = Months[month]
-            MonthLabel.text = "\(currentMonth)"
+            MonthLabel.text = "\(currentMonth) \(year)"
             Calendar.reloadData()
             
         default:
@@ -113,7 +127,7 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
             GetStartDateDayPosition()
             
             currentMonth = Months[month]
-            MonthLabel.text = "\(currentMonth)"
+            MonthLabel.text = "\(currentMonth) \(year)"
             Calendar.reloadData()
         }
     }
@@ -201,16 +215,16 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
             break
         }
         
-        //        if currentMonth == Months[calendar.component(.month, from: date) - 1]
-        //            && year == calendar.component(.year, from: date)
-        //            && day == indexPath.row +  1 - NumberOfEmptyBox {
-        //                cell.backgroundColor = UIColor.red
-        //        }
+        if currentMonth == Months[calendar.component(.month, from: date) - 1]
+            && year == calendar.component(.year, from: date)
+            && day == indexPath.row +  1 - NumberOfEmptyBox {
+                cell.PriceLabel.text = "72,000"
+        }
+        else {
+            cell.PriceLabel.text = ""
+        }
         
         // [TODO] 알바비 지급일 색상 변경 로직 추가해야함
-        
-        cell.PriceLabel.text = "+58,200"
-        cell.PriceLabel.textColor = UIColor.blue
         
         return cell
     }

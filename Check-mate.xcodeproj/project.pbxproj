@@ -10,9 +10,17 @@
 		046A1915D6A5D8AB6BF4A09A /* Pods_Check_mate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 259D7447581CD69D898C8CF3 /* Pods_Check_mate.framework */; };
 		276BAF0F20E7924C0063D8B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276BAF0E20E7924C0063D8B4 /* AppDelegate.swift */; };
 		276BAF1120E7924C0063D8B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276BAF1020E7924C0063D8B4 /* ViewController.swift */; };
-		276BAF1420E7924C0063D8B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276BAF1220E7924C0063D8B4 /* Main.storyboard */; };
 		276BAF1620E7924E0063D8B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 276BAF1520E7924E0063D8B4 /* Assets.xcassets */; };
 		276BAF1920E7924E0063D8B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276BAF1720E7924E0063D8B4 /* LaunchScreen.storyboard */; };
+		27A55C6120E796FC0036BFB1 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A55C6020E796FC0036BFB1 /* CalendarViewController.swift */; };
+		27A55C6320E797040036BFB1 /* CalendarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27A55C6220E797040036BFB1 /* CalendarViewController.storyboard */; };
+		27A55C6520E797270036BFB1 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A55C6420E797270036BFB1 /* HomeNavigationController.swift */; };
+		27A55C6720E7972F0036BFB1 /* HomeNavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27A55C6620E7972F0036BFB1 /* HomeNavigationController.storyboard */; };
+		27A55C6920E797410036BFB1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A55C6820E797410036BFB1 /* HomeViewController.swift */; };
+		27A55C7120E797AF0036BFB1 /* MonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A55C7020E797AF0036BFB1 /* MonthViewController.swift */; };
+		27A55C7320E797B60036BFB1 /* MonthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27A55C7220E797B60036BFB1 /* MonthViewController.storyboard */; };
+		27A55C7720E79B980036BFB1 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27A55C7620E79B980036BFB1 /* HomeViewController.storyboard */; };
+		27A55C7A20E79C310036BFB1 /* Extensions+Check-mate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A55C7920E79C310036BFB1 /* Extensions+Check-mate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +28,18 @@
 		276BAF0B20E7924C0063D8B4 /* Check-mate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check-mate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		276BAF0E20E7924C0063D8B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		276BAF1020E7924C0063D8B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		276BAF1320E7924C0063D8B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		276BAF1520E7924E0063D8B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		276BAF1820E7924E0063D8B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		276BAF1A20E7924E0063D8B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27A55C6020E796FC0036BFB1 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		27A55C6220E797040036BFB1 /* CalendarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarViewController.storyboard; sourceTree = "<group>"; };
+		27A55C6420E797270036BFB1 /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
+		27A55C6620E7972F0036BFB1 /* HomeNavigationController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeNavigationController.storyboard; sourceTree = "<group>"; };
+		27A55C6820E797410036BFB1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		27A55C7020E797AF0036BFB1 /* MonthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthViewController.swift; sourceTree = "<group>"; };
+		27A55C7220E797B60036BFB1 /* MonthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MonthViewController.storyboard; sourceTree = "<group>"; };
+		27A55C7620E79B980036BFB1 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
+		27A55C7920E79C310036BFB1 /* Extensions+Check-mate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Check-mate.swift"; sourceTree = "<group>"; };
 		47C713CA9592953B4F324282 /* Pods-Check-mate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check-mate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Check-mate/Pods-Check-mate.debug.xcconfig"; sourceTree = "<group>"; };
 		54D76EF7D1B419B9D1AB895C /* Pods-Check-mate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check-mate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Check-mate/Pods-Check-mate.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,14 +77,62 @@
 		276BAF0D20E7924C0063D8B4 /* Check-mate */ = {
 			isa = PBXGroup;
 			children = (
+				27A55C5820E794DC0036BFB1 /* views */,
+				27A55C7820E79C130036BFB1 /* utils */,
 				276BAF0E20E7924C0063D8B4 /* AppDelegate.swift */,
 				276BAF1020E7924C0063D8B4 /* ViewController.swift */,
-				276BAF1220E7924C0063D8B4 /* Main.storyboard */,
 				276BAF1520E7924E0063D8B4 /* Assets.xcassets */,
 				276BAF1720E7924E0063D8B4 /* LaunchScreen.storyboard */,
 				276BAF1A20E7924E0063D8B4 /* Info.plist */,
 			);
 			path = "Check-mate";
+			sourceTree = "<group>";
+		};
+		27A55C5820E794DC0036BFB1 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				27A55C5920E794E20036BFB1 /* home */,
+				27A55C5B20E794F30036BFB1 /* month */,
+				27A55C5A20E794E70036BFB1 /* calendar */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		27A55C5920E794E20036BFB1 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				27A55C6420E797270036BFB1 /* HomeNavigationController.swift */,
+				27A55C6620E7972F0036BFB1 /* HomeNavigationController.storyboard */,
+				27A55C6820E797410036BFB1 /* HomeViewController.swift */,
+				27A55C7620E79B980036BFB1 /* HomeViewController.storyboard */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		27A55C5A20E794E70036BFB1 /* calendar */ = {
+			isa = PBXGroup;
+			children = (
+				27A55C6020E796FC0036BFB1 /* CalendarViewController.swift */,
+				27A55C6220E797040036BFB1 /* CalendarViewController.storyboard */,
+			);
+			path = calendar;
+			sourceTree = "<group>";
+		};
+		27A55C5B20E794F30036BFB1 /* month */ = {
+			isa = PBXGroup;
+			children = (
+				27A55C7020E797AF0036BFB1 /* MonthViewController.swift */,
+				27A55C7220E797B60036BFB1 /* MonthViewController.storyboard */,
+			);
+			path = month;
+			sourceTree = "<group>";
+		};
+		27A55C7820E79C130036BFB1 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				27A55C7920E79C310036BFB1 /* Extensions+Check-mate.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 		A9702AA55629688ACC66E5A4 /* Pods */ = {
@@ -148,8 +212,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				276BAF1920E7924E0063D8B4 /* LaunchScreen.storyboard in Resources */,
+				27A55C6320E797040036BFB1 /* CalendarViewController.storyboard in Resources */,
+				27A55C7720E79B980036BFB1 /* HomeViewController.storyboard in Resources */,
+				27A55C6720E7972F0036BFB1 /* HomeNavigationController.storyboard in Resources */,
+				27A55C7320E797B60036BFB1 /* MonthViewController.storyboard in Resources */,
 				276BAF1620E7924E0063D8B4 /* Assets.xcassets in Resources */,
-				276BAF1420E7924C0063D8B4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,22 +248,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27A55C6520E797270036BFB1 /* HomeNavigationController.swift in Sources */,
+				27A55C7120E797AF0036BFB1 /* MonthViewController.swift in Sources */,
+				27A55C6120E796FC0036BFB1 /* CalendarViewController.swift in Sources */,
 				276BAF1120E7924C0063D8B4 /* ViewController.swift in Sources */,
 				276BAF0F20E7924C0063D8B4 /* AppDelegate.swift in Sources */,
+				27A55C6920E797410036BFB1 /* HomeViewController.swift in Sources */,
+				27A55C7A20E79C310036BFB1 /* Extensions+Check-mate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		276BAF1220E7924C0063D8B4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				276BAF1320E7924C0063D8B4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		276BAF1720E7924E0063D8B4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

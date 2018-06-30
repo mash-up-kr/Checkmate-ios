@@ -16,19 +16,23 @@ class HomeViewController: UIViewController {
         case working
         case noWorking
     }
+    @IBOutlet weak var workStateButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //setupCircularGraph(view: self.view, percentage: 0.1)
-        
+        workStateButton?.layer.cornerRadius = 5
         // Do any additional setup after loading the view.
-        let circularGraph = CircularGraph()
-        circularGraph.center = self.view.center
-        self.view.addSubview(circularGraph)
         
-        circularGraph.percentage = 0.5
-        circularGraph.trackLayer.fillColor = UIColor.clear.cgColor
-        circularGraph.shapeLayer.strokeColor = UIColor.blue.cgColor
+        self.circularGraph.center = view.center
+        self.circularGraph.trackLayer.fillColor = UIColor.clear.cgColor
+        self.circularGraph.trackLayer.lineWidth = 7
+        self.circularGraph.trackLayer.strokeColor = UIColor(displayP3Red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0).cgColor
+        
+        self.circularGraph.shapeLayer.lineWidth = 12
+        self.circularGraph.shapeLayer.strokeColor = UIColor(displayP3Red: 48/255, green: 79/255, blue: 254/255, alpha: 1.0).cgColor
+        self.view.addSubview(circularGraph)
+        self.circularGraph.percentage = 3/4
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,13 +51,23 @@ class HomeViewController: UIViewController {
     }
     */
     
-    @IBAction func touchUpWorkingButton(){
+    @IBAction func touchUpWorkStateButton(){
         //off로 가면 post요청
+        
+        if workState == .noWorking{
+            workState = .working
+            self.workStateButton.setTitle("Stop Work", for: .normal)
+            self.workStateButton.backgroundColor = UIColor(displayP3Red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
+            self.workStateButton.setTitleColor(UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 1.0), for: .normal)
+            
+        }else{
+            workState = .noWorking
+            self.workStateButton.setTitle("Start Work", for: .normal)
+            self.workStateButton.backgroundColor = UIColor(displayP3Red: 48/255, green: 79/255, blue: 254/255, alpha: 1.0)
+            self.workStateButton.setTitleColor(UIColor(displayP3Red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+        }
     }
     
-    @IBAction func touchUpBreakTimeButton(){
-        //사용하면 post요청
-    }
     
     @IBAction func monthClicked() {
         let vc = UIStoryboard.instantiate(MonthViewController.self, storyboardName: "MonthViewController")

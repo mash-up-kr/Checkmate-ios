@@ -21,6 +21,7 @@ class CircularGraph: UIView {
             return shapeLayer.strokeEnd
         }
     }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupCircularGraph(view: self, percentage: 1.0)
@@ -39,7 +40,7 @@ class CircularGraph: UIView {
         var center: CGPoint = view.center
         var lineWidth: CGFloat = 20
         
-        var radius: CGFloat = 100
+        var radius: CGFloat = 150
         var startAngle: CGFloat = 0
         var endAngle: CGFloat = 2 * CGFloat.pi
         

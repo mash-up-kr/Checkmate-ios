@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SetWorkButton: UIButton {
+class UserButton: UIButton {
     func setupUI(){
         layer.cornerRadius = frame.width/2;
         layer.masksToBounds = true
@@ -23,6 +23,8 @@ class SetWorkButton: UIButton {
         super.init(coder: aDecoder)
         setupUI()
     }
+    
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

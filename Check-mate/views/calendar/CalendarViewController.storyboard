@@ -169,10 +169,6 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="Kan-Vr-Kj8" id="hTI-S8-9tq"/>
-                                    <outlet property="delegate" destination="Kan-Vr-Kj8" id="tst-I6-lDn"/>
-                                </connections>
                             </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8TT-zc-Xia">
                                 <rect key="frame" x="0.0" y="203" width="375" height="51"/>

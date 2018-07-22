@@ -12,9 +12,9 @@ class CalendarDetailViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var Month = String()
-    var Day = String()
-    var Price = String()
+    var selectedMonth: Int!
+    var selectedDay: Int!
+    var selectedPrice: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +74,7 @@ extension CalendarDetailViewController: UITableViewDelegate, UITableViewDataSour
                 return UITableViewCell()
             }
             
-            cell.lblMoney.text = "\(Price) won"
+            cell.lblMoney.text = "\(selectedPrice) won"
             
             return cell
         }

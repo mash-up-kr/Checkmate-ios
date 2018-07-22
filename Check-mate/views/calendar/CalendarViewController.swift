@@ -8,37 +8,22 @@
 
 import UIKit
 
-class CalendarViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class CalendarViewController: UIViewController {
 
     @IBOutlet weak var Calendar: UICollectionView!
     @IBOutlet weak var MonthLabel: UILabel!
     @IBOutlet weak var DayLabel: UILabel!
     @IBOutlet weak var NameOfDayLabel: UILabel!
-        
-    var currentMonth = String()
-    var NumberOfEmptyBox = Int()                // The number of "empty boxes" at the start of the current month
-    var NextNumberOfEmptyBox = Int()            // the same with above but with the next month
-    var PreviousNumberOfEmptyBox = Int()        // the same with above but with the prev month
-    var Direction = 0                           // = 0 if we are at the current month, = 1 if we are in a future month, = -1 if we are in a past month
-    var PositionIndex = 0                       // here we will store the above vars of the empty boxes
-    
-    var LeapYearCounter = year % 4              // its 2 because the next time february has 29 days is in two years (it happen every 4 years)
-    
-    var dayCounter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        currentMonth = Months[month]
+        Calendar.delegate   = self
+        Calendar.dataSource = self
         
-        MonthLabel.text = "\(currentMonth) \(year)"
-        DayLabel.text = "\(day)"
+        MonthLabel.text     = "\(getCurrentMonthYear())"
+        DayLabel.text       = "\(day)"
         NameOfDayLabel.text = "\(NameOfDays[weekday])"
-        
-        if weekday == 0 {
-            weekday = 7
-        }
         
         GetStartDateDayPosition()
     }
@@ -52,182 +37,48 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         super.viewWillDisappear(animated)
     }
-    
+}
+
+// Button Actions & Segue Control
+extension CalendarViewController {
     @IBAction func Next(_ sender: Any) {
-        switch currentMonth {
-        case Months[Months.count - 1]:
+        Direction = .NEXT
+        
+        switch month {
+        case Months.count - 1:
             month = 0
             year += 1
-            Direction = 1
             
-            if LeapYearCounter < 5 {
-                LeapYearCounter += 1
-            }
-            
-            if LeapYearCounter == 4 {
-                DaysInMonths[1] = 29
-            }
-            
-            if LeapYearCounter == 5 {
-                LeapYearCounter = 1
-                DaysInMonths[1] = 28
-            }
-            
+            GetLeapYearCounter(Direction)
             GetStartDateDayPosition()
-            
-            currentMonth = Months[month]
-            MonthLabel.text = "\(currentMonth) \(year)"
-            Calendar.reloadData()
-            
         default:
-            Direction = 1
-            
             GetStartDateDayPosition()
             
             month += 1
-            
-            currentMonth = Months[month]
-            MonthLabel.text = "\(currentMonth) \(year)"
-            Calendar.reloadData()
         }
+        
+        MonthLabel.text = "\(Months[month]) \(year)"
+        Calendar.reloadData()
     }
     
     @IBAction func Back(_ sender: Any) {
-        switch currentMonth {
-        case Months[0]:
+        Direction = .BACK
+        
+        switch month {
+        case 0:
             month = Months.count - 1
             year -= 1
-            Direction = -1
             
-            if LeapYearCounter > 0 {
-                LeapYearCounter -= 1
-            }
-            
-            if LeapYearCounter == 0 {
-                DaysInMonths[1] = 29
-                LeapYearCounter = 4
-            }
-            else {
-                DaysInMonths[1] = 28
-            }
-            
+            GetLeapYearCounter(Direction)
             GetStartDateDayPosition()
-            
-            currentMonth = Months[month]
-            MonthLabel.text = "\(currentMonth) \(year)"
-            Calendar.reloadData()
-            
         default:
             month -= 1
-            Direction = -1
             
             GetStartDateDayPosition()
-            
-            currentMonth = Months[month]
-            MonthLabel.text = "\(currentMonth) \(year)"
-            Calendar.reloadData()
-        }
-    }
-    
-    func GetStartDateDayPosition() {
-        switch Direction {
-        case 0:
-            NumberOfEmptyBox = weekday
-            dayCounter = day
-            
-            while dayCounter > 0 {
-                NumberOfEmptyBox = NumberOfEmptyBox - 1
-                dayCounter -= 1
-                if NumberOfEmptyBox == 0 {
-                    NumberOfEmptyBox = 7
-                }
-            }
-            if NumberOfEmptyBox == 7 {
-                NumberOfEmptyBox = 0
-            }
-            
-            PositionIndex = NumberOfEmptyBox
-            
-        case 1...:
-            NextNumberOfEmptyBox = (PositionIndex + DaysInMonths[month]) % 7
-            PositionIndex = NextNumberOfEmptyBox
-            
-        case -1:
-            PreviousNumberOfEmptyBox = (7 - (DaysInMonths[month] - PositionIndex) % 7)
-            if PreviousNumberOfEmptyBox == 7 {
-                PreviousNumberOfEmptyBox = 0
-            }
-            PositionIndex = PreviousNumberOfEmptyBox
-            
-        default:
-            fatalError()
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch Direction {
-        case 0:
-            return DaysInMonths[month] + NumberOfEmptyBox
-        case 1...:
-            return DaysInMonths[month] + NextNumberOfEmptyBox
-        case -1:
-            return DaysInMonths[month] + PreviousNumberOfEmptyBox
-        default:
-            fatalError()
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.size.width / 7, height: 63)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Calendar", for: indexPath as IndexPath) as! DateCollectionViewCell
-    
-       cell.cellClear()
-        
-        switch Direction {
-        case 0:
-            cell.DateLabel.text = "\(indexPath.row + 1 - NumberOfEmptyBox)"
-            if indexPath.row / 7 == (DaysInMonths[month] + NumberOfEmptyBox) / 7 {
-                cell.ToggleBottomLine()
-            }
-        case 1:
-            cell.DateLabel.text = "\(indexPath.row + 1 - NextNumberOfEmptyBox)"
-            if indexPath.row / 7 == (DaysInMonths[month] + NextNumberOfEmptyBox) / 7 {
-                cell.ToggleBottomLine()
-            }
-        case -1:
-            cell.DateLabel.text = "\(indexPath.row + 1 - PreviousNumberOfEmptyBox)"
-            if indexPath.row / 7 == (DaysInMonths[month] + PreviousNumberOfEmptyBox) / 7 {
-                cell.ToggleBottomLine()
-            }
-        default:
-            fatalError()
         }
         
-        if Int(cell.DateLabel.text!)! < 1 {
-            cell.cellHide()
-        }
-        
-        switch indexPath.row {
-        case 5, 6, 12, 13, 19, 20:
-            cell.ToggleHistory()
-            cell.PriceLabel.text = "72,000"
-        case 27:
-            cell.ToggleHighlight()
-            cell.PriceLabel.text = "월급날"
-        default:
-            break
-        }
-        
-        // [TODO] 알바비 지급일 색상 변경 로직 추가해야함
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "DetailSegue", sender: indexPath)
+        MonthLabel.text = "\(getCurrentMonthYear())"
+        Calendar.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -239,10 +90,78 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
                     return
                 }
                 
-                destinationVC.Month = currentMonth
-                destinationVC.Day = cell.DateLabel.text!
-                destinationVC.Price = cell.PriceLabel.text!
+                destinationVC.selectedMonth = month
+                destinationVC.selectedDay = day
+                destinationVC.selectedPrice = Int(cell.PriceLabel.text!)
             }
         }
+    }
+}
+
+extension CalendarViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "DetailSegue", sender: indexPath)
+    }
+}
+
+extension CalendarViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        switch Direction {
+        case .CURRENT:
+            return DaysInMonths[month] + NumberOfEmptyBox
+        case .NEXT:
+            return DaysInMonths[month] + NextNumberOfEmptyBox
+        case .BACK:
+            return DaysInMonths[month] + PreviousNumberOfEmptyBox
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Calendar", for: indexPath as IndexPath) as! DateCollectionViewCell
+        
+        cell.cellClear()
+        
+        switch Direction {
+        case .CURRENT:
+            cell.DateLabel.text = "\(indexPath.row + 1 - NumberOfEmptyBox)"
+            if indexPath.row / 7 == (DaysInMonths[month] + NumberOfEmptyBox) / 7 {
+                cell.ToggleBottomLine()
+            }
+        case .NEXT:
+            cell.DateLabel.text = "\(indexPath.row + 1 - NextNumberOfEmptyBox)"
+            if indexPath.row / 7 == (DaysInMonths[month] + NextNumberOfEmptyBox) / 7 {
+                cell.ToggleBottomLine()
+            }
+        case .BACK:
+            cell.DateLabel.text = "\(indexPath.row + 1 - PreviousNumberOfEmptyBox)"
+            if indexPath.row / 7 == (DaysInMonths[month] + PreviousNumberOfEmptyBox) / 7 {
+                cell.ToggleBottomLine()
+            }
+        }
+        
+        if Int(cell.DateLabel.text!)! < 1 {
+            cell.cellHide()
+        }
+        
+        // [TODO] 서버 데이터 동기화해서 하이라이트 기능 추가해야 함
+        // 현재 MOCK 로직
+        switch indexPath.row {
+        case 5, 6, 12, 13, 19, 20:
+            cell.ToggleHistory()
+            cell.PriceLabel.text = "72,000"
+        case 27:
+            cell.ToggleHighlight()
+            cell.PriceLabel.text = "월급날"
+        default:
+            break
+        }
+        
+        return cell
+    }
+}
+
+extension CalendarViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.size.width / 7, height: 63)
     }
 }

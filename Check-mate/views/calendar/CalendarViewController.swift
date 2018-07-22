@@ -8,18 +8,13 @@
 
 import UIKit
 
-class CalendarViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class CalendarViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var Calendar: UICollectionView!
     @IBOutlet weak var MonthLabel: UILabel!
-    
-    @IBOutlet weak var ToayLabel: UILabel!
-    
-    
-    let Months = ["January", "Febraury", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-    let DaysOfMonth = ["M", "T", "W", "T", "F", "S", "S"]
-    var DaysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-    
+    @IBOutlet weak var DayLabel: UILabel!
+    @IBOutlet weak var NameOfDayLabel: UILabel!
+        
     var currentMonth = String()
     var NumberOfEmptyBox = Int()                // The number of "empty boxes" at the start of the current month
     var NextNumberOfEmptyBox = Int()            // the same with above but with the next month
@@ -36,8 +31,10 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
         // Do any additional setup after loading the view, typically from a nib.
         
         currentMonth = Months[month]
+        
         MonthLabel.text = "\(currentMonth) \(year)"
-        ToayLabel.text = "\(day)"
+        DayLabel.text = "\(day)"
+        NameOfDayLabel.text = "\(NameOfDays[weekday])"
         
         if weekday == 0 {
             weekday = 7
@@ -180,48 +177,48 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.size.width / 7, height: 63)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Calendar", for: indexPath as IndexPath) as! DateCollectionViewCell
-        
-        cell.backgroundColor = UIColor.clear
-        
-        if cell.isHidden {
-            cell.isHidden = false
-        }
-        
-        cell.DateLabel.textColor = UIColor.black
+    
+       cell.cellClear()
         
         switch Direction {
         case 0:
             cell.DateLabel.text = "\(indexPath.row + 1 - NumberOfEmptyBox)"
+            if indexPath.row / 7 == (DaysInMonths[month] + NumberOfEmptyBox) / 7 {
+                cell.ToggleBottomLine()
+            }
         case 1:
             cell.DateLabel.text = "\(indexPath.row + 1 - NextNumberOfEmptyBox)"
+            if indexPath.row / 7 == (DaysInMonths[month] + NextNumberOfEmptyBox) / 7 {
+                cell.ToggleBottomLine()
+            }
         case -1:
             cell.DateLabel.text = "\(indexPath.row + 1 - PreviousNumberOfEmptyBox)"
+            if indexPath.row / 7 == (DaysInMonths[month] + PreviousNumberOfEmptyBox) / 7 {
+                cell.ToggleBottomLine()
+            }
         default:
             fatalError()
         }
         
         if Int(cell.DateLabel.text!)! < 1 {
-            cell.isHidden = true
+            cell.cellHide()
         }
         
         switch indexPath.row {
-        case 5, 6, 12, 13, 19, 20, 26, 27, 33, 34:
-            if Int(cell.DateLabel.text!)! > 0 {
-                cell.DateLabel.textColor = UIColor.red
-            }
+        case 5, 6, 12, 13, 19, 20:
+            cell.ToggleHistory()
+            cell.PriceLabel.text = "72,000"
+        case 27:
+            cell.ToggleHighlight()
+            cell.PriceLabel.text = "월급날"
         default:
             break
-        }
-        
-        if currentMonth == Months[calendar.component(.month, from: date) - 1]
-            && year == calendar.component(.year, from: date)
-            && day == indexPath.row +  1 - NumberOfEmptyBox {
-                cell.PriceLabel.text = "72,000"
-        }
-        else {
-            cell.PriceLabel.text = ""
         }
         
         // [TODO] 알바비 지급일 색상 변경 로직 추가해야함
@@ -230,8 +227,6 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Calendar", for: indexPath as IndexPath) as! DateCollectionViewCell
-        
         self.performSegue(withIdentifier: "DetailSegue", sender: indexPath)
     }
     

@@ -26,6 +26,11 @@ class CalendarDetailViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.backgroundColor = UIColor.clear
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,6 +44,10 @@ internal class TodayMoneyCell: UITableViewCell {
     
     @IBOutlet weak var lblMoney: UILabel!
     
+    func setMoney(money: Int) {
+        lblMoney.text = String(money) + " won"
+    }
+    
 }
 
 internal class TodayTimeCell: UITableViewCell {
@@ -48,17 +57,6 @@ internal class TodayTimeCell: UITableViewCell {
 }
 
 internal class EtcCell: UITableViewCell {
-    
-    @IBOutlet weak var lblTitle1: UILabel!
-    @IBOutlet weak var lblTitle2: UILabel!
-    @IBOutlet weak var lblTitle3: UILabel!
-    @IBOutlet weak var lblTitle4: UILabel!
-    
-    @IBOutlet weak var lblPay1: UILabel!
-    @IBOutlet weak var lblPay2: UILabel!
-    @IBOutlet weak var lblPay3: UILabel!
-    @IBOutlet weak var lblPay4: UILabel!
-    
     
 }
 

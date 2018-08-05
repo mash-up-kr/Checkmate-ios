@@ -26,6 +26,17 @@ class CalendarViewController: UIViewController {
         NameOfDayLabel.text = "\(NameOfDays[weekday])"
         
         GetStartDateDayPosition()
+        
+        let leftGesture = UISwipeGestureRecognizer(target: self, action: #selector(self.leftSwiped(_:)))
+        leftGesture.direction = .left
+        leftGesture.delegate  = self
+        
+        let rightGesture = UISwipeGestureRecognizer(target: self, action: #selector(self.rightSwiped(_:)))
+        rightGesture.direction = .right
+        rightGesture.delegate = self
+        
+        Calendar.addGestureRecognizer(leftGesture)
+        Calendar.addGestureRecognizer(rightGesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +52,7 @@ class CalendarViewController: UIViewController {
 
 // Button Actions & Segue Control
 extension CalendarViewController {
-    @IBAction func Next(_ sender: Any) {
+    @IBAction func Next(_ sender: Any?) {
         Direction = .NEXT
         
         switch month {
@@ -61,7 +72,7 @@ extension CalendarViewController {
         Calendar.reloadData()
     }
     
-    @IBAction func Back(_ sender: Any) {
+    @IBAction func Back(_ sender: Any?) {
         Direction = .BACK
         
         switch month {
@@ -163,5 +174,19 @@ extension CalendarViewController: UICollectionViewDataSource {
 extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.size.width / 7, height: 63)
+    }
+}
+
+extension CalendarViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
+    @objc func leftSwiped(_ sender: UIGestureRecognizer) {
+        self.Next(nil)
+    }
+    
+    @objc func rightSwiped(_ sender: UIGestureRecognizer) {
+        self.Back(nil)
     }
 }

@@ -244,7 +244,7 @@
                         <outlet property="DayLabel" destination="AuM-qJ-xLB" id="H66-6c-y1n"/>
                         <outlet property="MonthLabel" destination="BNw-1N-ZX0" id="Ahd-3Y-qra"/>
                         <outlet property="NameOfDayLabel" destination="ZE9-HW-Skc" id="rRN-Hq-yy8"/>
-                        <segue destination="suy-VO-rXK" kind="show" identifier="detailSegue" id="sdF-vb-wS5"/>
+                        <segue destination="suy-VO-rXK" kind="show" identifier="DetailSegue" id="sdF-vb-wS5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fU-LQ-O9m" userLabel="First Responder" sceneMemberID="firstResponder"/>

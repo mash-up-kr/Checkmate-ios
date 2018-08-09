@@ -339,111 +339,11 @@
                                 <rect key="frame" x="0.0" y="114.5" width="375" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aug" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHn-wq-OBJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="62.5" height="52"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="13"/>
                                         <color key="textColor" red="0.4039215686" green="0.4039215686" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rq4-EI-Utb">
-                                        <rect key="frame" x="62.5" y="0.0" width="62.5" height="52"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tue 22" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1T-AG-bqr">
-                                                <rect key="frame" x="0.0" y="-0.5" width="62.5" height="52"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="13"/>
-                                                <color key="textColor" red="0.4039215686" green="0.4039215686" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wW-RQ-ang">
-                                                <rect key="frame" x="29.5" y="1" width="4" height="4"/>
-                                                <color key="backgroundColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="4" id="si4-K8-yH5"/>
-                                                    <constraint firstAttribute="width" constant="4" id="vzJ-fn-TI7"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="P1T-AG-bqr" firstAttribute="centerY" secondItem="rq4-EI-Utb" secondAttribute="centerY" id="2uR-HJ-DQ8"/>
-                                            <constraint firstItem="P1T-AG-bqr" firstAttribute="width" secondItem="rq4-EI-Utb" secondAttribute="width" id="5OV-8p-FVW"/>
-                                            <constraint firstItem="8wW-RQ-ang" firstAttribute="top" secondItem="rq4-EI-Utb" secondAttribute="top" constant="1" id="Dux-7b-8f9"/>
-                                            <constraint firstItem="P1T-AG-bqr" firstAttribute="height" secondItem="rq4-EI-Utb" secondAttribute="height" id="KAF-fu-veT"/>
-                                            <constraint firstItem="8wW-RQ-ang" firstAttribute="centerX" secondItem="rq4-EI-Utb" secondAttribute="centerX" id="Qt1-bQ-uGQ"/>
-                                            <constraint firstItem="P1T-AG-bqr" firstAttribute="centerX" secondItem="rq4-EI-Utb" secondAttribute="centerX" id="Vby-tf-IEW"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sBd-fd-npN">
-                                        <rect key="frame" x="125" y="0.0" width="62.5" height="52"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tue 22" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQS-Ub-AlF">
-                                                <rect key="frame" x="0.0" y="-0.5" width="62.5" height="52"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="13"/>
-                                                <color key="textColor" red="0.4039215686" green="0.4039215686" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="qQS-Ub-AlF" firstAttribute="width" secondItem="sBd-fd-npN" secondAttribute="width" id="Dcm-xE-Ibl"/>
-                                            <constraint firstItem="qQS-Ub-AlF" firstAttribute="centerY" secondItem="sBd-fd-npN" secondAttribute="centerY" id="fNf-Kr-Iho"/>
-                                            <constraint firstItem="qQS-Ub-AlF" firstAttribute="centerX" secondItem="sBd-fd-npN" secondAttribute="centerX" id="vol-aB-5d8"/>
-                                            <constraint firstItem="qQS-Ub-AlF" firstAttribute="height" secondItem="sBd-fd-npN" secondAttribute="height" id="zhh-m2-vsZ"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j2l-am-7Bf">
-                                        <rect key="frame" x="187.5" y="0.0" width="62.5" height="52"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tue 22" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mmu-Nm-RDj">
-                                                <rect key="frame" x="0.0" y="-0.5" width="62.5" height="52"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="13"/>
-                                                <color key="textColor" red="0.4039215686" green="0.4039215686" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="Mmu-Nm-RDj" firstAttribute="width" secondItem="j2l-am-7Bf" secondAttribute="width" id="LgA-iU-N2v"/>
-                                            <constraint firstItem="Mmu-Nm-RDj" firstAttribute="height" secondItem="j2l-am-7Bf" secondAttribute="height" id="XNK-Q2-49Z"/>
-                                            <constraint firstItem="Mmu-Nm-RDj" firstAttribute="centerX" secondItem="j2l-am-7Bf" secondAttribute="centerX" id="hcR-ih-ROm"/>
-                                            <constraint firstItem="Mmu-Nm-RDj" firstAttribute="centerY" secondItem="j2l-am-7Bf" secondAttribute="centerY" id="nJt-jE-DgV"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFg-zr-09g">
-                                        <rect key="frame" x="250" y="0.0" width="62.5" height="52"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tue 22" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4Y-N1-Wzb">
-                                                <rect key="frame" x="0.0" y="-0.5" width="62.5" height="52"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="13"/>
-                                                <color key="textColor" red="0.4039215686" green="0.4039215686" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="i4Y-N1-Wzb" firstAttribute="centerY" secondItem="hFg-zr-09g" secondAttribute="centerY" id="JUg-SU-koR"/>
-                                            <constraint firstItem="i4Y-N1-Wzb" firstAttribute="centerX" secondItem="hFg-zr-09g" secondAttribute="centerX" id="Lsh-8Z-hq1"/>
-                                            <constraint firstItem="i4Y-N1-Wzb" firstAttribute="width" secondItem="hFg-zr-09g" secondAttribute="width" id="aCd-06-c7K"/>
-                                            <constraint firstItem="i4Y-N1-Wzb" firstAttribute="height" secondItem="hFg-zr-09g" secondAttribute="height" id="qPz-mi-Zmg"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E72-rZ-amw">
-                                        <rect key="frame" x="312.5" y="0.0" width="62.5" height="52"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tue 22" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKA-a1-mb5">
-                                                <rect key="frame" x="0.0" y="-0.5" width="62.5" height="52"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="13"/>
-                                                <color key="textColor" red="0.4039215686" green="0.4039215686" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="yKA-a1-mb5" firstAttribute="centerX" secondItem="E72-rZ-amw" secondAttribute="centerX" id="UcJ-0o-Ve7"/>
-                                            <constraint firstItem="yKA-a1-mb5" firstAttribute="height" secondItem="E72-rZ-amw" secondAttribute="height" id="aRP-m6-abe"/>
-                                            <constraint firstItem="yKA-a1-mb5" firstAttribute="width" secondItem="E72-rZ-amw" secondAttribute="width" id="dqW-46-mLW"/>
-                                            <constraint firstItem="yKA-a1-mb5" firstAttribute="centerY" secondItem="E72-rZ-amw" secondAttribute="centerY" id="trQ-YV-uwk"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="YuQ-r4-voV"/>
@@ -456,15 +356,27 @@
                                     <constraint firstAttribute="height" constant="48" id="cjn-Sy-Xnc"/>
                                 </constraints>
                                 <state key="normal" image="arrowLeft"/>
+                                <connections>
+                                    <action selector="backButton:" destination="B8z-vt-8Gn" eventType="touchUpInside" id="sWe-jq-Kk3"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6t-y1-mcp">
+                                <rect key="frame" x="0.0" y="166.5" width="375" height="5"/>
+                                <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="NJb-aJ-EVJ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="MAr-xK-aZW" firstAttribute="bottom" secondItem="Y6t-y1-mcp" secondAttribute="top" id="0ib-1b-aIl"/>
                             <constraint firstItem="4St-yK-oQL" firstAttribute="top" secondItem="MAr-xK-aZW" secondAttribute="bottom" id="50o-to-tos"/>
                             <constraint firstItem="exE-69-iIX" firstAttribute="top" secondItem="iBx-7z-zrH" secondAttribute="top" id="5Fd-g2-9AY"/>
                             <constraint firstItem="MAr-xK-aZW" firstAttribute="top" secondItem="wAx-le-WmX" secondAttribute="bottom" constant="13" id="8Gz-qm-H4g"/>
                             <constraint firstItem="4St-yK-oQL" firstAttribute="width" secondItem="jrE-8D-FFA" secondAttribute="width" id="MjW-3d-VzK"/>
                             <constraint firstItem="iBx-7z-zrH" firstAttribute="bottom" secondItem="4St-yK-oQL" secondAttribute="bottom" id="V7L-GO-WED"/>
+                            <constraint firstItem="Y6t-y1-mcp" firstAttribute="leading" secondItem="jrE-8D-FFA" secondAttribute="leading" id="a3v-lj-C4h"/>
                             <constraint firstItem="jqY-9v-pwk" firstAttribute="top" secondItem="iBx-7z-zrH" secondAttribute="top" constant="16.5" id="fsX-nA-Xff"/>
                             <constraint firstItem="wAx-le-WmX" firstAttribute="top" secondItem="jqY-9v-pwk" secondAttribute="bottom" constant="-5" id="ftI-Et-Klf"/>
                             <constraint firstItem="jqY-9v-pwk" firstAttribute="centerX" secondItem="iBx-7z-zrH" secondAttribute="centerX" id="jK4-ZY-ZVT"/>
@@ -473,11 +385,16 @@
                             <constraint firstItem="4St-yK-oQL" firstAttribute="centerX" secondItem="iBx-7z-zrH" secondAttribute="centerX" id="rHq-5Q-OYG"/>
                             <constraint firstItem="MAr-xK-aZW" firstAttribute="width" secondItem="jrE-8D-FFA" secondAttribute="width" id="uxM-Km-KZ0"/>
                             <constraint firstItem="wAx-le-WmX" firstAttribute="centerX" secondItem="jqY-9v-pwk" secondAttribute="centerX" id="vbC-5i-ql0"/>
+                            <constraint firstItem="Y6t-y1-mcp" firstAttribute="trailing" secondItem="iBx-7z-zrH" secondAttribute="trailing" id="xSq-X0-mQM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iBx-7z-zrH"/>
                     </view>
                     <connections>
+                        <outlet property="MonthLabel" destination="WHn-wq-OBJ" id="Qd3-HA-uXY"/>
+                        <outlet property="dayLabel" destination="jqY-9v-pwk" id="lU6-Ee-JGk"/>
+                        <outlet property="dayStackView" destination="MAr-xK-aZW" id="JqZ-Pm-e0R"/>
                         <outlet property="tableView" destination="4St-yK-oQL" id="k01-CQ-cuq"/>
+                        <outlet property="weekdayLabel" destination="wAx-le-WmX" id="7Mp-hu-5yU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XaN-Ft-OW0" userLabel="First Responder" sceneMemberID="firstResponder"/>

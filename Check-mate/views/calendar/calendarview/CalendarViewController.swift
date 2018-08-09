@@ -15,28 +15,32 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var DayLabel: UILabel!
     @IBOutlet weak var NameOfDayLabel: UILabel!
     
+    var model: DateModel = DateModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Calendar.delegate   = self
-        Calendar.dataSource = self
+        Calendar.delegate       = self
+        Calendar.dataSource     = self
         
-        MonthLabel.text     = "\(getCurrentMonthYear())"
-        DayLabel.text       = "\(day)"
-        NameOfDayLabel.text = "\(NameOfDays[weekday])"
+        MonthLabel.text         = "\(getCurrentMonthYear())"
+        DayLabel.text           = "\(day)"
+        NameOfDayLabel.text     = "\(NameOfDays[weekday])"
         
         GetStartDateDayPosition()
         
-        let leftGesture = UISwipeGestureRecognizer(target: self, action: #selector(self.leftSwiped(_:)))
-        leftGesture.direction = .left
-        leftGesture.delegate  = self
+        let leftGesture         = UISwipeGestureRecognizer(target: self, action: #selector(self.leftSwiped(_:)))
+        leftGesture.direction   = .left
+        leftGesture.delegate    = self
         
-        let rightGesture = UISwipeGestureRecognizer(target: self, action: #selector(self.rightSwiped(_:)))
-        rightGesture.direction = .right
-        rightGesture.delegate = self
+        let rightGesture        = UISwipeGestureRecognizer(target: self, action: #selector(self.rightSwiped(_:)))
+        rightGesture.direction  = .right
+        rightGesture.delegate   = self
         
         Calendar.addGestureRecognizer(leftGesture)
         Calendar.addGestureRecognizer(rightGesture)
+        
+        model.setDummyData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -95,15 +99,23 @@ extension CalendarViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DetailSegue" {
             if let destinationVC = segue.destination as? CalendarDetailViewController {
-                guard let indexPath = sender as? IndexPath else { return }
+                guard let indexPath = sender as? IndexPath else {
+                    return
+                }
                 
                 guard let cell = Calendar.cellForItem(at: indexPath) as? DateCollectionViewCell else {
                     return
                 }
                 
-                destinationVC.selectedMonth = month
-                destinationVC.selectedDay = day
-                destinationVC.selectedPrice = Int(cell.PriceLabel.text!)
+                let detail: DetailDateModel = DetailDateModel()
+                destinationVC.selectedModel = detail
+                
+                detail.year = year;
+                detail.month = month;
+                detail.weekday = indexPath.row % 7
+                detail.day = Int(cell.DateLabel.text!)!
+                
+                detail.setDummyData()
             }
         }
     }
@@ -130,21 +142,26 @@ extension CalendarViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Calendar", for: indexPath as IndexPath) as! DateCollectionViewCell
         
+        let currentDay: Int
+        
         cell.cellClear()
         
         switch Direction {
         case .CURRENT:
-            cell.DateLabel.text = "\(indexPath.row + 1 - NumberOfEmptyBox)"
+            currentDay = indexPath.row + 1 - NumberOfEmptyBox
+            cell.DateLabel.text = "\(currentDay)"
             if indexPath.row / 7 == (DaysInMonths[month] + NumberOfEmptyBox) / 7 {
                 cell.ToggleBottomLine()
             }
         case .NEXT:
-            cell.DateLabel.text = "\(indexPath.row + 1 - NextNumberOfEmptyBox)"
+            currentDay = indexPath.row + 1 - NextNumberOfEmptyBox
+            cell.DateLabel.text = "\(currentDay)"
             if indexPath.row / 7 == (DaysInMonths[month] + NextNumberOfEmptyBox) / 7 {
                 cell.ToggleBottomLine()
             }
         case .BACK:
-            cell.DateLabel.text = "\(indexPath.row + 1 - PreviousNumberOfEmptyBox)"
+            currentDay = indexPath.row + 1 - PreviousNumberOfEmptyBox
+            cell.DateLabel.text = "\(currentDay)"
             if indexPath.row / 7 == (DaysInMonths[month] + PreviousNumberOfEmptyBox) / 7 {
                 cell.ToggleBottomLine()
             }
@@ -155,16 +172,18 @@ extension CalendarViewController: UICollectionViewDataSource {
         }
         
         // [TODO] 서버 데이터 동기화해서 하이라이트 기능 추가해야 함
-        // 현재 MOCK 로직
-        switch indexPath.row {
-        case 5, 6, 12, 13, 19, 20:
-            cell.ToggleHistory()
-            cell.PriceLabel.text = "72,000"
-        case 27:
+        
+        // MOCK 모델 데이터
+        for (day, value) in model.salaryData {
+            if currentDay == day {
+                cell.ToggleHistory()
+                cell.PriceLabel.text = "\(value)"
+            }
+        }
+        
+        if currentDay == model.payDay {
             cell.ToggleHighlight()
             cell.PriceLabel.text = "월급날"
-        default:
-            break
         }
         
         return cell

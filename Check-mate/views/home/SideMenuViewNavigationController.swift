@@ -15,6 +15,7 @@ class SideMenuViewNavigationController: UISideMenuNavigationController {
 
         // Do any additional setup after loading the view.
         self.sideMenuManager.menuPresentMode = .menuSlideIn
+        self.sideMenuManager.menuAnimationFadeStrength = 0.5
     }
 
     override func didReceiveMemoryWarning() {

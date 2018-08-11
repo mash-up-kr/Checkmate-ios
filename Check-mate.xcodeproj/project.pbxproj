@@ -38,6 +38,7 @@
 		27CD9CC120E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD9CC020E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift */; };
 		76429FC720E7A7E300B16DD4 /* UserButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76429FC620E7A7E300B16DD4 /* UserButton.swift */; };
 		76429FCB20E7AD1500B16DD4 /* CircularGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76429FCA20E7AD1400B16DD4 /* CircularGraph.swift */; };
+		76842E4A211DD7BD00D66357 /* TempJobData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76842E49211DD7BD00D66357 /* TempJobData.swift */; };
 		76B409992116F10800639082 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B409982116F10800639082 /* SideMenuViewController.swift */; };
 		76B4099B2116FA7E00639082 /* SideMenuViewNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B4099A2116FA7E00639082 /* SideMenuViewNavigationController.swift */; };
 		BE2F09D920E7A64F00CEA36E /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F09D820E7A64F00CEA36E /* DateCollectionViewCell.swift */; };
@@ -81,6 +82,7 @@
 		54D76EF7D1B419B9D1AB895C /* Pods-Check-mate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check-mate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Check-mate/Pods-Check-mate.release.xcconfig"; sourceTree = "<group>"; };
 		76429FC620E7A7E300B16DD4 /* UserButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserButton.swift; sourceTree = "<group>"; };
 		76429FCA20E7AD1400B16DD4 /* CircularGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularGraph.swift; sourceTree = "<group>"; };
+		76842E49211DD7BD00D66357 /* TempJobData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempJobData.swift; sourceTree = "<group>"; };
 		76B409982116F10800639082 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		76B4099A2116FA7E00639082 /* SideMenuViewNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewNavigationController.swift; sourceTree = "<group>"; };
 		BE2F09D820E7A64F00CEA36E /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				76429FC620E7A7E300B16DD4 /* UserButton.swift */,
 				76B409982116F10800639082 /* SideMenuViewController.swift */,
 				76B4099A2116FA7E00639082 /* SideMenuViewNavigationController.swift */,
+				76842E49211DD7BD00D66357 /* TempJobData.swift */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				BE2F09DD20E7B05800CEA36E /* CalendarDetailViewController.swift in Sources */,
 				76B409992116F10800639082 /* SideMenuViewController.swift in Sources */,
 				27A55C9220E7B6AD0036BFB1 /* WorkSpaceTableViewCell.swift in Sources */,
+				76842E4A211DD7BD00D66357 /* TempJobData.swift in Sources */,
 				27A55C6120E796FC0036BFB1 /* CalendarViewController.swift in Sources */,
 				BE2F09D920E7A64F00CEA36E /* DateCollectionViewCell.swift in Sources */,
 				276BAF1120E7924C0063D8B4 /* ViewController.swift in Sources */,

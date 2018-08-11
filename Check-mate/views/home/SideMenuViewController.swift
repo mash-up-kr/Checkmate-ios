@@ -7,9 +7,14 @@
 //
 
 import UIKit
-var tableData: [String] = ["Mash up", "Worksmobile"]
+var tableData: [TempJobData] = [TempJobData(name: "Mash up", pay: 0, location: "서울시 강남구"),
+                                TempJobData(name: "Worksmobile", pay: 20000, location:"성남시 분당구")]
 class SideMenuViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var jobNameLabel : UILabel!
+    @IBOutlet var jobPayLabel: UILabel!
+    @IBOutlet var jobLocationLabel: UILabel!
+    
     let cellIdentifier : String = "cell"
     
     override func viewDidLoad() {
@@ -40,11 +45,19 @@ extension SideMenuViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath)
         
-        cell.textLabel?.text = tableData[indexPath.row]
+        cell.textLabel?.text = tableData[indexPath.row].name
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableData.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //code to execute on click
+        self.jobNameLabel.text = tableData[indexPath.row].name
+        self.jobPayLabel.text = String(tableData[indexPath.row].pay)
+        self.jobLocationLabel.text = tableData[indexPath.row].location
+        
     }
 }

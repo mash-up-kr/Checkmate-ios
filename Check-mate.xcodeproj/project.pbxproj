@@ -41,7 +41,6 @@
 		BE2F09D920E7A64F00CEA36E /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F09D820E7A64F00CEA36E /* DateCollectionViewCell.swift */; };
 		BE2F09DB20E7A66400CEA36E /* CalendarVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F09DA20E7A66400CEA36E /* CalendarVars.swift */; };
 		BE2F09DD20E7B05800CEA36E /* CalendarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F09DC20E7B05800CEA36E /* CalendarDetailViewController.swift */; };
-		BE4F373F2113E73400A97853 /* CalendarBenefitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F373E2113E73400A97853 /* CalendarBenefitCell.swift */; };
 		BE5A4F61211662C30067189D /* DateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5A4F60211662C30067189D /* DateModel.swift */; };
 		BE5A4F63211662D20067189D /* DetailDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5A4F62211662D20067189D /* DetailDateModel.swift */; };
 		BE5A4F672116635D0067189D /* CalendarDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5A4F662116635D0067189D /* CalendarDetailViewController.storyboard */; };
@@ -86,7 +85,6 @@
 		BE2F09D820E7A64F00CEA36E /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE2F09DA20E7A66400CEA36E /* CalendarVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVars.swift; sourceTree = "<group>"; };
 		BE2F09DC20E7B05800CEA36E /* CalendarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewController.swift; sourceTree = "<group>"; };
-		BE4F373E2113E73400A97853 /* CalendarBenefitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarBenefitCell.swift; sourceTree = "<group>"; };
 		BE5A4F60211662C30067189D /* DateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateModel.swift; sourceTree = "<group>"; };
 		BE5A4F62211662D20067189D /* DetailDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDateModel.swift; sourceTree = "<group>"; };
 		BE5A4F662116635D0067189D /* CalendarDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarDetailViewController.storyboard; sourceTree = "<group>"; };
@@ -250,7 +248,6 @@
 			isa = PBXGroup;
 			children = (
 				BE2F09DC20E7B05800CEA36E /* CalendarDetailViewController.swift */,
-				BE4F373E2113E73400A97853 /* CalendarBenefitCell.swift */,
 				BE5A4F662116635D0067189D /* CalendarDetailViewController.storyboard */,
 			);
 			path = calendardetailview;
@@ -374,7 +371,6 @@
 				BE2F09DD20E7B05800CEA36E /* CalendarDetailViewController.swift in Sources */,
 				27A55C9220E7B6AD0036BFB1 /* WorkSpaceTableViewCell.swift in Sources */,
 				27A55C6120E796FC0036BFB1 /* CalendarViewController.swift in Sources */,
-				BE4F373F2113E73400A97853 /* CalendarBenefitCell.swift in Sources */,
 				BE2F09D920E7A64F00CEA36E /* DateCollectionViewCell.swift in Sources */,
 				276BAF1120E7924C0063D8B4 /* ViewController.swift in Sources */,
 				BE5A4F63211662D20067189D /* DetailDateModel.swift in Sources */,

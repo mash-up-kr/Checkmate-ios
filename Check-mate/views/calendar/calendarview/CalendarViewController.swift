@@ -97,24 +97,30 @@ extension CalendarViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "DetailSegue" {
-            if let destinationVC = segue.destination as? CalendarDetailViewController {
-                guard let indexPath = sender as? IndexPath else {
-                    return
-                }
-                
-                guard let cell = Calendar.cellForItem(at: indexPath) as? DateCollectionViewCell else {
-                    return
-                }
-                
-                let detail: DetailDateModel = DetailDateModel()
-                destinationVC.selectedModel = detail
-                
-                detail.year = year;
-                detail.month = month;
-                detail.weekday = indexPath.row % 7
-                detail.day = Int(cell.DateLabel.text!)!
-                
+        if let destinationVC = segue.destination as? CalendarDetailViewController {
+            guard let indexPath = sender as? IndexPath else {
+                return
+            }
+            
+            guard let cell = Calendar.cellForItem(at: indexPath) as? DateCollectionViewCell else {
+                return
+            }
+            
+            let detail: DetailDateModel = DetailDateModel()
+            destinationVC.selectedModel = detail
+            
+            detail.year = year;
+            detail.month = month;
+            detail.weekday = indexPath.row % 7
+            
+            if let day = Int(cell.DateLabel.text!) {
+                detail.day = day
+            }
+            else {
+                return
+            }
+            
+            if !cell.CircleView.isHidden {
                 detail.setDummyData()
             }
         }
@@ -123,7 +129,17 @@ extension CalendarViewController {
 
 extension CalendarViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "DetailSegue", sender: indexPath)
+        
+        guard let cell = Calendar.cellForItem(at: indexPath) as? DateCollectionViewCell else {
+            return
+        }
+        
+        if cell.DateLabel.isHidden {
+            return
+        }
+        else {
+            self.performSegue(withIdentifier: "DetailSegue", sender: indexPath)
+        }
     }
 }
 

@@ -479,6 +479,14 @@ internal class EtcCell: UITableViewCell {
     override func awakeFromNib() {
         extraCollectionView.delegate = self
         extraCollectionView.dataSource = self
+        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 86, height: 91)
+        
+        layout.scrollDirection = .horizontal
+        
+        self.extraCollectionView.setCollectionViewLayout(layout, animated: true)
+        self.extraCollectionView.isPagingEnabled = true
     }
     
     func setExtras(_ extras: [ExtraPay]) {
@@ -515,6 +523,9 @@ extension EtcCell: UICollectionViewDataSource {
         
         if indexPath.row == extras.count - 1 {
             cell.hideSeparator()
+        }
+        else {
+            cell.showSeparator()
         }
         
         return cell
@@ -565,8 +576,21 @@ internal class PictureCell: UITableViewCell, OpenButtonProtocol, SeparatorViewPr
         self.contentView.addSubview(additionalSeparator)
         self.setNeedsUpdateConstraints()
         
-        pictureCollectionView.dataSource = self
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: 140, height: 140)
+        
+        self.pictureCollectionView.setCollectionViewLayout(layout, animated: true)
+        self.pictureCollectionView.isPagingEnabled = true;
+        self.pictureCollectionView.showsHorizontalScrollIndicator = false
+        
+        self.pictureCollectionView.dataSource = self
         hideCollectionView()
+    }
+    
+    func setImages(images: [UIImage]) {
+        self.images = images
     }
     
     override func updateConstraints() {
@@ -682,6 +706,14 @@ extension CalendarDetailViewController: UITableViewDelegate, UITableViewDataSour
                 return UITableViewCell()
             }
             
+            cell.contentView.layer.cornerRadius = 10.0
+            cell.contentView.layer.shadowColor = UIColor.black.cgColor
+            cell.contentView.layer.shadowOffset = .zero
+            cell.contentView.layer.shadowOpacity = 0.6
+            cell.contentView.layer.shadowRadius = 10.0
+            cell.contentView.layer.shadowPath = UIBezierPath(rect: cell.bounds).cgPath
+            cell.contentView.layer.shouldRasterize = true
+            
             cell.setHourlyWage(selectedModel.hourlyWage)
             cell.setHour(selectedModel.workingHour)
             cell.delegate = self
@@ -695,9 +727,9 @@ extension CalendarDetailViewController: UITableViewDelegate, UITableViewDataSour
             let formatter = DateFormatter()
             formatter.dateFormat = "h a"
             
-            if selectedModel.time.count > 0 {
-                let firstHour: String = formatter.string(from: selectedModel.time.first!)
-                let lastHour: String = formatter.string(from: selectedModel.time.last!)
+            if selectedModel.times.count > 0 {
+                let firstHour: String = formatter.string(from: selectedModel.times.first!)
+                let lastHour: String = formatter.string(from: selectedModel.times.last!)
                 
                 cell.lblTime.text = "\(firstHour) - \(lastHour)"
             }
@@ -715,7 +747,7 @@ extension CalendarDetailViewController: UITableViewDelegate, UITableViewDataSour
                 return UITableViewCell()
             }
             
-            cell.setTimes(selectedModel.time)
+            cell.setTimes(selectedModel.times)
             
             cell.delegate = self
             
@@ -725,6 +757,8 @@ extension CalendarDetailViewController: UITableViewDelegate, UITableViewDataSour
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "pictureCell", for: indexPath) as? PictureCell else {
                 return UITableViewCell()
             }
+            
+            cell.setImages(images: selectedModel.pictures)
             
             cell.showSeparator()
             cell.delegate = self
@@ -736,7 +770,7 @@ extension CalendarDetailViewController: UITableViewDelegate, UITableViewDataSour
                 return UITableViewCell()
             }
             
-            cell.setExtras(selectedModel.extraPay)
+            cell.setExtras(selectedModel.extraPaies)
             
             return cell
         }

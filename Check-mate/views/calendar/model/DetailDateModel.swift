@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum ExtraPayType {
     case night
@@ -49,9 +50,11 @@ class DetailDateModel {
     var hourlyWage: Int = Int()
     var workingHour: Int = Int()
     
-    var time: [Date] = []
+    var times: [Date] = []
     
-    var extraPay: [ExtraPay] = []
+    var extraPaies: [ExtraPay] = []
+    
+    var pictures: [UIImage] = []
     
     init() {
         
@@ -69,16 +72,24 @@ class DetailDateModel {
         self.workingHour = workingHour
     }
     
-    func setTimes(time: [Date]) {
-        self.time = time
+    func setTimes(times: [Date]) {
+        self.times = times
     }
     
-    func setExtraPay(extraPay: [ExtraPay]) {
-        self.extraPay = extraPay
+    func setExtraPaies(extraPaies: [ExtraPay]) {
+        self.extraPaies = extraPaies
     }
     
     func pushExtraPay(type: ExtraPayType, value: Int) {
-        self.extraPay.append(ExtraPay(type: type, value: value))
+        self.extraPaies.append(ExtraPay(type: type, value: value))
+    }
+    
+    func setPictures(pictures: [UIImage]) {
+        self.pictures = pictures
+    }
+    
+    func pushPicture(picture: UIImage) {
+        self.pictures.append(picture)
     }
     
     func setDummyData() {
@@ -95,10 +106,18 @@ class DetailDateModel {
         times.append(formatter.date(from: "\(year)/\(month)/\(day) 14:00")!)
         times.append(formatter.date(from: "\(year)/\(month)/\(day) 17:00")!)
         
-        setTimes(time: times)
+        setTimes(times: times)
         
         pushExtraPay(type: .night, value: 30000)
         pushExtraPay(type: .holiday, value: 0)
         pushExtraPay(type: .overtime, value: 0)
+        
+        if let dummyIcon = UIImage(named: "dummyIcon") {
+            pushPicture(picture: dummyIcon)
+            pushPicture(picture: dummyIcon)
+            pushPicture(picture: dummyIcon)
+            pushPicture(picture: dummyIcon)
+            pushPicture(picture: dummyIcon)
+        }
     }
 }

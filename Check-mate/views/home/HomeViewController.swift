@@ -75,7 +75,7 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func monthClicked() {
-        let vc = UIStoryboard.instantiate(MonthViewController.self, storyboardName: "MonthViewController")
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = UIStoryboard.instantiate(MonthViewController.self, storyboardName: "MonthViewController")
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

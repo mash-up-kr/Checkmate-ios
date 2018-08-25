@@ -6,5 +6,5 @@ target 'Check-mate' do
   use_frameworks!
 
   # Pods for Check-mate
-
+  pod 'SideMenu'
 end

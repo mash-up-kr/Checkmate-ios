@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		046A1915D6A5D8AB6BF4A09A /* Pods_Check_mate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 259D7447581CD69D898C8CF3 /* Pods_Check_mate.framework */; };
+		2766FDA92115A3FB00E713D6 /* WorkSpaceAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2766FDA82115A3FB00E713D6 /* WorkSpaceAddVC.swift */; };
+		2766FDAB2115A47300E713D6 /* WorkSpaceAddVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2766FDAA2115A47300E713D6 /* WorkSpaceAddVC.storyboard */; };
+		2766FDAD2115AC8400E713D6 /* GraphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2766FDAC2115AC8400E713D6 /* GraphicView.swift */; };
 		276BAF0F20E7924C0063D8B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276BAF0E20E7924C0063D8B4 /* AppDelegate.swift */; };
 		276BAF1120E7924C0063D8B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276BAF1020E7924C0063D8B4 /* ViewController.swift */; };
 		276BAF1620E7924E0063D8B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 276BAF1520E7924E0063D8B4 /* Assets.xcassets */; };
@@ -31,8 +34,6 @@
 		27A55C8E20E7A72B0036BFB1 /* WorkSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A55C8D20E7A72B0036BFB1 /* WorkSpaceView.swift */; };
 		27A55C9020E7A7360036BFB1 /* WorkSpaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27A55C8F20E7A7360036BFB1 /* WorkSpaceView.xib */; };
 		27A55C9220E7B6AD0036BFB1 /* WorkSpaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A55C9120E7B6AD0036BFB1 /* WorkSpaceTableViewCell.swift */; };
-		27CD9CB320E7D4B5000F6CB3 /* WorkSpaceAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD9CB220E7D4B5000F6CB3 /* WorkSpaceAddViewController.swift */; };
-		27CD9CB520E7D4C4000F6CB3 /* WorkSpaceAddViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27CD9CB420E7D4C4000F6CB3 /* WorkSpaceAddViewController.storyboard */; };
 		27CD9CB720E7DDBF000F6CB3 /* WorkSpaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27CD9CB620E7DDBF000F6CB3 /* WorkSpaceTableViewCell.xib */; };
 		27CD9CC120E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD9CC020E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift */; };
 		76429FC720E7A7E300B16DD4 /* SetWorkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76429FC620E7A7E300B16DD4 /* SetWorkButton.swift */; };
@@ -61,6 +62,9 @@
 
 /* Begin PBXFileReference section */
 		259D7447581CD69D898C8CF3 /* Pods_Check_mate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Check_mate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2766FDA82115A3FB00E713D6 /* WorkSpaceAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceAddVC.swift; sourceTree = "<group>"; };
+		2766FDAA2115A47300E713D6 /* WorkSpaceAddVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorkSpaceAddVC.storyboard; sourceTree = "<group>"; };
+		2766FDAC2115AC8400E713D6 /* GraphicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicView.swift; sourceTree = "<group>"; };
 		276BAF0B20E7924C0063D8B4 /* Check-mate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check-mate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		276BAF0E20E7924C0063D8B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		276BAF1020E7924C0063D8B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,8 +90,6 @@
 		27A55C8D20E7A72B0036BFB1 /* WorkSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceView.swift; sourceTree = "<group>"; };
 		27A55C8F20E7A7360036BFB1 /* WorkSpaceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkSpaceView.xib; sourceTree = "<group>"; };
 		27A55C9120E7B6AD0036BFB1 /* WorkSpaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceTableViewCell.swift; sourceTree = "<group>"; };
-		27CD9CB220E7D4B5000F6CB3 /* WorkSpaceAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceAddViewController.swift; sourceTree = "<group>"; };
-		27CD9CB420E7D4C4000F6CB3 /* WorkSpaceAddViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorkSpaceAddViewController.storyboard; sourceTree = "<group>"; };
 		27CD9CB620E7DDBF000F6CB3 /* WorkSpaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkSpaceTableViewCell.xib; sourceTree = "<group>"; };
 		27CD9CC020E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceDetailViewController.swift; sourceTree = "<group>"; };
 		47C713CA9592953B4F324282 /* Pods-Check-mate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check-mate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Check-mate/Pods-Check-mate.debug.xcconfig"; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				27A55C7920E79C310036BFB1 /* Extensions+Check-mate.swift */,
+				2766FDAC2115AC8400E713D6 /* GraphicView.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -237,8 +240,8 @@
 				27A55C8F20E7A7360036BFB1 /* WorkSpaceView.xib */,
 				27A55C9120E7B6AD0036BFB1 /* WorkSpaceTableViewCell.swift */,
 				27CD9CB620E7DDBF000F6CB3 /* WorkSpaceTableViewCell.xib */,
-				27CD9CB220E7D4B5000F6CB3 /* WorkSpaceAddViewController.swift */,
-				27CD9CB420E7D4C4000F6CB3 /* WorkSpaceAddViewController.storyboard */,
+				2766FDA82115A3FB00E713D6 /* WorkSpaceAddVC.swift */,
+				2766FDAA2115A47300E713D6 /* WorkSpaceAddVC.storyboard */,
 			);
 			path = workspace;
 			sourceTree = "<group>";
@@ -370,13 +373,13 @@
 				27A55C7F20E7A0040036BFB1 /* TabBarController.storyboard in Resources */,
 				276BAF1920E7924E0063D8B4 /* LaunchScreen.storyboard in Resources */,
 				27A55C6320E797040036BFB1 /* CalendarViewController.storyboard in Resources */,
-				27CD9CB520E7D4C4000F6CB3 /* WorkSpaceAddViewController.storyboard in Resources */,
 				27A55C7720E79B980036BFB1 /* HomeViewController.storyboard in Resources */,
 				27A55C8320E7A0510036BFB1 /* CalendarNavigationController.storyboard in Resources */,
 				27A55C6720E7972F0036BFB1 /* HomeNavigationController.storyboard in Resources */,
 				27A55C8820E7A10A0036BFB1 /* WorkSpaceNavigationController.storyboard in Resources */,
 				27CD9CB720E7DDBF000F6CB3 /* WorkSpaceTableViewCell.xib in Resources */,
 				27A55C9020E7A7360036BFB1 /* WorkSpaceView.xib in Resources */,
+				2766FDAB2115A47300E713D6 /* WorkSpaceAddVC.storyboard in Resources */,
 				27A55C7320E797B60036BFB1 /* MonthViewController.storyboard in Resources */,
 				276BAF1620E7924E0063D8B4 /* Assets.xcassets in Resources */,
 				BE5A4F672116635D0067189D /* CalendarDetailViewController.storyboard in Resources */,
@@ -436,11 +439,13 @@
 				27A55C6520E797270036BFB1 /* HomeNavigationController.swift in Sources */,
 				27A55C7D20E79FF70036BFB1 /* TabBarController.swift in Sources */,
 				27A55C7120E797AF0036BFB1 /* MonthViewController.swift in Sources */,
+				2766FDA92115A3FB00E713D6 /* WorkSpaceAddVC.swift in Sources */,
 				BE2F09DD20E7B05800CEA36E /* CalendarDetailViewController.swift in Sources */,
 				76B409992116F10800639082 /* SideMenuViewController.swift in Sources */,
 				27A55C9220E7B6AD0036BFB1 /* WorkSpaceTableViewCell.swift in Sources */,
 				76842E4A211DD7BD00D66357 /* TempJobData.swift in Sources */,
 				27A55C6120E796FC0036BFB1 /* CalendarViewController.swift in Sources */,
+				2766FDAD2115AC8400E713D6 /* GraphicView.swift in Sources */,
 				BE2F09D920E7A64F00CEA36E /* DateCollectionViewCell.swift in Sources */,
 				BECCBFB5212EE47500B953F4 /* TodayTImeCell.swift in Sources */,
 				BECCBFAA212EE30F00B953F4 /* PictureCell.swift in Sources */,

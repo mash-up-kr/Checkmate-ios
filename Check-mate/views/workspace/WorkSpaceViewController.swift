@@ -35,7 +35,7 @@ class WorkSpaceViewController: UIViewController {
     }
 
     func addBtnClicked() {
-        let vc = UIStoryboard.instantiate(WorkSpaceAddViewController.self)
+        let vc = UIStoryboard.instantiate(WorkSpaceAddVC.self)
         self.present(vc, animated: true)
     }
 

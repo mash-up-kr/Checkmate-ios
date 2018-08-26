@@ -217,8 +217,8 @@
                                                         <action selector="buttonPressed:" destination="NSH-sz-Uep" eventType="touchUpInside" id="c6j-Zh-rgw"/>
                                                     </connections>
                                                 </button>
-                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XLu-tm-kYM">
-                                                    <rect key="frame" x="22" y="24" width="333" height="139.5"/>
+                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XLu-tm-kYM">
+                                                    <rect key="frame" x="22" y="24" width="333" height="139"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <prototypes>
                                                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="timeHistoryCell" rowHeight="61" id="aOY-FT-fW8" customClass="DetailTimeHistoryCell" customModule="Check_mate" customModuleProvider="target">
@@ -247,7 +247,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ao-6o-2tx">
-                                                                        <rect key="frame" x="0.0" y="51" width="333" height="9"/>
+                                                                        <rect key="frame" x="0.0" y="51.5" width="333" height="9"/>
                                                                         <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="9" id="Leb-K1-Di7"/>
@@ -283,6 +283,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="XLu-tm-kYM" secondAttribute="trailing" constant="20" id="RuU-x5-NcS"/>
                                                 <constraint firstAttribute="bottom" secondItem="jYs-z2-LWQ" secondAttribute="bottom" constant="7" id="U4y-c7-E4W"/>
                                                 <constraint firstItem="jYs-z2-LWQ" firstAttribute="centerX" secondItem="7Hf-c9-h3d" secondAttribute="centerX" id="mwF-Gs-fzl"/>
+                                                <constraint firstAttribute="bottom" secondItem="XLu-tm-kYM" secondAttribute="bottom" constant="40.5" id="x1u-dM-iai"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -297,46 +298,59 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="101"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시급 7,350 won" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5g-Ns-Ube">
-                                                    <rect key="frame" x="224" y="19" width="140" height="27"/>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="22"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aon-Rc-tha">
-                                                    <rect key="frame" x="224" y="50" width="13" height="26"/>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="22"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N42-k0-jAP">
-                                                    <rect key="frame" x="341" y="49" width="23" height="27"/>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="22"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Sc-Xv-tvS">
-                                                    <rect key="frame" x="173" y="64" width="29" height="29"/>
-                                                    <color key="tintColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <state key="normal" image="arrowDown"/>
-                                                    <connections>
-                                                        <action selector="closedButton:" destination="Ztj-YE-Ywz" eventType="touchUpInside" id="eyi-p9-Y05"/>
-                                                    </connections>
-                                                </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGm-mg-IyK">
+                                                    <rect key="frame" x="5" y="5" width="365" height="90"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시급 7,350 won" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5g-Ns-Ube">
+                                                            <rect key="frame" x="206" y="11" width="140" height="27"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="22"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aon-Rc-tha">
+                                                            <rect key="frame" x="206" y="42" width="13" height="26"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="22"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N42-k0-jAP">
+                                                            <rect key="frame" x="323" y="42" width="23" height="27"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="22"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Sc-Xv-tvS">
+                                                            <rect key="frame" x="168" y="61" width="29" height="29"/>
+                                                            <color key="tintColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <state key="normal" image="arrowDown"/>
+                                                            <connections>
+                                                                <action selector="closedButton:" destination="Ztj-YE-Ywz" eventType="touchUpInside" id="eyi-p9-Y05"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="aon-Rc-tha" firstAttribute="top" secondItem="X5g-Ns-Ube" secondAttribute="bottom" constant="4" id="9Qo-pC-Vg0"/>
+                                                        <constraint firstAttribute="bottom" secondItem="9Sc-Xv-tvS" secondAttribute="bottom" id="Aa3-PJ-5u0"/>
+                                                        <constraint firstItem="N42-k0-jAP" firstAttribute="trailing" secondItem="X5g-Ns-Ube" secondAttribute="trailing" id="YtC-L9-gwQ"/>
+                                                        <constraint firstItem="9Sc-Xv-tvS" firstAttribute="centerX" secondItem="aGm-mg-IyK" secondAttribute="centerX" id="Zyj-4g-ekU"/>
+                                                        <constraint firstItem="X5g-Ns-Ube" firstAttribute="top" secondItem="aGm-mg-IyK" secondAttribute="top" constant="11" id="aKn-I5-FHZ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="X5g-Ns-Ube" secondAttribute="trailing" constant="19" id="hSf-Cu-LeD"/>
+                                                        <constraint firstItem="aon-Rc-tha" firstAttribute="leading" secondItem="X5g-Ns-Ube" secondAttribute="leading" id="iB3-qk-Y1B"/>
+                                                        <constraint firstItem="N42-k0-jAP" firstAttribute="top" secondItem="X5g-Ns-Ube" secondAttribute="bottom" constant="4" id="pCU-gT-hZ0"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="N42-k0-jAP" firstAttribute="centerY" secondItem="aon-Rc-tha" secondAttribute="centerY" id="1fD-uW-gn8"/>
-                                                <constraint firstItem="aon-Rc-tha" firstAttribute="top" secondItem="X5g-Ns-Ube" secondAttribute="bottom" constant="4" id="9yz-lc-zan"/>
-                                                <constraint firstItem="9Sc-Xv-tvS" firstAttribute="centerX" secondItem="bwB-uG-4ga" secondAttribute="centerX" id="FGN-1o-KRh"/>
-                                                <constraint firstItem="aon-Rc-tha" firstAttribute="leading" secondItem="X5g-Ns-Ube" secondAttribute="leading" id="JbA-04-URX"/>
-                                                <constraint firstAttribute="trailing" secondItem="X5g-Ns-Ube" secondAttribute="trailing" constant="11" id="TFF-Lw-6yO"/>
-                                                <constraint firstItem="X5g-Ns-Ube" firstAttribute="top" secondItem="bwB-uG-4ga" secondAttribute="top" constant="19" id="fTc-Pu-iuc"/>
-                                                <constraint firstItem="N42-k0-jAP" firstAttribute="trailing" secondItem="X5g-Ns-Ube" secondAttribute="trailing" id="nX1-Aw-UBY"/>
-                                                <constraint firstAttribute="bottom" secondItem="9Sc-Xv-tvS" secondAttribute="bottom" constant="7" id="tTd-Ew-dfR"/>
+                                                <constraint firstAttribute="bottom" secondItem="aGm-mg-IyK" secondAttribute="bottom" constant="5" id="8RW-hg-NK8"/>
+                                                <constraint firstAttribute="trailing" secondItem="aGm-mg-IyK" secondAttribute="trailing" constant="5" id="EbW-o9-v6G"/>
+                                                <constraint firstItem="aGm-mg-IyK" firstAttribute="leading" secondItem="bwB-uG-4ga" secondAttribute="leading" constant="5" id="FA5-qO-LJ4"/>
+                                                <constraint firstItem="aGm-mg-IyK" firstAttribute="top" secondItem="bwB-uG-4ga" secondAttribute="top" constant="5" id="YJi-9z-jxc"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
+                                            <outlet property="innerView" destination="aGm-mg-IyK" id="DWv-iu-Rfa"/>
                                             <outlet property="lblTime" destination="N42-k0-jAP" id="7bC-Rd-H8m"/>
                                             <outlet property="lblWage" destination="X5g-Ns-Ube" id="MxN-ll-eTv"/>
                                         </connections>
@@ -345,11 +359,11 @@
                                         <rect key="frame" x="0.0" y="814" width="375" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u6G-ts-Mtz" id="cwG-ns-XlY">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="82.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="83"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iTO-7Z-NZ8">
-                                                    <rect key="frame" x="173" y="36.5" width="29" height="29"/>
+                                                    <rect key="frame" x="173" y="36" width="29" height="29"/>
                                                     <color key="tintColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="arrowDown"/>
                                                     <connections>

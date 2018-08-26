@@ -138,7 +138,10 @@ extension CalendarViewController: UICollectionViewDelegate {
             return
         }
         else {
-            self.performSegue(withIdentifier: "DetailSegue", sender: indexPath)
+            if cell.isHistory
+            {
+                self.performSegue(withIdentifier: "DetailSegue", sender: indexPath)
+            }
         }
     }
 }

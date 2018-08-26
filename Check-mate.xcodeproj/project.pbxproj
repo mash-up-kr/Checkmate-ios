@@ -44,6 +44,16 @@
 		BE5A4F61211662C30067189D /* DateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5A4F60211662C30067189D /* DateModel.swift */; };
 		BE5A4F63211662D20067189D /* DetailDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5A4F62211662D20067189D /* DetailDateModel.swift */; };
 		BE5A4F672116635D0067189D /* CalendarDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5A4F662116635D0067189D /* CalendarDetailViewController.storyboard */; };
+		BECCBFAA212EE30F00B953F4 /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFA9212EE30F00B953F4 /* PictureCell.swift */; };
+		BECCBFAD212EE39E00B953F4 /* EtcCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFAC212EE39E00B953F4 /* EtcCell.swift */; };
+		BECCBFAF212EE3E500B953F4 /* BenefitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFAE212EE3E500B953F4 /* BenefitCell.swift */; };
+		BECCBFB1212EE41500B953F4 /* DetailTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFB0212EE41500B953F4 /* DetailTimeCell.swift */; };
+		BECCBFB3212EE45600B953F4 /* DetailTimeHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFB2212EE45600B953F4 /* DetailTimeHistoryCell.swift */; };
+		BECCBFB5212EE47500B953F4 /* TodayTImeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFB4212EE47500B953F4 /* TodayTImeCell.swift */; };
+		BECCBFB7212EE49900B953F4 /* DetailMoneyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFB6212EE49900B953F4 /* DetailMoneyCell.swift */; };
+		BECCBFB9212EE4CA00B953F4 /* TodayMoneyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFB8212EE4CA00B953F4 /* TodayMoneyCell.swift */; };
+		BECCBFBB212EE4E400B953F4 /* CommonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFBA212EE4E400B953F4 /* CommonProtocols.swift */; };
+		BECCBFBD212EE50E00B953F4 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFBC212EE50E00B953F4 /* DayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +98,16 @@
 		BE5A4F60211662C30067189D /* DateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateModel.swift; sourceTree = "<group>"; };
 		BE5A4F62211662D20067189D /* DetailDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDateModel.swift; sourceTree = "<group>"; };
 		BE5A4F662116635D0067189D /* CalendarDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarDetailViewController.storyboard; sourceTree = "<group>"; };
+		BECCBFA9212EE30F00B953F4 /* PictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
+		BECCBFAC212EE39E00B953F4 /* EtcCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcCell.swift; sourceTree = "<group>"; };
+		BECCBFAE212EE3E500B953F4 /* BenefitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitCell.swift; sourceTree = "<group>"; };
+		BECCBFB0212EE41500B953F4 /* DetailTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTimeCell.swift; sourceTree = "<group>"; };
+		BECCBFB2212EE45600B953F4 /* DetailTimeHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTimeHistoryCell.swift; sourceTree = "<group>"; };
+		BECCBFB4212EE47500B953F4 /* TodayTImeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTImeCell.swift; sourceTree = "<group>"; };
+		BECCBFB6212EE49900B953F4 /* DetailMoneyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMoneyCell.swift; sourceTree = "<group>"; };
+		BECCBFB8212EE4CA00B953F4 /* TodayMoneyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMoneyCell.swift; sourceTree = "<group>"; };
+		BECCBFBA212EE4E400B953F4 /* CommonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonProtocols.swift; sourceTree = "<group>"; };
+		BECCBFBC212EE50E00B953F4 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,10 +267,28 @@
 		BE5A4F65211663160067189D /* calendardetailview */ = {
 			isa = PBXGroup;
 			children = (
+				BECCBFAB212EE36A00B953F4 /* cells */,
 				BE2F09DC20E7B05800CEA36E /* CalendarDetailViewController.swift */,
 				BE5A4F662116635D0067189D /* CalendarDetailViewController.storyboard */,
+				BECCBFBC212EE50E00B953F4 /* DayView.swift */,
 			);
 			path = calendardetailview;
+			sourceTree = "<group>";
+		};
+		BECCBFAB212EE36A00B953F4 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				BECCBFA9212EE30F00B953F4 /* PictureCell.swift */,
+				BECCBFAC212EE39E00B953F4 /* EtcCell.swift */,
+				BECCBFAE212EE3E500B953F4 /* BenefitCell.swift */,
+				BECCBFB0212EE41500B953F4 /* DetailTimeCell.swift */,
+				BECCBFB2212EE45600B953F4 /* DetailTimeHistoryCell.swift */,
+				BECCBFB4212EE47500B953F4 /* TodayTImeCell.swift */,
+				BECCBFB6212EE49900B953F4 /* DetailMoneyCell.swift */,
+				BECCBFB8212EE4CA00B953F4 /* TodayMoneyCell.swift */,
+				BECCBFBA212EE4E400B953F4 /* CommonProtocols.swift */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 		FDA9D081B46B93433A3880B1 /* Frameworks */ = {
@@ -364,7 +402,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BECCBFB1212EE41500B953F4 /* DetailTimeCell.swift in Sources */,
+				BECCBFBD212EE50E00B953F4 /* DayView.swift in Sources */,
 				76429FC720E7A7E300B16DD4 /* UserButton.swift in Sources */,
+				BECCBFB3212EE45600B953F4 /* DetailTimeHistoryCell.swift in Sources */,
 				27A55C6520E797270036BFB1 /* HomeNavigationController.swift in Sources */,
 				27A55C7D20E79FF70036BFB1 /* TabBarController.swift in Sources */,
 				27A55C7120E797AF0036BFB1 /* MonthViewController.swift in Sources */,
@@ -372,20 +413,27 @@
 				27A55C9220E7B6AD0036BFB1 /* WorkSpaceTableViewCell.swift in Sources */,
 				27A55C6120E796FC0036BFB1 /* CalendarViewController.swift in Sources */,
 				BE2F09D920E7A64F00CEA36E /* DateCollectionViewCell.swift in Sources */,
+				BECCBFB5212EE47500B953F4 /* TodayTImeCell.swift in Sources */,
+				BECCBFAA212EE30F00B953F4 /* PictureCell.swift in Sources */,
 				276BAF1120E7924C0063D8B4 /* ViewController.swift in Sources */,
+				BECCBFB7212EE49900B953F4 /* DetailMoneyCell.swift in Sources */,
 				BE5A4F63211662D20067189D /* DetailDateModel.swift in Sources */,
 				27A55C8120E7A0440036BFB1 /* CalendarNavigationController.swift in Sources */,
 				27CD9CC120E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift in Sources */,
 				276BAF0F20E7924C0063D8B4 /* AppDelegate.swift in Sources */,
 				27A55C8620E7A1020036BFB1 /* WorkSpaceNavigationController.swift in Sources */,
+				BECCBFAF212EE3E500B953F4 /* BenefitCell.swift in Sources */,
 				BE2F09DB20E7A66400CEA36E /* CalendarVars.swift in Sources */,
+				BECCBFB9212EE4CA00B953F4 /* TodayMoneyCell.swift in Sources */,
 				27A55C8E20E7A72B0036BFB1 /* WorkSpaceView.swift in Sources */,
 				27CD9CBF20E7E143000F6CB3 /* WorkSpaceAddNavigationController.swift in Sources */,
 				27CD9CB320E7D4B5000F6CB3 /* WorkSpaceAddViewController.swift in Sources */,
+				BECCBFAD212EE39E00B953F4 /* EtcCell.swift in Sources */,
 				27A55C6920E797410036BFB1 /* HomeViewController.swift in Sources */,
 				76429FCB20E7AD1500B16DD4 /* CircularGraph.swift in Sources */,
 				27A55C8A20E7A11D0036BFB1 /* WorkSpaceViewController.swift in Sources */,
 				27A55C7A20E79C310036BFB1 /* Extensions+Check-mate.swift in Sources */,
+				BECCBFBB212EE4E400B953F4 /* CommonProtocols.swift in Sources */,
 				BE5A4F61211662C30067189D /* DateModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

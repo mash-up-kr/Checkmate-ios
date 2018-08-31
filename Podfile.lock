@@ -2,15 +2,15 @@ PODS:
   - SideMenu (4.0.0)
 
 DEPENDENCIES:
-  - SideMenu
+  - SideMenu (from `./SideMenu`)
 
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - SideMenu
+EXTERNAL SOURCES:
+  SideMenu:
+    :path: "./SideMenu"
 
 SPEC CHECKSUMS:
-  SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
+  SideMenu: dd8521dbded934e1ce2f079340f5d113d8e5b990
 
-PODFILE CHECKSUM: d939e9184641272664104adab5e6d331afe5fcac
+PODFILE CHECKSUM: c06ffe56af5682996198379c4c1b51f5b593999c
 
 COCOAPODS: 1.5.3

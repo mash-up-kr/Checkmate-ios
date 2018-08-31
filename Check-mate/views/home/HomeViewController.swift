@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
         case noWorking
     }
     @IBOutlet weak var workStateButton: UIButton!
+    @IBOutlet var payLabel: CountingLabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,10 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.payLabel.count(fromValue: 60000, to: 691200, withDuration: 2, andAnimationType: .EaseOut, andCouterType: .Int)
+    }
     /*
     // MARK: - Navigation
 

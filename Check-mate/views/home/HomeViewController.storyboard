@@ -111,7 +111,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EKB-eF-8kU">
                                         <rect key="frame" x="0.0" y="25" width="189" height="45.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="691,200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvB-53-H3j">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="691,200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvB-53-H3j" customClass="CountingLabel" customModule="Check_mate" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="141" height="45.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                                 <nil key="textColor"/>
@@ -157,6 +157,7 @@
                         <viewLayoutGuide key="safeArea" id="STD-ZN-mvS"/>
                     </view>
                     <connections>
+                        <outlet property="payLabel" destination="yvB-53-H3j" id="cX2-ej-rjs"/>
                         <outlet property="workStateButton" destination="3V9-WT-kno" id="nJ8-bZ-8wq"/>
                     </connections>
                 </viewController>

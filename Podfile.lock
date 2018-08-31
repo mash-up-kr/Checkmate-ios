@@ -2,15 +2,20 @@ PODS:
   - SideMenu (4.0.0)
 
 DEPENDENCIES:
-  - SideMenu
+  - SideMenu (from `https://github.com/changmin-dev/SideMenu`)
 
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - SideMenu
+EXTERNAL SOURCES:
+  SideMenu:
+    :git: https://github.com/changmin-dev/SideMenu
+
+CHECKOUT OPTIONS:
+  SideMenu:
+    :commit: 83f8e461e103d2caacb328c3050fcbb4980cbc83
+    :git: https://github.com/changmin-dev/SideMenu
 
 SPEC CHECKSUMS:
   SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
 
-PODFILE CHECKSUM: d939e9184641272664104adab5e6d331afe5fcac
+PODFILE CHECKSUM: 6d8a68de9250ef787f44b34af8f45556c3a453c0
 
 COCOAPODS: 1.5.3

@@ -1,0 +1,3 @@
+[submodule "SideMenu"]
+	path = SideMenu
+	url = https://github.com/changmin-dev/SideMenu

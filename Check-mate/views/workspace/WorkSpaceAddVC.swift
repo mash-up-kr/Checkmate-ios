@@ -92,6 +92,7 @@ class WorkSpaceAddVC: UIViewController {
             salaryIVC.textField.becomeFirstResponder()
             nextable = (salaryIVC.textField.text ?? "") != ""
         case 2:
+            self.view.endEditing(true)
             nextable = true
         case 3:
             restIVC.textField.becomeFirstResponder()
@@ -100,9 +101,14 @@ class WorkSpaceAddVC: UIViewController {
             paydayIVC.textField.becomeFirstResponder()
             nextable = (paydayIVC.textField.text ?? "") != ""
         case 5:
+            self.view.endEditing(true)
             nextable = (taxIVC.btn.title(for: .normal) ?? "") != ""
         case 6:
+            self.view.endEditing(true)
             nextable = (scaleIVC.btn.title(for: .normal) ?? "") != ""
+        case 7:
+            self.view.endEditing(true)
+            nextable = true
         default:
             return
         }
@@ -301,4 +307,16 @@ class WorkSpaceAddScaleIVC: UIViewController {
             self.btnClickCallback?(selected)
         }
     }
+}
+
+class WorkSpaceAddWeekIVC: UIViewController {
+    @IBOutlet weak var btn1: UIButton!
+    @IBOutlet weak var btn2: UIButton!
+    @IBOutlet weak var btn3: UIButton!
+    @IBOutlet weak var btn4: UIButton!
+    @IBOutlet weak var btn5: UIButton!
+    @IBOutlet weak var btn6: UIButton!
+    @IBOutlet weak var btn7: UIButton!
+    
+    
 }

@@ -59,3 +59,35 @@ extension UIViewController {
         }
     }
 }
+
+extension UIViewController {
+    func showListAlertView(title: String = "",
+                           content: String = "",
+                           items: [String] = [],
+                           callback: ((String?) -> Void)? = nil) {
+        let alert = UIAlertController(title: title, message: content, preferredStyle: .actionSheet)
+        
+        for item in items {
+            let action = UIAlertAction(title: item, style: .default) { action in
+                callback?(action.title)
+            }
+            
+            alert.addAction(action)
+        }
+        
+        let action = UIAlertAction(title: "Cancel", style: .cancel) { action in
+            callback?(nil)
+        }
+        alert.addAction(action)
+        
+        if (UIDevice.current.userInterfaceIdiom == .pad) {
+            if let popoverController = alert.popoverPresentationController {
+                popoverController.sourceView = self.view
+                popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+                popoverController.permittedArrowDirections = []
+            }
+        }
+        
+        self.present(alert, animated: true)
+    }
+}

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		046A1915D6A5D8AB6BF4A09A /* Pods_Check_mate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 259D7447581CD69D898C8CF3 /* Pods_Check_mate.framework */; };
+		275CB4BC213656C800186904 /* PageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275CB4BB213656C800186904 /* PageIndicator.swift */; };
 		2766FDA92115A3FB00E713D6 /* WorkSpaceAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2766FDA82115A3FB00E713D6 /* WorkSpaceAddVC.swift */; };
 		2766FDAB2115A47300E713D6 /* WorkSpaceAddVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2766FDAA2115A47300E713D6 /* WorkSpaceAddVC.storyboard */; };
 		2766FDAD2115AC8400E713D6 /* GraphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2766FDAC2115AC8400E713D6 /* GraphicView.swift */; };
@@ -36,7 +37,7 @@
 		27A55C9220E7B6AD0036BFB1 /* WorkSpaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A55C9120E7B6AD0036BFB1 /* WorkSpaceTableViewCell.swift */; };
 		27CD9CB720E7DDBF000F6CB3 /* WorkSpaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27CD9CB620E7DDBF000F6CB3 /* WorkSpaceTableViewCell.xib */; };
 		27CD9CC120E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD9CC020E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift */; };
-		76429FC720E7A7E300B16DD4 /* SetWorkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76429FC620E7A7E300B16DD4 /* SetWorkButton.swift */; };
+		27D1C47621391D6A007DEC2E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1C47521391D6A007DEC2E /* Color.swift */; };
 		76429FC720E7A7E300B16DD4 /* UserButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76429FC620E7A7E300B16DD4 /* UserButton.swift */; };
 		76429FCB20E7AD1500B16DD4 /* CircularGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76429FCA20E7AD1400B16DD4 /* CircularGraph.swift */; };
 		76842E4A211DD7BD00D66357 /* TempJobData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76842E49211DD7BD00D66357 /* TempJobData.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		259D7447581CD69D898C8CF3 /* Pods_Check_mate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Check_mate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		275CB4BB213656C800186904 /* PageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndicator.swift; sourceTree = "<group>"; };
 		2766FDA82115A3FB00E713D6 /* WorkSpaceAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceAddVC.swift; sourceTree = "<group>"; };
 		2766FDAA2115A47300E713D6 /* WorkSpaceAddVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorkSpaceAddVC.storyboard; sourceTree = "<group>"; };
 		2766FDAC2115AC8400E713D6 /* GraphicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicView.swift; sourceTree = "<group>"; };
@@ -79,9 +81,9 @@
 		27A55C9120E7B6AD0036BFB1 /* WorkSpaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceTableViewCell.swift; sourceTree = "<group>"; };
 		27CD9CB620E7DDBF000F6CB3 /* WorkSpaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkSpaceTableViewCell.xib; sourceTree = "<group>"; };
 		27CD9CC020E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceDetailViewController.swift; sourceTree = "<group>"; };
+		27D1C47521391D6A007DEC2E /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		47C713CA9592953B4F324282 /* Pods-Check-mate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check-mate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Check-mate/Pods-Check-mate.debug.xcconfig"; sourceTree = "<group>"; };
 		54D76EF7D1B419B9D1AB895C /* Pods-Check-mate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check-mate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Check-mate/Pods-Check-mate.release.xcconfig"; sourceTree = "<group>"; };
-		76429FC620E7A7E300B16DD4 /* SetWorkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkButton.swift; sourceTree = "<group>"; };
 		76429FC620E7A7E300B16DD4 /* UserButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserButton.swift; sourceTree = "<group>"; };
 		76429FCA20E7AD1400B16DD4 /* CircularGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularGraph.swift; sourceTree = "<group>"; };
 		76842E49211DD7BD00D66357 /* TempJobData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempJobData.swift; sourceTree = "<group>"; };
@@ -104,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		275CB4BA2136567500186904 /* custom_view */ = {
+			isa = PBXGroup;
+			children = (
+				275CB4BB213656C800186904 /* PageIndicator.swift */,
+			);
+			path = custom_view;
+			sourceTree = "<group>";
+		};
 		276BAF0220E7924C0063D8B4 = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +202,7 @@
 			children = (
 				27A55C7920E79C310036BFB1 /* Extensions+Check-mate.swift */,
 				2766FDAC2115AC8400E713D6 /* GraphicView.swift */,
+				27D1C47521391D6A007DEC2E /* Color.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -208,6 +219,7 @@
 		27A55C8420E7A0850036BFB1 /* workspace */ = {
 			isa = PBXGroup;
 			children = (
+				275CB4BA2136567500186904 /* custom_view */,
 				27A55C8520E7A1020036BFB1 /* WorkSpaceNavigationController.swift */,
 				27A55C8720E7A10A0036BFB1 /* WorkSpaceNavigationController.storyboard */,
 				27A55C8920E7A11D0036BFB1 /* WorkSpaceViewController.swift */,
@@ -363,6 +375,7 @@
 				76429FC720E7A7E300B16DD4 /* UserButton.swift in Sources */,
 				27A55C6520E797270036BFB1 /* HomeNavigationController.swift in Sources */,
 				27A55C7D20E79FF70036BFB1 /* TabBarController.swift in Sources */,
+				275CB4BC213656C800186904 /* PageIndicator.swift in Sources */,
 				27A55C7120E797AF0036BFB1 /* MonthViewController.swift in Sources */,
 				2766FDA92115A3FB00E713D6 /* WorkSpaceAddVC.swift in Sources */,
 				BE2F09DD20E7B05800CEA36E /* CalendarDetailViewController.swift in Sources */,
@@ -376,6 +389,7 @@
 				27A55C8120E7A0440036BFB1 /* CalendarNavigationController.swift in Sources */,
 				27CD9CC120E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift in Sources */,
 				276BAF0F20E7924C0063D8B4 /* AppDelegate.swift in Sources */,
+				27D1C47621391D6A007DEC2E /* Color.swift in Sources */,
 				27A55C8620E7A1020036BFB1 /* WorkSpaceNavigationController.swift in Sources */,
 				76B4099B2116FA7E00639082 /* SideMenuViewNavigationController.swift in Sources */,
 				BE2F09DB20E7A66400CEA36E /* CalendarVars.swift in Sources */,

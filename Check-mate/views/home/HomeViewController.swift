@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
     let circularGraph = CircularGraph()
     var workState: WorkState = .noWorking
     
@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addSlideMenuButton()
         //setupCircularGraph(view: self.view, percentage: 0.1)
         workStateButton?.layer.cornerRadius = 5
         // Do any additional setup after loading the view.

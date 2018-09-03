@@ -16,15 +16,15 @@ class HomeViewController: BaseViewController {
         case working
         case noWorking
     }
+    
     @IBOutlet weak var workStateButton: UIButton!
     @IBOutlet var payLabel: CountingLabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSlideMenuButton()
+        
         //setupCircularGraph(view: self.view, percentage: 0.1)
         workStateButton?.layer.cornerRadius = 5
-        // Do any additional setup after loading the view.
         
         self.circularGraph.center = view.center
         self.circularGraph.trackLayer.fillColor = UIColor.clear.cgColor
@@ -73,9 +73,7 @@ class HomeViewController: BaseViewController {
         }
     }
     
-    
-    @IBAction func monthClicked() {
-//        let vc = UIStoryboard.instantiate(MonthViewController.self, storyboardName: "MonthViewController")
-//        self.navigationController?.pushViewController(vc, animated: true)
+    @IBAction func touchUpProfileButton(_ sender: UIButton) {
+        self.onSlideMenuButtonPressed(sender)
     }
 }

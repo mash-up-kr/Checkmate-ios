@@ -111,8 +111,8 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         sender.tag = 10
         
         let menuVC : SideMenuViewController = self.storyboard!.instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuViewController
-        menuVC.btnMenu = sender
-        menuVC.delegate = self
+        //menuVC.btnMenu = sender
+        //menuVC.delegate = self
         self.view.addSubview(menuVC.view)
         self.addChildViewController(menuVC)
         menuVC.view.layoutIfNeeded()
@@ -122,7 +122,7 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
             menuVC.view.frame=CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height);
-            sender.isEnabled = true
+            //sender.isEnabled = true
             }, completion:nil)
     }
 }

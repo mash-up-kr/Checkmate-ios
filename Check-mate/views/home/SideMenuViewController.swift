@@ -18,38 +18,35 @@ class SideMenuViewController: UIViewController {
     @IBOutlet var jobPayLabel: UILabel!
     @IBOutlet var jobLocationLabel: UILabel!
     
-    @IBOutlet var shadowView: UIView!
     
     var btnMenu : UIButton!
     var delegate: SlideMenuDelegate?
     
     let cellIdentifier : String = "cell"
     
+    @IBOutlet weak var sideMenuLeadingConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         // Do any additional setup after loading the view.
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        
-         let tapShadowViewGesture = UITapGestureRecognizer.init(target: self, action: #selector(tapShadowView))
-        self.shadowView.addGestureRecognizer(tapShadowViewGesture)
+        sideMenuLeadingConstraint.constant = -1 * UIScreen.main.bounds.size.width
     }
     
-    @objc func tapShadowView(){
-        
-        let viewMenuBack : UIView = view.subviews.last!
+    func modalSidebarMenu(){
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
-            var frameMenu : CGRect = viewMenuBack.frame
-            frameMenu.origin.x = -1 * UIScreen.main.bounds.size.width
-            viewMenuBack.frame = frameMenu
-            viewMenuBack.layoutIfNeeded()
-            viewMenuBack.backgroundColor = UIColor.clear
-        }, completion: { (finished) -> Void in
-            viewMenuBack.removeFromSuperview()
+            self.sideMenuLeadingConstraint.constant = 0
+            self.view.layoutIfNeeded()
         })
-
-        return
     }
+    
+    func dismissSidebar(){
+        UIView.animate(withDuration: 0.3, animations: { () -> Void in
+            self.sideMenuLeadingConstraint.constant = -1 * UIScreen.main.bounds.size.width
+            self.view.layoutIfNeeded()
+        })
+    }
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

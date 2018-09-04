@@ -16,22 +16,28 @@ class HomeViewController: BaseViewController {
         case working
         case noWorking
     }
-    
+    @IBOutlet var shadowView: UIView!
     @IBOutlet weak var workStateButton: UIButton!
     @IBOutlet var payLabel: CountingLabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //setupCircularGraph(view: self.view, percentage: 0.1)
-        workStateButton?.layer.cornerRadius = 5
+        let tabShadowViewGesture = UITapGestureRecognizer.init(target: self, action: #selector(tabShadowView))
+        shadowView.addGestureRecognizer(tabShadowViewGesture)
+        shadowView.isHidden = true
         
-        self.circularGraph.center = view.center
+        
+        //setupCircularGraph(view: self.view, percentage: 0.1)
+        workStateButton?.layer.cornerRadius = 25
+        
+        let graphCenterPos : CGPoint = CGPoint(x: view.center.x, y: view.center.y - 100)
+        self.circularGraph.center = graphCenterPos
         self.circularGraph.trackLayer.fillColor = UIColor.clear.cgColor
-        self.circularGraph.trackLayer.lineWidth = 7
+        self.circularGraph.trackLayer.lineWidth = 3
         self.circularGraph.trackLayer.strokeColor = UIColor(displayP3Red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0).cgColor
         
-        self.circularGraph.shapeLayer.lineWidth = 12
+        self.circularGraph.shapeLayer.lineWidth = 3
         self.circularGraph.shapeLayer.strokeColor = UIColor(displayP3Red: 48/255, green: 79/255, blue: 254/255, alpha: 1.0).cgColor
         self.view.addSubview(circularGraph)
         self.circularGraph.percentage = 3/4
@@ -73,7 +79,15 @@ class HomeViewController: BaseViewController {
         }
     }
     
-    @IBAction func touchUpProfileButton(_ sender: UIButton) {
-        self.onSlideMenuButtonPressed(sender)
+    @IBAction func touchUpSideMenuButton(_ sender: UIButton) {
+        let parentController = self.parent as! SideMenuViewController
+        parentController.modalSidebarMenu()
+        shadowView.isHidden = false
+    }
+    
+    @objc func tabShadowView(){
+        let parentController = self.parent as! SideMenuViewController
+        parentController.dismissSidebar()
+        shadowView.isHidden = true
     }
 }

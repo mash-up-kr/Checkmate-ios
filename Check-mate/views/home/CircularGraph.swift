@@ -40,7 +40,7 @@ class CircularGraph: UIView {
         var center: CGPoint = view.center
         var lineWidth: CGFloat = 20
         
-        var radius: CGFloat = 150
+        var radius: CGFloat = 170
         var startAngle: CGFloat = 0
         var endAngle: CGFloat = 2 * CGFloat.pi
         

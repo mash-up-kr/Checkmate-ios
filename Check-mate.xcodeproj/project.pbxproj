@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		046A1915D6A5D8AB6BF4A09A /* Pods_Check_mate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 259D7447581CD69D898C8CF3 /* Pods_Check_mate.framework */; };
+		2711E032213CFAFE003BAFED /* ServerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2711E031213CFAFE003BAFED /* ServerClient.swift */; };
+		2711E035213CFDD2003BAFED /* WorkSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2711E034213CFDD2003BAFED /* WorkSpace.swift */; };
 		275CB4BC213656C800186904 /* PageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275CB4BB213656C800186904 /* PageIndicator.swift */; };
 		2766FDA92115A3FB00E713D6 /* WorkSpaceAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2766FDA82115A3FB00E713D6 /* WorkSpaceAddVC.swift */; };
 		2766FDAB2115A47300E713D6 /* WorkSpaceAddVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2766FDAA2115A47300E713D6 /* WorkSpaceAddVC.storyboard */; };
@@ -63,6 +65,8 @@
 
 /* Begin PBXFileReference section */
 		259D7447581CD69D898C8CF3 /* Pods_Check_mate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Check_mate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2711E031213CFAFE003BAFED /* ServerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerClient.swift; sourceTree = "<group>"; };
+		2711E034213CFDD2003BAFED /* WorkSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpace.swift; sourceTree = "<group>"; };
 		275CB4BB213656C800186904 /* PageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndicator.swift; sourceTree = "<group>"; };
 		2766FDA82115A3FB00E713D6 /* WorkSpaceAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceAddVC.swift; sourceTree = "<group>"; };
 		2766FDAA2115A47300E713D6 /* WorkSpaceAddVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorkSpaceAddVC.storyboard; sourceTree = "<group>"; };
@@ -132,6 +136,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2711E033213CFDC4003BAFED /* models */ = {
+			isa = PBXGroup;
+			children = (
+				2711E034213CFDD2003BAFED /* WorkSpace.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 		275CB4BA2136567500186904 /* custom_view */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +173,7 @@
 		276BAF0D20E7924C0063D8B4 /* Check-mate */ = {
 			isa = PBXGroup;
 			children = (
+				2711E033213CFDC4003BAFED /* models */,
 				27A55C5820E794DC0036BFB1 /* views */,
 				27A55C7820E79C130036BFB1 /* utils */,
 				276BAF0E20E7924C0063D8B4 /* AppDelegate.swift */,
@@ -227,6 +240,7 @@
 				27A55C7920E79C310036BFB1 /* Extensions+Check-mate.swift */,
 				2766FDAC2115AC8400E713D6 /* GraphicView.swift */,
 				27D1C47521391D6A007DEC2E /* Color.swift */,
+				2711E031213CFAFE003BAFED /* ServerClient.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -426,11 +440,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Check-mate/Pods-Check-mate-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -461,6 +479,7 @@
 				2766FDAD2115AC8400E713D6 /* GraphicView.swift in Sources */,
 				BE2F09D920E7A64F00CEA36E /* DateCollectionViewCell.swift in Sources */,
 				BECCBFB5212EE47500B953F4 /* TodayTImeCell.swift in Sources */,
+				2711E035213CFDD2003BAFED /* WorkSpace.swift in Sources */,
 				BECCBFAA212EE30F00B953F4 /* PictureCell.swift in Sources */,
 				276BAF1120E7924C0063D8B4 /* ViewController.swift in Sources */,
 				BECCBFB7212EE49900B953F4 /* DetailMoneyCell.swift in Sources */,
@@ -475,13 +494,13 @@
 				BE2F09DB20E7A66400CEA36E /* CalendarVars.swift in Sources */,
 				BECCBFB9212EE4CA00B953F4 /* TodayMoneyCell.swift in Sources */,
 				27A55C8E20E7A72B0036BFB1 /* WorkSpaceView.swift in Sources */,
-				27CD9CB320E7D4B5000F6CB3 /* WorkSpaceAddViewController.swift in Sources */,
 				BECCBFAD212EE39E00B953F4 /* EtcCell.swift in Sources */,
 				27A55C6920E797410036BFB1 /* HomeViewController.swift in Sources */,
 				76429FCB20E7AD1500B16DD4 /* CircularGraph.swift in Sources */,
 				27A55C8A20E7A11D0036BFB1 /* WorkSpaceViewController.swift in Sources */,
 				27A55C7A20E79C310036BFB1 /* Extensions+Check-mate.swift in Sources */,
 				BECCBFBB212EE4E400B953F4 /* CommonProtocols.swift in Sources */,
+				2711E032213CFAFE003BAFED /* ServerClient.swift in Sources */,
 				BE5A4F61211662C30067189D /* DateModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

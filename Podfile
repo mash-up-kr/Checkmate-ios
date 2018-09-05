@@ -7,4 +7,6 @@ target 'Check-mate' do
 
   # Pods for Check-mate
   pod 'SideMenu', :git => 'https://github.com/changmin-dev/SideMenu'
+  pod 'Alamofire', '~> 4.7'
+  pod 'SwiftyJSON', '~> 4.0'
 end

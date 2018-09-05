@@ -73,10 +73,14 @@ class WorkSpaceAddVC: UIViewController {
     }
     
     @IBAction func nextBtnClicked() {
-        if nowIndex  + 1 < totalIndex {
+        if nowIndex + 1 < totalIndex {
             nowIndex += 1
             pageIndicator.next()
             changePage()
+        }
+        
+        if nowIndex + 1 == totalIndex {
+            finish()
         }
     }
     
@@ -124,6 +128,15 @@ class WorkSpaceAddVC: UIViewController {
     private func updateUI() {
         nextBtn.backgroundColor = nextable ? UIColor.blue1 : UIColor.grey204
         nextBtn.isEnabled = nextable
+    }
+    
+    private func finish() {
+        let name = nameIVC.textField.text ?? ""
+        let address = "address"
+        let latitude = 12.345
+        let longitude = 23.456
+        let hourlyWage = Int(salaryIVC.textField.text ?? "0")
+        let probation = Int(probationIVC.textField.text ?? "0")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

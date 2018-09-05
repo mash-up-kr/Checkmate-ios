@@ -12,8 +12,8 @@ class HomeViewController: UIViewController {
     let circularGraph = CircularGraph()
     var workState: WorkState = .noWorking
     
-    var today = 23.0
-    var lastday = 31.0
+    var today = 28
+    var lastday = 31
     
     enum WorkState {
         case working
@@ -41,12 +41,31 @@ class HomeViewController: UIViewController {
         self.circularGraph.shapeLayer.strokeColor = UIColor(displayP3Red: 48/255, green: 79/255, blue: 254/255, alpha: 1.0).cgColor
         self.view.addSubview(circularGraph)
         
-        self.circularGraph.percentage = CGFloat.init(today/lastday)
-        let d_day = Int(lastday - today)
+        
+        
+        self.circularGraph.percentage = CGFloat.init(Double(today)/Double(lastday))
+        let d_day = lastday - today
         self.dDayLabel.text = "\(d_day)일"
         
+        
+        //그래프 끝에 동그라미 그리기 - 개어렵다.
+        let degree = CGFloat(Double.pi * 2) *  self.circularGraph.percentage - CGFloat(Double.pi/2)
+        let x = graphCenterPos.x + cos(degree) * self.circularGraph.radius
+        let y = graphCenterPos.y + sin(degree) * self.circularGraph.radius
+        let rect: CGRect = CGRect.init(x: x-20, y: y-20, width: 40, height: 40)
+        let button: UILabel = UILabel.init(frame: rect)
+        button.layer.masksToBounds = true
+        button.layer.cornerRadius = 20
+        button.text = "\(today)일"
+        button.font.withSize(15.0)
+        button.textAlignment = .center
+        button.textColor = UIColor.white
+        button.backgroundColor = UIColor.blue
+        view.addSubview(button)
     }
 
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

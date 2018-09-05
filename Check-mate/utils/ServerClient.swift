@@ -81,7 +81,7 @@ class ServerClient {
             "hourly_wage": hourlyWage,
             "probation": probation,
             "recess": recess,
-            "recess_state": recess_state,
+            "recess_state": recessState,
             "pay_day": payDay,
             "tax": tax,
             "five_state": fiveState,

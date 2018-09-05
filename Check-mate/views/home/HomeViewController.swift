@@ -16,20 +16,28 @@ class HomeViewController: UIViewController {
         case working
         case noWorking
     }
+    @IBOutlet var shadowView: UIView!
     @IBOutlet weak var workStateButton: UIButton!
-    
+    @IBOutlet var payLabel: CountingLabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tabShadowViewGesture = UITapGestureRecognizer.init(target: self, action: #selector(tabShadowView))
+        shadowView.addGestureRecognizer(tabShadowViewGesture)
+        shadowView.isHidden = true
+        
+        
         //setupCircularGraph(view: self.view, percentage: 0.1)
-        workStateButton?.layer.cornerRadius = 5
-        // Do any additional setup after loading the view.
+        workStateButton?.layer.cornerRadius = 25
         
-        self.circularGraph.center = view.center
+        let graphCenterPos : CGPoint = CGPoint(x: view.center.x, y: view.center.y - 100)
+        self.circularGraph.center = graphCenterPos
         self.circularGraph.trackLayer.fillColor = UIColor.clear.cgColor
-        self.circularGraph.trackLayer.lineWidth = 7
+        self.circularGraph.trackLayer.lineWidth = 3
         self.circularGraph.trackLayer.strokeColor = UIColor(displayP3Red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0).cgColor
-        
-        self.circularGraph.shapeLayer.lineWidth = 12
+    
+        self.circularGraph.shapeLayer.lineWidth = 3
         self.circularGraph.shapeLayer.strokeColor = UIColor(displayP3Red: 48/255, green: 79/255, blue: 254/255, alpha: 1.0).cgColor
         self.view.addSubview(circularGraph)
         self.circularGraph.percentage = 3/4
@@ -45,7 +53,10 @@ class HomeViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.payLabel.count(fromValue: 60000, to: 691200, withDuration: 2, andAnimationType: .EaseOut, andCouterType: .Int)
+    }
     /*
     // MARK: - Navigation
 
@@ -73,9 +84,15 @@ class HomeViewController: UIViewController {
         }
     }
     
+    @IBAction func touchUpSideMenuButton(_ sender: UIButton) {
+        let parentController = self.parent as! SideMenuViewController
+        parentController.modalSidebarMenu()
+        shadowView.isHidden = false
+    }
     
-    @IBAction func monthClicked() {
-//        let vc = UIStoryboard.instantiate(MonthViewController.self, storyboardName: "MonthViewController")
-//        self.navigationController?.pushViewController(vc, animated: true)
+    @objc func tabShadowView(){
+        let parentController = self.parent as! SideMenuViewController
+        parentController.dismissSidebar()
+        shadowView.isHidden = true
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 var tableData: [TempJobData] = [TempJobData(name: "Mash up", pay: 0, location: "서울시 강남구"),
                                 TempJobData(name: "Worksmobile", pay: 20000, location:"성남시 분당구")]
 class SideMenuViewController: UIViewController {
@@ -17,12 +18,29 @@ class SideMenuViewController: UIViewController {
     
     let cellIdentifier : String = "cell"
     
+    @IBOutlet weak var sideMenuLeadingConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         // Do any additional setup after loading the view.
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        sideMenuLeadingConstraint.constant = -1 * UIScreen.main.bounds.size.width
     }
     
+    func modalSidebarMenu(){
+        UIView.animate(withDuration: 0.3, animations: { () -> Void in
+            self.sideMenuLeadingConstraint.constant = 0
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    func dismissSidebar(){
+        UIView.animate(withDuration: 0.3, animations: { () -> Void in
+            self.sideMenuLeadingConstraint.constant = -1 * UIScreen.main.bounds.size.width
+            self.view.layoutIfNeeded()
+        })
+    }
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

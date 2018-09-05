@@ -40,11 +40,11 @@
 		27CD9CB720E7DDBF000F6CB3 /* WorkSpaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27CD9CB620E7DDBF000F6CB3 /* WorkSpaceTableViewCell.xib */; };
 		27CD9CC120E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD9CC020E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift */; };
 		27D1C47621391D6A007DEC2E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1C47521391D6A007DEC2E /* Color.swift */; };
+		760726952139321C00964D19 /* CountingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760726942139321B00964D19 /* CountingLabel.swift */; };
 		76429FC720E7A7E300B16DD4 /* UserButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76429FC620E7A7E300B16DD4 /* UserButton.swift */; };
 		76429FCB20E7AD1500B16DD4 /* CircularGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76429FCA20E7AD1400B16DD4 /* CircularGraph.swift */; };
 		76842E4A211DD7BD00D66357 /* TempJobData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76842E49211DD7BD00D66357 /* TempJobData.swift */; };
 		76B409992116F10800639082 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B409982116F10800639082 /* SideMenuViewController.swift */; };
-		76B4099B2116FA7E00639082 /* SideMenuViewNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B4099A2116FA7E00639082 /* SideMenuViewNavigationController.swift */; };
 		BE2F09D920E7A64F00CEA36E /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F09D820E7A64F00CEA36E /* DateCollectionViewCell.swift */; };
 		BE2F09DB20E7A66400CEA36E /* CalendarVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F09DA20E7A66400CEA36E /* CalendarVars.swift */; };
 		BE2F09DD20E7B05800CEA36E /* CalendarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F09DC20E7B05800CEA36E /* CalendarDetailViewController.swift */; };
@@ -101,11 +101,11 @@
 		27D1C47521391D6A007DEC2E /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		47C713CA9592953B4F324282 /* Pods-Check-mate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check-mate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Check-mate/Pods-Check-mate.debug.xcconfig"; sourceTree = "<group>"; };
 		54D76EF7D1B419B9D1AB895C /* Pods-Check-mate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check-mate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Check-mate/Pods-Check-mate.release.xcconfig"; sourceTree = "<group>"; };
+		760726942139321B00964D19 /* CountingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountingLabel.swift; sourceTree = "<group>"; };
 		76429FC620E7A7E300B16DD4 /* UserButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserButton.swift; sourceTree = "<group>"; };
 		76429FCA20E7AD1400B16DD4 /* CircularGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularGraph.swift; sourceTree = "<group>"; };
 		76842E49211DD7BD00D66357 /* TempJobData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempJobData.swift; sourceTree = "<group>"; };
 		76B409982116F10800639082 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
-		76B4099A2116FA7E00639082 /* SideMenuViewNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewNavigationController.swift; sourceTree = "<group>"; };
 		BE2F09D820E7A64F00CEA36E /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE2F09DA20E7A66400CEA36E /* CalendarVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVars.swift; sourceTree = "<group>"; };
 		BE2F09DC20E7B05800CEA36E /* CalendarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewController.swift; sourceTree = "<group>"; };
@@ -207,7 +207,6 @@
 				27A55C7620E79B980036BFB1 /* HomeViewController.storyboard */,
 				76429FC620E7A7E300B16DD4 /* UserButton.swift */,
 				76B409982116F10800639082 /* SideMenuViewController.swift */,
-				76B4099A2116FA7E00639082 /* SideMenuViewNavigationController.swift */,
 				76842E49211DD7BD00D66357 /* TempJobData.swift */,
 			);
 			path = home;
@@ -237,6 +236,7 @@
 		27A55C7820E79C130036BFB1 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				760726942139321B00964D19 /* CountingLabel.swift */,
 				27A55C7920E79C310036BFB1 /* Extensions+Check-mate.swift */,
 				2766FDAC2115AC8400E713D6 /* GraphicView.swift */,
 				27D1C47521391D6A007DEC2E /* Color.swift */,
@@ -347,7 +347,7 @@
 				276BAF0720E7924C0063D8B4 /* Sources */,
 				276BAF0820E7924C0063D8B4 /* Frameworks */,
 				276BAF0920E7924C0063D8B4 /* Resources */,
-				9BEA72BD880B3D14ADD1FC5C /* [CP] Embed Pods Frameworks */,
+				9F770AF3806FFA1CD233DE01 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -433,7 +433,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9BEA72BD880B3D14ADD1FC5C /* [CP] Embed Pods Frameworks */ = {
+		9F770AF3806FFA1CD233DE01 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -441,13 +441,11 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Check-mate/Pods-Check-mate-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,10 +484,10 @@
 				BE5A4F63211662D20067189D /* DetailDateModel.swift in Sources */,
 				27A55C8120E7A0440036BFB1 /* CalendarNavigationController.swift in Sources */,
 				27CD9CC120E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift in Sources */,
+				760726952139321C00964D19 /* CountingLabel.swift in Sources */,
 				276BAF0F20E7924C0063D8B4 /* AppDelegate.swift in Sources */,
 				27D1C47621391D6A007DEC2E /* Color.swift in Sources */,
 				27A55C8620E7A1020036BFB1 /* WorkSpaceNavigationController.swift in Sources */,
-				76B4099B2116FA7E00639082 /* SideMenuViewNavigationController.swift in Sources */,
 				BECCBFAF212EE3E500B953F4 /* BenefitCell.swift in Sources */,
 				BE2F09DB20E7A66400CEA36E /* CalendarVars.swift in Sources */,
 				BECCBFB9212EE4CA00B953F4 /* TodayMoneyCell.swift in Sources */,

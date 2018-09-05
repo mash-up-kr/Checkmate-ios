@@ -53,15 +53,15 @@ class HomeViewController: UIViewController {
         let x = graphCenterPos.x + cos(degree) * self.circularGraph.radius
         let y = graphCenterPos.y + sin(degree) * self.circularGraph.radius
         let rect: CGRect = CGRect.init(x: x-20, y: y-20, width: 40, height: 40)
-        let button: UILabel = UILabel.init(frame: rect)
-        button.layer.masksToBounds = true
-        button.layer.cornerRadius = 20
-        button.text = "\(today)일"
-        button.font.withSize(15.0)
-        button.textAlignment = .center
-        button.textColor = UIColor.white
-        button.backgroundColor = UIColor.blue
-        view.addSubview(button)
+        let circleNumber: UILabel = UILabel.init(frame: rect)
+        circleNumber.layer.masksToBounds = true
+        circleNumber.layer.cornerRadius = 20
+        circleNumber.text = "\(today)일"
+        circleNumber.font = UIFont.systemFont(ofSize: 14)
+        circleNumber.textAlignment = .center
+        circleNumber.textColor = UIColor.white
+        circleNumber.backgroundColor = UIColor.init(red: 48/255, green: 79/255, blue: 254/255, alpha: 1.0)
+        view.addSubview(circleNumber)
     }
 
     

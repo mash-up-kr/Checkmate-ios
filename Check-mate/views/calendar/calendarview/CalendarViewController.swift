@@ -11,9 +11,12 @@ import UIKit
 class CalendarViewController: UIViewController {
 
     @IBOutlet weak var Calendar: UICollectionView!
+    @IBOutlet weak var YearLabel: UILabel!
     @IBOutlet weak var MonthLabel: UILabel!
     @IBOutlet weak var DayLabel: UILabel!
     @IBOutlet weak var NameOfDayLabel: UILabel!
+    
+    @IBOutlet weak var CircleView: UIView!
     
     var model: DateModel = DateModel()
     
@@ -23,9 +26,12 @@ class CalendarViewController: UIViewController {
         Calendar.delegate       = self
         Calendar.dataSource     = self
         
-        MonthLabel.text         = "\(getCurrentMonthYear())"
+        YearLabel.text          = "\(year)"
+        MonthLabel.text         = "\(getCurrentMonth())"
         DayLabel.text           = "\(day)"
         NameOfDayLabel.text     = "\(NameOfDays[weekday])"
+        
+        CircleView.layer.cornerRadius = CircleView.bounds.size.height / 2
         
         GetStartDateDayPosition()
         
@@ -72,7 +78,8 @@ extension CalendarViewController {
             month += 1
         }
         
-        MonthLabel.text = "\(Months[month]) \(year)"
+        YearLabel.text = "\(year)"
+        MonthLabel.text = "\(getCurrentMonth())"
         Calendar.reloadData()
     }
     
@@ -92,7 +99,8 @@ extension CalendarViewController {
             GetStartDateDayPosition()
         }
         
-        MonthLabel.text = "\(getCurrentMonthYear())"
+        YearLabel.text = "\(year)"
+        MonthLabel.text = "\(getCurrentMonth())"
         Calendar.reloadData()
     }
     
@@ -169,21 +177,21 @@ extension CalendarViewController: UICollectionViewDataSource {
         case .CURRENT:
             currentDay = indexPath.row + 1 - NumberOfEmptyBox
             cell.DateLabel.text = "\(currentDay)"
-            if indexPath.row / 7 == (DaysInMonths[month] + NumberOfEmptyBox) / 7 {
-                cell.ToggleBottomLine()
-            }
+//            if indexPath.row / 7 == (DaysInMonths[month] + NumberOfEmptyBox) / 7 {
+//                cell.ToggleBottomLine()
+//            }
         case .NEXT:
             currentDay = indexPath.row + 1 - NextNumberOfEmptyBox
             cell.DateLabel.text = "\(currentDay)"
-            if indexPath.row / 7 == (DaysInMonths[month] + NextNumberOfEmptyBox) / 7 {
-                cell.ToggleBottomLine()
-            }
+//            if indexPath.row / 7 == (DaysInMonths[month] + NextNumberOfEmptyBox) / 7 {
+//                cell.ToggleBottomLine()
+//            }
         case .BACK:
             currentDay = indexPath.row + 1 - PreviousNumberOfEmptyBox
             cell.DateLabel.text = "\(currentDay)"
-            if indexPath.row / 7 == (DaysInMonths[month] + PreviousNumberOfEmptyBox) / 7 {
-                cell.ToggleBottomLine()
-            }
+//            if indexPath.row / 7 == (DaysInMonths[month] + PreviousNumberOfEmptyBox) / 7 {
+//                cell.ToggleBottomLine()
+//            }
         }
         
         if Int(cell.DateLabel.text!)! < 1 {
@@ -195,14 +203,15 @@ extension CalendarViewController: UICollectionViewDataSource {
         // MOCK 모델 데이터
         for (day, value) in model.salaryData {
             if currentDay == day {
+                cell.ToggleHighlight()
                 cell.ToggleHistory()
                 cell.PriceLabel.text = "\(value)"
             }
         }
         
         if currentDay == model.payDay {
-            cell.ToggleHighlight()
-            cell.PriceLabel.text = "월급날"
+            cell.TogglePayDay()
+            cell.PriceLabel.text = "🎉"
         }
         
         return cell
@@ -211,7 +220,7 @@ extension CalendarViewController: UICollectionViewDataSource {
 
 extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.size.width / 7, height: 63)
+        return CGSize(width: Calendar.bounds.size.width / 7, height: 67)
     }
 }
 

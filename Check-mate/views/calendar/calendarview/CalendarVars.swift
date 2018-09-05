@@ -114,7 +114,3 @@ func GetLeapYearCounter(_ dir: enumDirection) {
 func getCurrentMonth() -> String {
     return "\(Months[month])"
 }
-
-func getCurrentMonthYear() -> String {
-    return "\(getCurrentMonth()) \(year)"
-}

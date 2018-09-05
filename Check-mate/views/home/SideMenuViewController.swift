@@ -7,9 +7,7 @@
 //
 
 import UIKit
-protocol SlideMenuDelegate {
-    func slideMenuItemSelectedAtIndex(_ index : Int32)
-}
+
 var tableData: [TempJobData] = [TempJobData(name: "Mash up", pay: 0, location: "서울시 강남구"),
                                 TempJobData(name: "Worksmobile", pay: 20000, location:"성남시 분당구")]
 class SideMenuViewController: UIViewController {
@@ -17,10 +15,6 @@ class SideMenuViewController: UIViewController {
     @IBOutlet var jobNameLabel : UILabel!
     @IBOutlet var jobPayLabel: UILabel!
     @IBOutlet var jobLocationLabel: UILabel!
-    
-    
-    var btnMenu : UIButton!
-    var delegate: SlideMenuDelegate?
     
     let cellIdentifier : String = "cell"
     

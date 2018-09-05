@@ -13,6 +13,10 @@ class CircularGraph: UIView {
     let trackLayer: CAShapeLayer = CAShapeLayer()
     let shapeLayer: CAShapeLayer = CAShapeLayer()
     
+    var radius: CGFloat = 170
+    var startAngle: CGFloat = 0
+    var endAngle: CGFloat = 2 * CGFloat.pi
+    
     var percentage: CGFloat{
         set(newValue){
             shapeLayer.strokeEnd = newValue
@@ -21,7 +25,18 @@ class CircularGraph: UIView {
             return shapeLayer.strokeEnd
         }
     }
-    
+    func endPoint() -> CGPoint {
+        /*
+         to get coordinate from angle of circle
+         https://www.mathsisfun.com/polar-cartesian-coordinates.html
+         */
+        
+        let x = self.radius * cos(self.endAngle)// + center.x // cos(α) = x / radius
+        let y = self.radius * sin(self.endAngle)// + center.y // sin(α) = y / radius
+        let point = CGPoint(x: x, y: y)
+        
+        return point
+    }
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupCircularGraph(view: self, percentage: 1.0)
@@ -37,12 +52,10 @@ class CircularGraph: UIView {
     }
     
     func setupCircularGraph(view: UIView, percentage: CGFloat){
-        var center: CGPoint = view.center
-        var lineWidth: CGFloat = 20
         
-        var radius: CGFloat = 170
-        var startAngle: CGFloat = 0
-        var endAngle: CGFloat = 2 * CGFloat.pi
+        var lineWidth: CGFloat = 20
+        var center: CGPoint = view.center
+        
         
         var circularPath = UIBezierPath(arcCenter: .zero, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
         

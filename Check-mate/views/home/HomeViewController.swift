@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController {
+class HomeViewController: UIViewController {
     let circularGraph = CircularGraph()
     var workState: WorkState = .noWorking
     
@@ -19,7 +19,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet var shadowView: UIView!
     @IBOutlet weak var workStateButton: UIButton!
     @IBOutlet var payLabel: CountingLabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,7 +36,7 @@ class HomeViewController: BaseViewController {
         self.circularGraph.trackLayer.fillColor = UIColor.clear.cgColor
         self.circularGraph.trackLayer.lineWidth = 3
         self.circularGraph.trackLayer.strokeColor = UIColor(displayP3Red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0).cgColor
-        
+    
         self.circularGraph.shapeLayer.lineWidth = 3
         self.circularGraph.shapeLayer.strokeColor = UIColor(displayP3Red: 48/255, green: 79/255, blue: 254/255, alpha: 1.0).cgColor
         self.view.addSubview(circularGraph)

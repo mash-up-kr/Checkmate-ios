@@ -19,18 +19,45 @@ class SideMenuViewController: UIViewController {
     let cellIdentifier : String = "cell"
     
     @IBOutlet weak var sideMenuLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet var shadowView: UIView!
     
     override func viewDidLoad() {
         // Do any additional setup after loading the view.
         self.tableView.dataSource = self
         self.tableView.delegate = self
         sideMenuLeadingConstraint.constant = -1 * UIScreen.main.bounds.size.width
+        
+        let tabShadowViewGesture = UITapGestureRecognizer.init(target: self, action: #selector(tabShadowView))
+        shadowView.addGestureRecognizer(tabShadowViewGesture)
+        shadowView.isHidden = true
+        
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipeSideView))
+        swipeRight.direction = .right
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipeSideView))
+        swipeLeft.direction = .left
+        
+        self.view.addGestureRecognizer(swipeRight)
+        self.view.addGestureRecognizer(swipeLeft)
+    }
+    
+    @objc func tabShadowView(){
+        self.dismissSidebar()
+    }
+    
+    @objc func swipeSideView(_ sender: UISwipeGestureRecognizer){
+        if sender.direction == .left {
+            self.dismissSidebar()
+        }else if sender.direction == .right{
+            self.modalSidebarMenu()
+        }
     }
     
     func modalSidebarMenu(){
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
             self.sideMenuLeadingConstraint.constant = 0
             self.view.layoutIfNeeded()
+            self.shadowView.isHidden = false
         })
     }
     
@@ -38,6 +65,7 @@ class SideMenuViewController: UIViewController {
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
             self.sideMenuLeadingConstraint.constant = -1 * UIScreen.main.bounds.size.width
             self.view.layoutIfNeeded()
+            self.shadowView.isHidden = true
         })
     }
    

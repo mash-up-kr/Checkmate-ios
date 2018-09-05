@@ -12,23 +12,23 @@ class HomeViewController: UIViewController {
     let circularGraph = CircularGraph()
     var workState: WorkState = .noWorking
     
+    var today = 23.0
+    var lastday = 31.0
+    
     enum WorkState {
         case working
         case noWorking
     }
-    @IBOutlet var shadowView: UIView!
+    
+    
     @IBOutlet weak var workStateButton: UIButton!
     @IBOutlet var payLabel: CountingLabel!
 
+    @IBOutlet weak var dDayLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tabShadowViewGesture = UITapGestureRecognizer.init(target: self, action: #selector(tabShadowView))
-        shadowView.addGestureRecognizer(tabShadowViewGesture)
-        shadowView.isHidden = true
-        
-        
-        //setupCircularGraph(view: self.view, percentage: 0.1)
         workStateButton?.layer.cornerRadius = 25
         
         let graphCenterPos : CGPoint = CGPoint(x: view.center.x, y: view.center.y - 100)
@@ -40,7 +40,11 @@ class HomeViewController: UIViewController {
         self.circularGraph.shapeLayer.lineWidth = 3
         self.circularGraph.shapeLayer.strokeColor = UIColor(displayP3Red: 48/255, green: 79/255, blue: 254/255, alpha: 1.0).cgColor
         self.view.addSubview(circularGraph)
-        self.circularGraph.percentage = 3/4
+        
+        self.circularGraph.percentage = CGFloat.init(today/lastday)
+        let d_day = Int(lastday - today)
+        self.dDayLabel.text = "\(d_day)일"
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,7 +59,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.payLabel.count(fromValue: 60000, to: 691200, withDuration: 2, andAnimationType: .EaseOut, andCouterType: .Int)
+        self.payLabel.count(fromValue: 0, to: 691200, withDuration: 0.8, andAnimationType: .EaseOut, andCouterType: .Int)
     }
     /*
     // MARK: - Navigation
@@ -87,12 +91,6 @@ class HomeViewController: UIViewController {
     @IBAction func touchUpSideMenuButton(_ sender: UIButton) {
         let parentController = self.parent as! SideMenuViewController
         parentController.modalSidebarMenu()
-        shadowView.isHidden = false
     }
-    
-    @objc func tabShadowView(){
-        let parentController = self.parent as! SideMenuViewController
-        parentController.dismissSidebar()
-        shadowView.isHidden = true
-    }
+
 }

@@ -31,8 +31,8 @@ class CircularGraph: UIView {
          https://www.mathsisfun.com/polar-cartesian-coordinates.html
          */
         
-        let x = self.radius * cos(self.endAngle)// + center.x // cos(α) = x / radius
-        let y = self.radius * sin(self.endAngle)// + center.y // sin(α) = y / radius
+        let x = self.radius * cos(self.endAngle) // cos(α) = x / radius
+        let y = self.radius * sin(self.endAngle) // sin(α) = y / radius
         let point = CGPoint(x: x, y: y)
         
         return point

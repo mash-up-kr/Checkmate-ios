@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     var workState: WorkState = .noWorking
     
     @IBOutlet weak var jobLabel: UILabel!
-    var today = 28
+    var today = 23
     var lastday = 31
     var pay: Int = 691200
     var job: String = "Mash up"
@@ -25,6 +25,7 @@ class HomeViewController: UIViewController {
         case noWorking
     }
     
+    @IBOutlet weak var todayLabel: UILabel!
     
     @IBOutlet weak var workStateButton: UIButton!
     @IBOutlet var payLabel: CountingLabel!
@@ -40,10 +41,15 @@ class HomeViewController: UIViewController {
         jobLabel.text = job
         payPerTimeLabel.text = "\(payPerTime)"
         workTimeLabel.text = "\(workTime)"
-        
         workStateButton?.layer.cornerRadius = 25
         
-        let graphCenterPos : CGPoint = CGPoint(x: view.center.x, y: view.center.y - 100)
+        var graphSpace: CGFloat = 80
+        if UIScreen.main.bounds.size.width > 400.0 {
+            graphSpace = 100
+        }else{
+            graphSpace = 70
+        }
+        let graphCenterPos : CGPoint = CGPoint(x: view.center.x, y: view.center.y - graphSpace)
         self.circularGraph.center = graphCenterPos
         self.circularGraph.trackLayer.fillColor = UIColor.clear.cgColor
         self.circularGraph.trackLayer.lineWidth = 3

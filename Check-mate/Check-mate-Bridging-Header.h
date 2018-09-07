@@ -10,5 +10,6 @@
 #define Check_mate_Bridging_Header_h
 
 #import <KakaoOpenSDK/KakaoOpenSDK.h>
+#import <QuartzCore/QuartzCore.h>
 
 #endif /* Check_mate_Bridging_Header_h */

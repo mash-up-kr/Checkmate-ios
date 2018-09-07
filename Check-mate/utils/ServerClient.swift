@@ -92,6 +92,29 @@ class ServerClient {
         }
     }
     
+    static func modifyWorkSpace(workSpace: WorkSpace,
+                                callback: ((Bool) -> Void)? = nil) {
+        let path = "/user/\(userId)/work/\(workSpace.id)"
+        let parameters: Parameters = [
+            "name": workSpace.name,
+            "address": workSpace.address,
+            "latitude": workSpace.latitude,
+            "longitude": workSpace.longitude,
+            "hourly_wage": workSpace.wage,
+            "probation": workSpace.probation,
+            "recess": workSpace.recess,
+            "recess_state": workSpace.recessStatus,
+            "pay_day": workSpace.payDay,
+            "tax": workSpace.tax,
+            "five_state": workSpace.fiveState,
+            "working_day": workSpace.workingDay
+        ]
+        
+        request(url: HOST+path, method: .put, parameters: parameters) { (json, code) in
+            callback?(code == 200)
+        }
+    }
+    
     static func deleteWorkSpace(workSpaceId: String,
                                 callback: ((Bool) -> Void)? = nil) {
         let path = "/user/\(userId)/work/\(workSpaceId)"

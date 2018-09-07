@@ -20,6 +20,36 @@ open class GraphicView: UIView {
             self.layer.borderColor = borderColor?.cgColor
         }
     }
+    
+    @IBInspectable open var shadowColor: UIColor? {
+        didSet {
+            self.layer.shadowColor = shadowColor?.cgColor
+        }
+    }
+    
+    @IBInspectable open var shadowRadius: CGFloat = 0 {
+        didSet {
+            self.layer.shadowRadius = shadowRadius
+        }
+    }
+    
+    @IBInspectable open var shadowOffset: CGSize = CGSize.zero {
+        didSet {
+            self.layer.shadowOffset = shadowOffset
+        }
+    }
+    
+    @IBInspectable open var shadowOpacity: Float = 0 {
+        didSet {
+            self.layer.shadowOpacity = shadowOpacity
+        }
+    }
+    
+    @IBInspectable open var masksToBounds: Bool = false {
+        didSet {
+            self.layer.masksToBounds = masksToBounds
+        }
+    }
 }
 
 @IBDesignable

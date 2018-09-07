@@ -24,7 +24,7 @@ class WorkSpaceView: UIView {
     var workSpace: WorkSpace?
 
     var addBtnCallback: (() -> Void)?
-    var detailCallback: (() -> Void)?
+    var detailCallback: ((WorkSpace) -> Void)?
     var deleteCallback: ((WorkSpace) -> Void)?
 
     private var mIsLastCardView = false
@@ -86,7 +86,8 @@ class WorkSpaceView: UIView {
 
     @IBAction func detailClicked() {
         if !isLastCardView {
-            detailCallback?()
+            guard let ws = workSpace else { return }
+            detailCallback?(ws)
         }
     }
     

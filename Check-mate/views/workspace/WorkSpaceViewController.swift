@@ -41,11 +41,6 @@ class WorkSpaceViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func deleteBtnClicked() {
         deleteBtn.isSelected = !deleteBtn.isSelected
@@ -58,8 +53,9 @@ class WorkSpaceViewController: UIViewController {
         self.present(vc, animated: true)
     }
 
-    func cellDetailClicked() {
-        let vc = UIStoryboard.instantiate(WorkSpaceDetailViewController.self, storyboardName: "WorkSpaceNavigationController")
+    func cellDetailClicked(workSpace: WorkSpace) {
+        let vc = UIStoryboard.instantiate(WorkSpaceDetailViewController.self, storyboardName: "WorkSpaceDetailViewController")
+        (vc as? WorkSpaceDetailViewController)?.workSpace = workSpace
         self.navigationController?.pushViewController(vc, animated: true)
     }
 

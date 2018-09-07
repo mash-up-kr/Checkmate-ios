@@ -42,7 +42,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="2hp-RU-bi3">
             <objects>
-                <tabBarController id="Han-qq-K55" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Han-qq-K55" customClass="TabBarController" customModule="Check_mate" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="shm-rg-seO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

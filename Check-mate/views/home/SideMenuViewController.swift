@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 var tableData: [TempJobData] = [TempJobData(name: "Mash up", pay: 0, location: "서울시 강남구"),
                                 TempJobData(name: "Worksmobile", pay: 20000, location:"성남시 분당구")]
 class SideMenuViewController: UIViewController {
@@ -17,12 +18,60 @@ class SideMenuViewController: UIViewController {
     
     let cellIdentifier : String = "cell"
     
+    @IBOutlet weak var sideMenuLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet var shadowView: UIView!
+    
     override func viewDidLoad() {
         // Do any additional setup after loading the view.
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        sideMenuLeadingConstraint.constant = -1 * UIScreen.main.bounds.size.width
+        
+        let tabShadowViewGesture = UITapGestureRecognizer.init(target: self, action: #selector(tabShadowView))
+        shadowView.addGestureRecognizer(tabShadowViewGesture)
+        shadowView.isHidden = true
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipeSideView))
+        swipeRight.direction = .right
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipeSideView))
+        swipeLeft.direction = .left
+        
+        self.view.addGestureRecognizer(swipeRight)
+        self.view.addGestureRecognizer(swipeLeft)
+        
+        jobNameLabel.layer.cornerRadius = 10
+        jobNameLabel.layer.masksToBounds = true
+        
     }
     
+    @objc func tabShadowView(){
+        self.dismissSidebar()
+    }
+    
+    @objc func swipeSideView(_ sender: UISwipeGestureRecognizer){
+        if sender.direction == .left {
+            self.dismissSidebar()
+        }else if sender.direction == .right{
+            self.modalSidebarMenu()
+        }
+    }
+    
+    func modalSidebarMenu(){
+        UIView.animate(withDuration: 0.3, animations: { () -> Void in
+            self.sideMenuLeadingConstraint.constant = 0
+            self.view.layoutIfNeeded()
+            self.shadowView.isHidden = false
+        })
+    }
+    
+    func dismissSidebar(){
+        UIView.animate(withDuration: 0.3, animations: { () -> Void in
+            self.sideMenuLeadingConstraint.constant = -1 * UIScreen.main.bounds.size.width
+            self.view.layoutIfNeeded()
+            self.shadowView.isHidden = true
+        })
+    }
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -12,29 +12,78 @@ class HomeViewController: UIViewController {
     let circularGraph = CircularGraph()
     var workState: WorkState = .noWorking
     
+    @IBOutlet weak var jobLabel: UILabel!
+    var today = 23
+    var lastday = 31
+    var pay: Int = 691200
+    var job: String = "Mash up"
+    var workTime: Int = 72
+    var payPerTime: Int = 8000
+    
     enum WorkState {
         case working
         case noWorking
     }
-    @IBOutlet weak var workStateButton: UIButton!
     
+    @IBOutlet weak var todayLabel: UILabel!
+    
+    @IBOutlet weak var workStateButton: UIButton!
+    @IBOutlet var payLabel: CountingLabel!
+    
+    @IBOutlet weak var payPerTimeLabel: UILabel!
+    @IBOutlet weak var dDayLabel: UILabel!
+    
+    @IBOutlet weak var workTimeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //setupCircularGraph(view: self.view, percentage: 0.1)
-        workStateButton?.layer.cornerRadius = 5
-        // Do any additional setup after loading the view.
         
-        self.circularGraph.center = view.center
+        payLabel.text = "\(pay)"
+        jobLabel.text = job
+        payPerTimeLabel.text = "\(payPerTime)"
+        workTimeLabel.text = "\(workTime)"
+        workStateButton?.layer.cornerRadius = 25
+        
+        var graphSpace: CGFloat = 80
+        if UIScreen.main.bounds.size.width > 400.0 {
+            graphSpace = 100
+        }else{
+            graphSpace = 70
+        }
+        let graphCenterPos : CGPoint = CGPoint(x: view.center.x, y: view.center.y - graphSpace)
+        self.circularGraph.center = graphCenterPos
         self.circularGraph.trackLayer.fillColor = UIColor.clear.cgColor
-        self.circularGraph.trackLayer.lineWidth = 7
+        self.circularGraph.trackLayer.lineWidth = 3
         self.circularGraph.trackLayer.strokeColor = UIColor(displayP3Red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0).cgColor
-        
-        self.circularGraph.shapeLayer.lineWidth = 12
+    
+        self.circularGraph.shapeLayer.lineWidth = 3
         self.circularGraph.shapeLayer.strokeColor = UIColor(displayP3Red: 48/255, green: 79/255, blue: 254/255, alpha: 1.0).cgColor
         self.view.addSubview(circularGraph)
-        self.circularGraph.percentage = 3/4
+        
+        
+        
+        self.circularGraph.percentage = CGFloat.init(Double(today)/Double(lastday))
+        let d_day = lastday - today
+        self.dDayLabel.text = "\(d_day)일"
+        
+        
+        //그래프 끝에 동그라미 그리기 - 개어렵다.
+        let degree = CGFloat(Double.pi * 2) *  self.circularGraph.percentage - CGFloat(Double.pi/2)
+        let x = graphCenterPos.x + cos(degree) * self.circularGraph.radius
+        let y = graphCenterPos.y + sin(degree) * self.circularGraph.radius
+        let rect: CGRect = CGRect.init(x: x-20, y: y-20, width: 40, height: 40)
+        let circleNumber: UILabel = UILabel.init(frame: rect)
+        circleNumber.layer.masksToBounds = true
+        circleNumber.layer.cornerRadius = 20
+        circleNumber.text = "\(today)일"
+        circleNumber.font = UIFont.systemFont(ofSize: 14)
+        circleNumber.textAlignment = .center
+        circleNumber.textColor = UIColor.white
+        circleNumber.backgroundColor = UIColor.init(red: 48/255, green: 79/255, blue: 254/255, alpha: 1.0)
+        view.addSubview(circleNumber)
     }
 
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -45,7 +94,10 @@ class HomeViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.payLabel.count(fromValue: 0, to: 691200, withDuration: 0.8, andAnimationType: .EaseOut, andCouterType: .Int)
+    }
     /*
     // MARK: - Navigation
 
@@ -73,9 +125,9 @@ class HomeViewController: UIViewController {
         }
     }
     
-    
-    @IBAction func monthClicked() {
-//        let vc = UIStoryboard.instantiate(MonthViewController.self, storyboardName: "MonthViewController")
-//        self.navigationController?.pushViewController(vc, animated: true)
+    @IBAction func touchUpSideMenuButton(_ sender: UIButton) {
+        let parentController = self.parent as! SideMenuViewController
+        parentController.modalSidebarMenu()
     }
+
 }

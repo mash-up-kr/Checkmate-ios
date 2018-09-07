@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		046A1915D6A5D8AB6BF4A09A /* Pods_Check_mate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 259D7447581CD69D898C8CF3 /* Pods_Check_mate.framework */; };
+		2711E032213CFAFE003BAFED /* ServerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2711E031213CFAFE003BAFED /* ServerClient.swift */; };
+		2711E035213CFDD2003BAFED /* WorkSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2711E034213CFDD2003BAFED /* WorkSpace.swift */; };
+		275CB4BC213656C800186904 /* PageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275CB4BB213656C800186904 /* PageIndicator.swift */; };
 		2766FDA92115A3FB00E713D6 /* WorkSpaceAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2766FDA82115A3FB00E713D6 /* WorkSpaceAddVC.swift */; };
 		2766FDAB2115A47300E713D6 /* WorkSpaceAddVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2766FDAA2115A47300E713D6 /* WorkSpaceAddVC.storyboard */; };
 		2766FDAD2115AC8400E713D6 /* GraphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2766FDAC2115AC8400E713D6 /* GraphicView.swift */; };
@@ -34,14 +37,20 @@
 		27A55C8E20E7A72B0036BFB1 /* WorkSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A55C8D20E7A72B0036BFB1 /* WorkSpaceView.swift */; };
 		27A55C9020E7A7360036BFB1 /* WorkSpaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27A55C8F20E7A7360036BFB1 /* WorkSpaceView.xib */; };
 		27A55C9220E7B6AD0036BFB1 /* WorkSpaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A55C9120E7B6AD0036BFB1 /* WorkSpaceTableViewCell.swift */; };
+		27BA3E8F21424E64001DE3A8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BA3E8E21424E64001DE3A8 /* LoginViewController.swift */; };
+		27BA3E9121424E70001DE3A8 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27BA3E9021424E70001DE3A8 /* LoginViewController.storyboard */; };
+		27BA3E9521425500001DE3A8 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BA3E9421425500001DE3A8 /* KakaoOpenSDK.framework */; };
+		27BA3E9821425FDD001DE3A8 /* LoadingDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BA3E9721425FDD001DE3A8 /* LoadingDialog.swift */; };
 		27CD9CB720E7DDBF000F6CB3 /* WorkSpaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27CD9CB620E7DDBF000F6CB3 /* WorkSpaceTableViewCell.xib */; };
 		27CD9CC120E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD9CC020E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift */; };
-		76429FC720E7A7E300B16DD4 /* SetWorkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76429FC620E7A7E300B16DD4 /* SetWorkButton.swift */; };
-		76429FC720E7A7E300B16DD4 /* UserButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76429FC620E7A7E300B16DD4 /* UserButton.swift */; };
+		27D1C47621391D6A007DEC2E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1C47521391D6A007DEC2E /* Color.swift */; };
+		760726952139321C00964D19 /* CountingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760726942139321B00964D19 /* CountingLabel.swift */; };
+		76429FC720E7A7E300B16DD4 /* SideMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76429FC620E7A7E300B16DD4 /* SideMenuButton.swift */; };
 		76429FCB20E7AD1500B16DD4 /* CircularGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76429FCA20E7AD1400B16DD4 /* CircularGraph.swift */; };
 		76842E4A211DD7BD00D66357 /* TempJobData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76842E49211DD7BD00D66357 /* TempJobData.swift */; };
 		76B409992116F10800639082 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B409982116F10800639082 /* SideMenuViewController.swift */; };
-		76B4099B2116FA7E00639082 /* SideMenuViewNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B4099A2116FA7E00639082 /* SideMenuViewNavigationController.swift */; };
+		76CFC7BF2142D07200D24B33 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CFC7BE2142D07200D24B33 /* PaddingLabel.swift */; };
+		76CFC7C12142D99300D24B33 /* WorkSpaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CFC7C02142D99300D24B33 /* WorkSpaceCell.swift */; };
 		BE2F09D920E7A64F00CEA36E /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F09D820E7A64F00CEA36E /* DateCollectionViewCell.swift */; };
 		BE2F09DB20E7A66400CEA36E /* CalendarVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F09DA20E7A66400CEA36E /* CalendarVars.swift */; };
 		BE2F09DD20E7B05800CEA36E /* CalendarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F09DC20E7B05800CEA36E /* CalendarDetailViewController.swift */; };
@@ -61,6 +70,9 @@
 
 /* Begin PBXFileReference section */
 		259D7447581CD69D898C8CF3 /* Pods_Check_mate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Check_mate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2711E031213CFAFE003BAFED /* ServerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerClient.swift; sourceTree = "<group>"; };
+		2711E034213CFDD2003BAFED /* WorkSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpace.swift; sourceTree = "<group>"; };
+		275CB4BB213656C800186904 /* PageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndicator.swift; sourceTree = "<group>"; };
 		2766FDA82115A3FB00E713D6 /* WorkSpaceAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceAddVC.swift; sourceTree = "<group>"; };
 		2766FDAA2115A47300E713D6 /* WorkSpaceAddVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorkSpaceAddVC.storyboard; sourceTree = "<group>"; };
 		2766FDAC2115AC8400E713D6 /* GraphicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicView.swift; sourceTree = "<group>"; };
@@ -89,16 +101,23 @@
 		27A55C8D20E7A72B0036BFB1 /* WorkSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceView.swift; sourceTree = "<group>"; };
 		27A55C8F20E7A7360036BFB1 /* WorkSpaceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkSpaceView.xib; sourceTree = "<group>"; };
 		27A55C9120E7B6AD0036BFB1 /* WorkSpaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceTableViewCell.swift; sourceTree = "<group>"; };
+		27BA3E8E21424E64001DE3A8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		27BA3E9021424E70001DE3A8 /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
+		27BA3E9421425500001DE3A8 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		27BA3E9621425A07001DE3A8 /* Check-mate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Check-mate-Bridging-Header.h"; sourceTree = "<group>"; };
+		27BA3E9721425FDD001DE3A8 /* LoadingDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDialog.swift; sourceTree = "<group>"; };
 		27CD9CB620E7DDBF000F6CB3 /* WorkSpaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkSpaceTableViewCell.xib; sourceTree = "<group>"; };
 		27CD9CC020E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceDetailViewController.swift; sourceTree = "<group>"; };
+		27D1C47521391D6A007DEC2E /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		47C713CA9592953B4F324282 /* Pods-Check-mate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check-mate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Check-mate/Pods-Check-mate.debug.xcconfig"; sourceTree = "<group>"; };
 		54D76EF7D1B419B9D1AB895C /* Pods-Check-mate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check-mate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Check-mate/Pods-Check-mate.release.xcconfig"; sourceTree = "<group>"; };
-		76429FC620E7A7E300B16DD4 /* SetWorkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkButton.swift; sourceTree = "<group>"; };
-		76429FC620E7A7E300B16DD4 /* UserButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserButton.swift; sourceTree = "<group>"; };
+		760726942139321B00964D19 /* CountingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountingLabel.swift; sourceTree = "<group>"; };
+		76429FC620E7A7E300B16DD4 /* SideMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuButton.swift; sourceTree = "<group>"; usesTabs = 0; };
 		76429FCA20E7AD1400B16DD4 /* CircularGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularGraph.swift; sourceTree = "<group>"; };
 		76842E49211DD7BD00D66357 /* TempJobData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempJobData.swift; sourceTree = "<group>"; };
 		76B409982116F10800639082 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
-		76B4099A2116FA7E00639082 /* SideMenuViewNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewNavigationController.swift; sourceTree = "<group>"; };
+		76CFC7BE2142D07200D24B33 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		76CFC7C02142D99300D24B33 /* WorkSpaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceCell.swift; sourceTree = "<group>"; };
 		BE2F09D820E7A64F00CEA36E /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE2F09DA20E7A66400CEA36E /* CalendarVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVars.swift; sourceTree = "<group>"; };
 		BE2F09DC20E7B05800CEA36E /* CalendarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewController.swift; sourceTree = "<group>"; };
@@ -131,12 +150,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				046A1915D6A5D8AB6BF4A09A /* Pods_Check_mate.framework in Frameworks */,
+				27BA3E9521425500001DE3A8 /* KakaoOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2711E033213CFDC4003BAFED /* models */ = {
+			isa = PBXGroup;
+			children = (
+				2711E034213CFDD2003BAFED /* WorkSpace.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		275CB4BA2136567500186904 /* custom_view */ = {
+			isa = PBXGroup;
+			children = (
+				275CB4BB213656C800186904 /* PageIndicator.swift */,
+			);
+			path = custom_view;
+			sourceTree = "<group>";
+		};
 		276BAF0220E7924C0063D8B4 = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +194,7 @@
 		276BAF0D20E7924C0063D8B4 /* Check-mate */ = {
 			isa = PBXGroup;
 			children = (
+				2711E033213CFDC4003BAFED /* models */,
 				27A55C5820E794DC0036BFB1 /* views */,
 				27A55C7820E79C130036BFB1 /* utils */,
 				276BAF0E20E7924C0063D8B4 /* AppDelegate.swift */,
@@ -165,6 +202,7 @@
 				276BAF1520E7924E0063D8B4 /* Assets.xcassets */,
 				276BAF1720E7924E0063D8B4 /* LaunchScreen.storyboard */,
 				276BAF1A20E7924E0063D8B4 /* Info.plist */,
+				27BA3E9621425A07001DE3A8 /* Check-mate-Bridging-Header.h */,
 			);
 			path = "Check-mate";
 			sourceTree = "<group>";
@@ -172,6 +210,7 @@
 		27A55C5820E794DC0036BFB1 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				27BA3E8921424CFE001DE3A8 /* login */,
 				27A55C7B20E79FD00036BFB1 /* tab */,
 				27A55C5920E794E20036BFB1 /* home */,
 				27A55C5B20E794F30036BFB1 /* month */,
@@ -189,10 +228,11 @@
 				27A55C6620E7972F0036BFB1 /* HomeNavigationController.storyboard */,
 				27A55C6820E797410036BFB1 /* HomeViewController.swift */,
 				27A55C7620E79B980036BFB1 /* HomeViewController.storyboard */,
-				76429FC620E7A7E300B16DD4 /* UserButton.swift */,
+				76429FC620E7A7E300B16DD4 /* SideMenuButton.swift */,
 				76B409982116F10800639082 /* SideMenuViewController.swift */,
-				76B4099A2116FA7E00639082 /* SideMenuViewNavigationController.swift */,
+				76CFC7BE2142D07200D24B33 /* PaddingLabel.swift */,
 				76842E49211DD7BD00D66357 /* TempJobData.swift */,
+				76CFC7C02142D99300D24B33 /* WorkSpaceCell.swift */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -221,8 +261,12 @@
 		27A55C7820E79C130036BFB1 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				760726942139321B00964D19 /* CountingLabel.swift */,
 				27A55C7920E79C310036BFB1 /* Extensions+Check-mate.swift */,
 				2766FDAC2115AC8400E713D6 /* GraphicView.swift */,
+				27D1C47521391D6A007DEC2E /* Color.swift */,
+				2711E031213CFAFE003BAFED /* ServerClient.swift */,
+				27BA3E9721425FDD001DE3A8 /* LoadingDialog.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -239,6 +283,7 @@
 		27A55C8420E7A0850036BFB1 /* workspace */ = {
 			isa = PBXGroup;
 			children = (
+				275CB4BA2136567500186904 /* custom_view */,
 				27A55C8520E7A1020036BFB1 /* WorkSpaceNavigationController.swift */,
 				27A55C8720E7A10A0036BFB1 /* WorkSpaceNavigationController.storyboard */,
 				27A55C8920E7A11D0036BFB1 /* WorkSpaceViewController.swift */,
@@ -251,6 +296,15 @@
 				2766FDAA2115A47300E713D6 /* WorkSpaceAddVC.storyboard */,
 			);
 			path = workspace;
+			sourceTree = "<group>";
+		};
+		27BA3E8921424CFE001DE3A8 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				27BA3E8E21424E64001DE3A8 /* LoginViewController.swift */,
+				27BA3E9021424E70001DE3A8 /* LoginViewController.storyboard */,
+			);
+			path = login;
 			sourceTree = "<group>";
 		};
 		A9702AA55629688ACC66E5A4 /* Pods */ = {
@@ -311,6 +365,7 @@
 		FDA9D081B46B93433A3880B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27BA3E9421425500001DE3A8 /* KakaoOpenSDK.framework */,
 				259D7447581CD69D898C8CF3 /* Pods_Check_mate.framework */,
 			);
 			name = Frameworks;
@@ -327,7 +382,7 @@
 				276BAF0720E7924C0063D8B4 /* Sources */,
 				276BAF0820E7924C0063D8B4 /* Frameworks */,
 				276BAF0920E7924C0063D8B4 /* Resources */,
-				1966831AB3366A058349AD29 /* [CP] Embed Pods Frameworks */,
+				9F770AF3806FFA1CD233DE01 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -387,6 +442,7 @@
 				27A55C9020E7A7360036BFB1 /* WorkSpaceView.xib in Resources */,
 				2766FDAB2115A47300E713D6 /* WorkSpaceAddVC.storyboard in Resources */,
 				27A55C7320E797B60036BFB1 /* MonthViewController.storyboard in Resources */,
+				27BA3E9121424E70001DE3A8 /* LoginViewController.storyboard in Resources */,
 				276BAF1620E7924E0063D8B4 /* Assets.xcassets in Resources */,
 				BE5A4F672116635D0067189D /* CalendarDetailViewController.storyboard in Resources */,
 			);
@@ -395,24 +451,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1966831AB3366A058349AD29 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Check-mate/Pods-Check-mate-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Check-mate/Pods-Check-mate-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8817F0CCE28B93E04EEB47BB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -431,6 +469,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9F770AF3806FFA1CD233DE01 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Check-mate/Pods-Check-mate-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Check-mate/Pods-Check-mate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -438,12 +496,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27BA3E8F21424E64001DE3A8 /* LoginViewController.swift in Sources */,
 				BECCBFB1212EE41500B953F4 /* DetailTimeCell.swift in Sources */,
 				BECCBFBD212EE50E00B953F4 /* DayView.swift in Sources */,
-				76429FC720E7A7E300B16DD4 /* UserButton.swift in Sources */,
+				76429FC720E7A7E300B16DD4 /* SideMenuButton.swift in Sources */,
 				BECCBFB3212EE45600B953F4 /* DetailTimeHistoryCell.swift in Sources */,
 				27A55C6520E797270036BFB1 /* HomeNavigationController.swift in Sources */,
 				27A55C7D20E79FF70036BFB1 /* TabBarController.swift in Sources */,
+				275CB4BC213656C800186904 /* PageIndicator.swift in Sources */,
 				27A55C7120E797AF0036BFB1 /* MonthViewController.swift in Sources */,
 				2766FDA92115A3FB00E713D6 /* WorkSpaceAddVC.swift in Sources */,
 				BE2F09DD20E7B05800CEA36E /* CalendarDetailViewController.swift in Sources */,
@@ -454,13 +514,17 @@
 				2766FDAD2115AC8400E713D6 /* GraphicView.swift in Sources */,
 				BE2F09D920E7A64F00CEA36E /* DateCollectionViewCell.swift in Sources */,
 				BECCBFB5212EE47500B953F4 /* TodayTImeCell.swift in Sources */,
+				2711E035213CFDD2003BAFED /* WorkSpace.swift in Sources */,
 				BECCBFAA212EE30F00B953F4 /* PictureCell.swift in Sources */,
 				276BAF1120E7924C0063D8B4 /* ViewController.swift in Sources */,
 				BE5A4F63211662D20067189D /* DetailDateModel.swift in Sources */,
 				27A55C8120E7A0440036BFB1 /* CalendarNavigationController.swift in Sources */,
 				27CD9CC120E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift in Sources */,
+				760726952139321C00964D19 /* CountingLabel.swift in Sources */,
 				276BAF0F20E7924C0063D8B4 /* AppDelegate.swift in Sources */,
+				27D1C47621391D6A007DEC2E /* Color.swift in Sources */,
 				27A55C8620E7A1020036BFB1 /* WorkSpaceNavigationController.swift in Sources */,
+<<<<<<< HEAD
 <<<<<<< HEAD
 				76B4099B2116FA7E00639082 /* SideMenuViewNavigationController.swift in Sources */,
 				BECCBFAF212EE3E500B953F4 /* BenefitCell.swift in Sources */,
@@ -471,17 +535,23 @@
 				76B4099B2116FA7E00639082 /* SideMenuViewNavigationController.swift in Sources */,
 >>>>>>> bccb0a39805192181a6794568e483b617339f87d
 >>>>>>> seonjae
+=======
+				BECCBFAF212EE3E500B953F4 /* BenefitCell.swift in Sources */,
+				76CFC7BF2142D07200D24B33 /* PaddingLabel.swift in Sources */,
+>>>>>>> 0dc23a9864ce237b5fe3ea208e97134b610aa36f
 				BE2F09DB20E7A66400CEA36E /* CalendarVars.swift in Sources */,
+				27BA3E9821425FDD001DE3A8 /* LoadingDialog.swift in Sources */,
 				BECCBFB9212EE4CA00B953F4 /* TodayMoneyCell.swift in Sources */,
 				27A55C8E20E7A72B0036BFB1 /* WorkSpaceView.swift in Sources */,
-				27CD9CB320E7D4B5000F6CB3 /* WorkSpaceAddViewController.swift in Sources */,
 				BECCBFAD212EE39E00B953F4 /* EtcCell.swift in Sources */,
 				27A55C6920E797410036BFB1 /* HomeViewController.swift in Sources */,
 				76429FCB20E7AD1500B16DD4 /* CircularGraph.swift in Sources */,
 				27A55C8A20E7A11D0036BFB1 /* WorkSpaceViewController.swift in Sources */,
 				27A55C7A20E79C310036BFB1 /* Extensions+Check-mate.swift in Sources */,
 				BECCBFBB212EE4E400B953F4 /* CommonProtocols.swift in Sources */,
+				2711E032213CFAFE003BAFED /* ServerClient.swift in Sources */,
 				BE5A4F61211662C30067189D /* DateModel.swift in Sources */,
+				76CFC7C12142D99300D24B33 /* WorkSpaceCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,13 +690,26 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Check-mate/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "mash-up-kr.Check-mate";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Check-mate/Check-mate-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -639,13 +722,26 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Check-mate/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "mash-up-kr.Check-mate";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Check-mate/Check-mate-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

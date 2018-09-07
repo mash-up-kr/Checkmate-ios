@@ -12,16 +12,23 @@ class WorkSpaceViewController: UIViewController {
 
     let CELL_ID = "cell"
 
-    var workSpaces: [String] = ["파리바게트", "백다방"]
+    var workSpaces: [WorkSpace] = []
 
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView.dataSource = self
-        tableView.delegate = self
+        
         tableView.register(UINib(nibName: "WorkSpaceTableViewCell", bundle: nil), forCellReuseIdentifier: CELL_ID)
+        
+        ServerClient.getWorkSpaceList() { workSpaces in
+            DispatchQueue.main.async {
+                self.workSpaces = workSpaces
+                self.tableView.dataSource = self
+                self.tableView.delegate = self
+                self.tableView.reloadData()
+            }
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -70,6 +77,10 @@ extension WorkSpaceViewController: UITableViewDataSource {
         cell.isLastCell = indexPath.row == workSpaces.count
         cell.workSpaceView.addBtnCallback = addBtnClicked
         cell.workSpaceView.detailCallback = detailClicked
+        
+        if (!cell.isLastCell) {
+            cell.workSpaceView.setWorkSpace(workSpace: workSpaces[indexPath.row])
+        }
 
         return cell
     }
@@ -77,6 +88,7 @@ extension WorkSpaceViewController: UITableViewDataSource {
 
 extension WorkSpaceViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200 + (indexPath.row == workSpaces.count ? WorkSpaceTableViewCell.workSpaceViewBottomOrigin : 0)
+        let isLastView = indexPath.row == workSpaces.count
+        return CGFloat(isLastView ? WorkSpaceView.addBtnStatusHeight : WorkSpaceView.normalStatusHeight) + CGFloat(10.0)
     }
 }

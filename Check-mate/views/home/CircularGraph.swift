@@ -13,7 +13,7 @@ class CircularGraph: UIView {
     let trackLayer: CAShapeLayer = CAShapeLayer()
     let shapeLayer: CAShapeLayer = CAShapeLayer()
     
-    var radius: CGFloat = 170
+    var radius: CGFloat = 160
     var startAngle: CGFloat = 0
     var endAngle: CGFloat = 2 * CGFloat.pi
     

@@ -31,7 +31,6 @@ class SideMenuViewController: UIViewController {
         shadowView.addGestureRecognizer(tabShadowViewGesture)
         shadowView.isHidden = true
         
-        
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipeSideView))
         swipeRight.direction = .right
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipeSideView))
@@ -39,6 +38,10 @@ class SideMenuViewController: UIViewController {
         
         self.view.addGestureRecognizer(swipeRight)
         self.view.addGestureRecognizer(swipeLeft)
+        
+        jobNameLabel.layer.cornerRadius = 10
+        jobNameLabel.layer.masksToBounds = true
+        
     }
     
     @objc func tabShadowView(){

@@ -8,16 +8,17 @@
 
 import UIKit
 
-class UserButton: UIButton {
+class SideMenuButton: UIButton {
     func setupUI(){
         layer.cornerRadius = frame.width/2;
         layer.masksToBounds = true
+        self.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
     }
     
     init(){
-        super.init(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        super.init(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
+        self.setupUI()
     }
-    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

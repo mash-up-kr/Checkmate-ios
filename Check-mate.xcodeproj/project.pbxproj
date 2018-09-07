@@ -121,10 +121,6 @@
 		BE2F09D820E7A64F00CEA36E /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE2F09DA20E7A66400CEA36E /* CalendarVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVars.swift; sourceTree = "<group>"; };
 		BE2F09DC20E7B05800CEA36E /* CalendarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewController.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> seonjae
 		BE5A4F60211662C30067189D /* DateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateModel.swift; sourceTree = "<group>"; };
 		BE5A4F62211662D20067189D /* DetailDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDateModel.swift; sourceTree = "<group>"; };
 		BE5A4F662116635D0067189D /* CalendarDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarDetailViewController.storyboard; sourceTree = "<group>"; };
@@ -137,11 +133,6 @@
 		BECCBFB8212EE4CA00B953F4 /* TodayMoneyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMoneyCell.swift; sourceTree = "<group>"; };
 		BECCBFBA212EE4E400B953F4 /* CommonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonProtocols.swift; sourceTree = "<group>"; };
 		BECCBFBC212EE50E00B953F4 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
-=======
-=======
->>>>>>> bccb0a39805192181a6794568e483b617339f87d
->>>>>>> seonjae
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -524,21 +515,10 @@
 				276BAF0F20E7924C0063D8B4 /* AppDelegate.swift in Sources */,
 				27D1C47621391D6A007DEC2E /* Color.swift in Sources */,
 				27A55C8620E7A1020036BFB1 /* WorkSpaceNavigationController.swift in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
 				76B4099B2116FA7E00639082 /* SideMenuViewNavigationController.swift in Sources */,
 				BECCBFAF212EE3E500B953F4 /* BenefitCell.swift in Sources */,
-=======
-<<<<<<< HEAD
-				BECCBFAF212EE3E500B953F4 /* BenefitCell.swift in Sources */,
-=======
 				76B4099B2116FA7E00639082 /* SideMenuViewNavigationController.swift in Sources */,
->>>>>>> bccb0a39805192181a6794568e483b617339f87d
->>>>>>> seonjae
-=======
-				BECCBFAF212EE3E500B953F4 /* BenefitCell.swift in Sources */,
 				76CFC7BF2142D07200D24B33 /* PaddingLabel.swift in Sources */,
->>>>>>> 0dc23a9864ce237b5fe3ea208e97134b610aa36f
 				BE2F09DB20E7A66400CEA36E /* CalendarVars.swift in Sources */,
 				27BA3E9821425FDD001DE3A8 /* LoadingDialog.swift in Sources */,
 				BECCBFB9212EE4CA00B953F4 /* TodayMoneyCell.swift in Sources */,

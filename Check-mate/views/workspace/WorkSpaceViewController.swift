@@ -12,9 +12,11 @@ class WorkSpaceViewController: UIViewController {
 
     let CELL_ID = "cell"
 
-    var workSpaces: [WorkSpace] = []
-
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var deleteBtn: UIButton!
+    var views = [WorkSpaceView]()
+    var workSpaces: [WorkSpace] = []
+    var isDeleteMode = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,27 +46,30 @@ class WorkSpaceViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    func addBtnClicked() {
+    
+    @IBAction func deleteBtnClicked() {
+        deleteBtn.isSelected = !deleteBtn.isSelected
+        isDeleteMode = deleteBtn.isSelected
+        views.forEach { $0.modeToDelete(on: self.isDeleteMode) }
+    }
+    
+    func cellAddBtnClicked() {
         let vc = UIStoryboard.instantiate(WorkSpaceAddVC.self)
         self.present(vc, animated: true)
     }
 
-    func detailClicked() {
+    func cellDetailClicked() {
         let vc = UIStoryboard.instantiate(WorkSpaceDetailViewController.self, storyboardName: "WorkSpaceNavigationController")
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func cellDeleteClicked(workSpace: WorkSpace) {
+        ServerClient.deleteWorkSpace(workSpaceId: workSpace.id) { success in
+            DispatchQueue.main.async {
+                self.refresh()
+            }
+        }
     }
-    */
-
 }
 
 extension WorkSpaceViewController: UITableViewDataSource {
@@ -79,11 +84,17 @@ extension WorkSpaceViewController: UITableViewDataSource {
         }
         
         cell.isLastCell = indexPath.row == workSpaces.count
-        cell.workSpaceView.addBtnCallback = addBtnClicked
-        cell.workSpaceView.detailCallback = detailClicked
+        cell.workSpaceView.addBtnCallback = cellAddBtnClicked
+        cell.workSpaceView.detailCallback = cellDetailClicked
+        cell.workSpaceView.deleteCallback = cellDeleteClicked
+        cell.workSpaceView.modeToDelete(on: isDeleteMode)
         
         if (!cell.isLastCell) {
             cell.workSpaceView.setWorkSpace(workSpace: workSpaces[indexPath.row])
+        }
+        
+        if (!views.contains(cell.workSpaceView)) {
+            views.append(cell.workSpaceView)
         }
 
         return cell

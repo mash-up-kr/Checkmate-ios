@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WorkSpaceView" customModule="Check_mate" customModuleProvider="target">
             <connections>
                 <outlet property="addBtn" destination="glS-IT-la0" id="O7C-Dd-3Dy"/>
+                <outlet property="deleteLayout" destination="nF1-Ao-GcJ" id="8rT-bN-rI4"/>
                 <outlet property="locationLabel" destination="yGf-7e-sFq" id="1Ot-Ki-xSU"/>
                 <outlet property="nameLabel" destination="KjU-WQ-WqC" id="L7e-zi-Ec5"/>
                 <outlet property="payLabel" destination="pcD-jm-qP6" id="YDM-tT-oyc"/>
@@ -125,16 +126,38 @@
                                 <constraint firstItem="xl6-Pe-y92" firstAttribute="centerY" secondItem="glS-IT-la0" secondAttribute="centerY" id="tHg-XB-7QS"/>
                             </constraints>
                         </view>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nF1-Ao-GcJ">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="190"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsA-M9-Y7c">
+                                    <rect key="frame" x="212" y="149" width="74" height="32"/>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
+                                    <state key="normal" title="지우기" image="delete"/>
+                                    <connections>
+                                        <action selector="deleteBtnClicked" destination="-1" eventType="touchUpInside" id="h4F-e8-DIz"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="deviceRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="nsA-M9-Y7c" secondAttribute="trailing" constant="14" id="3zD-av-9RZ"/>
+                                <constraint firstAttribute="bottom" secondItem="nsA-M9-Y7c" secondAttribute="bottom" constant="9" id="R0Z-CY-w9f"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="QBk-t4-m5q" firstAttribute="top" secondItem="Pd6-VT-2jf" secondAttribute="top" id="0Ab-st-3ip"/>
+                        <constraint firstAttribute="bottom" secondItem="nF1-Ao-GcJ" secondAttribute="bottom" id="3jr-nM-3FJ"/>
+                        <constraint firstAttribute="trailing" secondItem="nF1-Ao-GcJ" secondAttribute="trailing" id="5fc-wz-P7k"/>
                         <constraint firstAttribute="trailing" secondItem="nUm-O7-4Bb" secondAttribute="trailing" id="9W5-7e-66q"/>
                         <constraint firstItem="glS-IT-la0" firstAttribute="leading" secondItem="Pd6-VT-2jf" secondAttribute="leading" id="9zP-LE-s06"/>
+                        <constraint firstItem="nF1-Ao-GcJ" firstAttribute="top" secondItem="Pd6-VT-2jf" secondAttribute="top" id="B1Y-Im-fnU"/>
                         <constraint firstItem="glS-IT-la0" firstAttribute="top" secondItem="Pd6-VT-2jf" secondAttribute="top" id="Dwm-x8-a27"/>
                         <constraint firstAttribute="trailing" secondItem="QBk-t4-m5q" secondAttribute="trailing" id="Gn6-ob-wZh"/>
                         <constraint firstAttribute="trailing" secondItem="glS-IT-la0" secondAttribute="trailing" id="Yvt-CD-xFf"/>
                         <constraint firstItem="QBk-t4-m5q" firstAttribute="leading" secondItem="Pd6-VT-2jf" secondAttribute="leading" id="aCn-PF-ZdS"/>
+                        <constraint firstItem="nF1-Ao-GcJ" firstAttribute="leading" secondItem="Pd6-VT-2jf" secondAttribute="leading" id="hWP-ao-wSL"/>
                         <constraint firstAttribute="bottom" secondItem="nUm-O7-4Bb" secondAttribute="bottom" id="uhm-ue-1Mr"/>
                         <constraint firstItem="nUm-O7-4Bb" firstAttribute="top" secondItem="QBk-t4-m5q" secondAttribute="bottom" id="va8-UT-tuT"/>
                         <constraint firstItem="nUm-O7-4Bb" firstAttribute="leading" secondItem="Pd6-VT-2jf" secondAttribute="leading" id="vqQ-h9-ER2"/>
@@ -155,5 +178,6 @@
     </objects>
     <resources>
         <image name="addBtn" width="42" height="42"/>
+        <image name="delete" width="32" height="32"/>
     </resources>
 </document>

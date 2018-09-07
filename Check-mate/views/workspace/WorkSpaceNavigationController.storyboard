@@ -49,6 +49,10 @@
                                     <constraint firstAttribute="width" constant="32" id="s4f-mx-hh4"/>
                                 </constraints>
                                 <state key="normal" image="trashOff"/>
+                                <state key="selected" image="trashOn"/>
+                                <connections>
+                                    <action selector="deleteBtnClicked" destination="LoR-ZH-kjU" eventType="touchUpInside" id="e32-ES-Z7s"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -64,6 +68,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="WorkSpaceList" id="ghs-St-90L"/>
                     <connections>
+                        <outlet property="deleteBtn" destination="hp8-Wn-eT3" id="75Z-Sc-WpC"/>
                         <outlet property="tableView" destination="Y6e-AV-MS2" id="d4q-hV-TLF"/>
                         <segue destination="va0-GN-i6J" kind="show" id="SIT-pL-zTe"/>
                     </connections>
@@ -92,5 +97,6 @@
         <image name="addOff" width="32" height="32"/>
         <image name="addOn" width="32" height="32"/>
         <image name="trashOff" width="32" height="32"/>
+        <image name="trashOn" width="32" height="32"/>
     </resources>
 </document>

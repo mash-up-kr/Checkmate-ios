@@ -91,4 +91,14 @@ class ServerClient {
             callback?(code == 200)
         }
     }
+    
+    static func deleteWorkSpace(workSpaceId: String,
+                                callback: ((Bool) -> Void)? = nil) {
+        let path = "/user/\(userId)/work/\(workSpaceId)"
+        let parameters: Parameters = [:]
+        
+        request(url: HOST+path, method: .delete, parameters: parameters) { (json, code) in
+            callback?(code == 200)
+        }
+    }
 }

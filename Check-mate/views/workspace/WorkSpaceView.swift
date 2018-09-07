@@ -16,6 +16,7 @@ class WorkSpaceView: UIView {
     @IBOutlet weak var view1: UIView!
     @IBOutlet weak var view2: UIView!
     @IBOutlet weak var addBtn: UIView!
+    @IBOutlet weak var deleteLayout: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var payLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
@@ -24,6 +25,7 @@ class WorkSpaceView: UIView {
 
     var addBtnCallback: (() -> Void)?
     var detailCallback: (() -> Void)?
+    var deleteCallback: ((WorkSpace) -> Void)?
 
     private var mIsLastCardView = false
     var isLastCardView: Bool {
@@ -69,6 +71,14 @@ class WorkSpaceView: UIView {
         locationLabel.text = workSpace.address
         probationLabel.text = "\(workSpace.probation) 개월"
     }
+    
+    func modeToDelete(on: Bool) {
+        if !isLastCardView {
+            deleteLayout.isHidden = !on
+        } else {
+            deleteLayout.isHidden = true
+        }
+    }
 
     @IBAction func addBtnClicked() {
         addBtnCallback?()
@@ -78,5 +88,10 @@ class WorkSpaceView: UIView {
         if !isLastCardView {
             detailCallback?()
         }
+    }
+    
+    @IBAction func deleteBtnClicked() {
+        guard let ws = workSpace else { return }
+        deleteCallback?(ws)
     }
 }

@@ -177,28 +177,17 @@ extension CalendarViewController: UICollectionViewDataSource {
         case .CURRENT:
             currentDay = indexPath.row + 1 - NumberOfEmptyBox
             cell.DateLabel.text = "\(currentDay)"
-//            if indexPath.row / 7 == (DaysInMonths[month] + NumberOfEmptyBox) / 7 {
-//                cell.ToggleBottomLine()
-//            }
         case .NEXT:
             currentDay = indexPath.row + 1 - NextNumberOfEmptyBox
             cell.DateLabel.text = "\(currentDay)"
-//            if indexPath.row / 7 == (DaysInMonths[month] + NextNumberOfEmptyBox) / 7 {
-//                cell.ToggleBottomLine()
-//            }
         case .BACK:
             currentDay = indexPath.row + 1 - PreviousNumberOfEmptyBox
             cell.DateLabel.text = "\(currentDay)"
-//            if indexPath.row / 7 == (DaysInMonths[month] + PreviousNumberOfEmptyBox) / 7 {
-//                cell.ToggleBottomLine()
-//            }
         }
         
         if Int(cell.DateLabel.text!)! < 1 {
             cell.cellHide()
         }
-        
-        // [TODO] 서버 데이터 동기화해서 하이라이트 기능 추가해야 함
         
         // MOCK 모델 데이터
         for (day, value) in model.salaryData {

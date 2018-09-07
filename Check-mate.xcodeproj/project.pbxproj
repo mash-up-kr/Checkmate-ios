@@ -50,7 +50,6 @@
 		BECCBFB1212EE41500B953F4 /* DetailTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFB0212EE41500B953F4 /* DetailTimeCell.swift */; };
 		BECCBFB3212EE45600B953F4 /* DetailTimeHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFB2212EE45600B953F4 /* DetailTimeHistoryCell.swift */; };
 		BECCBFB5212EE47500B953F4 /* TodayTImeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFB4212EE47500B953F4 /* TodayTImeCell.swift */; };
-		BECCBFB7212EE49900B953F4 /* DetailMoneyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFB6212EE49900B953F4 /* DetailMoneyCell.swift */; };
 		BECCBFB9212EE4CA00B953F4 /* TodayMoneyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFB8212EE4CA00B953F4 /* TodayMoneyCell.swift */; };
 		BECCBFBB212EE4E400B953F4 /* CommonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFBA212EE4E400B953F4 /* CommonProtocols.swift */; };
 		BECCBFBD212EE50E00B953F4 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFBC212EE50E00B953F4 /* DayView.swift */; };
@@ -104,7 +103,6 @@
 		BECCBFB0212EE41500B953F4 /* DetailTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTimeCell.swift; sourceTree = "<group>"; };
 		BECCBFB2212EE45600B953F4 /* DetailTimeHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTimeHistoryCell.swift; sourceTree = "<group>"; };
 		BECCBFB4212EE47500B953F4 /* TodayTImeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTImeCell.swift; sourceTree = "<group>"; };
-		BECCBFB6212EE49900B953F4 /* DetailMoneyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMoneyCell.swift; sourceTree = "<group>"; };
 		BECCBFB8212EE4CA00B953F4 /* TodayMoneyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMoneyCell.swift; sourceTree = "<group>"; };
 		BECCBFBA212EE4E400B953F4 /* CommonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonProtocols.swift; sourceTree = "<group>"; };
 		BECCBFBC212EE50E00B953F4 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
@@ -284,7 +282,6 @@
 				BECCBFB0212EE41500B953F4 /* DetailTimeCell.swift */,
 				BECCBFB2212EE45600B953F4 /* DetailTimeHistoryCell.swift */,
 				BECCBFB4212EE47500B953F4 /* TodayTImeCell.swift */,
-				BECCBFB6212EE49900B953F4 /* DetailMoneyCell.swift */,
 				BECCBFB8212EE4CA00B953F4 /* TodayMoneyCell.swift */,
 				BECCBFBA212EE4E400B953F4 /* CommonProtocols.swift */,
 			);
@@ -416,7 +413,6 @@
 				BECCBFB5212EE47500B953F4 /* TodayTImeCell.swift in Sources */,
 				BECCBFAA212EE30F00B953F4 /* PictureCell.swift in Sources */,
 				276BAF1120E7924C0063D8B4 /* ViewController.swift in Sources */,
-				BECCBFB7212EE49900B953F4 /* DetailMoneyCell.swift in Sources */,
 				BE5A4F63211662D20067189D /* DetailDateModel.swift in Sources */,
 				27A55C8120E7A0440036BFB1 /* CalendarNavigationController.swift in Sources */,
 				27CD9CC120E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift in Sources */,

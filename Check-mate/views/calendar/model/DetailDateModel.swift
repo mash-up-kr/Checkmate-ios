@@ -13,15 +13,18 @@ enum ExtraPayType {
     case night
     case holiday
     case overtime
+    case week
     
     func description() -> String {
         switch self {
         case .night:
-            return "야간수당"
+            return "야간 수당"
         case .holiday:
-            return "주휴수당"
+            return "휴일 수당"
         case .overtime:
-            return "초과근무수당"
+            return "연장 수당"
+        case .week:
+            return "주휴 수당"
         }
     }
 }
@@ -108,8 +111,9 @@ class DetailDateModel {
         
         setTimes(times: times)
         
-        pushExtraPay(type: .night, value: 30000)
+        pushExtraPay(type: .night, value: 0)
         pushExtraPay(type: .holiday, value: 0)
+        pushExtraPay(type: .week, value: 0)
         pushExtraPay(type: .overtime, value: 0)
         
         if let dummyIcon = UIImage(named: "dummyIcon") {

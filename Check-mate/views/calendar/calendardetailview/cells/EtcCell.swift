@@ -4,9 +4,16 @@ class EtcCell: UITableViewCell {
     
     @IBOutlet weak var extraCollectionView: UICollectionView!
     
+    @IBOutlet weak var innerView: UIView!
+    
     var extras: [ExtraPay] = []
     
     override func awakeFromNib() {
+        innerView.layer.shadowColor = UIColor.black.cgColor
+        innerView.layer.shadowOpacity = 0.4
+        innerView.layer.shadowOffset = CGSize.zero
+        innerView.layer.shadowRadius = 1
+        
         extraCollectionView.delegate = self
         extraCollectionView.dataSource = self
         extraCollectionView.allowsSelection = false
@@ -33,18 +40,35 @@ extension EtcCell: UICollectionViewDataSource {
         return extras.count
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (self.bounds.width - 44) / 4.0, height: 103)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = extraCollectionView.dequeueReusableCell(withReuseIdentifier: "benefitCell", for: indexPath) as? BenefitCell else {
             return UICollectionViewCell()
         }
         
+        let extra = extras[indexPath.row]
+        
+        let description = extra.type.description()
+        let price = extra.value
+        
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         
-        cell.lblExtra.text = extras[indexPath.row].type.description()
+        switch extra.type {
+        case .holiday:
+            cell.extraImage.image = UIImage(named: "holidayPay")
+        case .night:
+            cell.extraImage.image = UIImage(named: "nightPay")
+        case .week:
+            cell.extraImage.image = UIImage(named: "weekPay")
+        case .overtime:
+            cell.extraImage.image = UIImage(named: "overtimePay")
+        }
         
-        let price = extras[indexPath.row].value
-        
+        cell.lblExtra.text = description
         if let strExtraMoney = numberFormatter.string(from: NSNumber(value: price)) {
             cell.lblPay.text = strExtraMoney
         }
@@ -58,6 +82,7 @@ extension EtcCell: UICollectionViewDataSource {
         else {
             cell.showSeparator()
         }
+        
         
         return cell
     }

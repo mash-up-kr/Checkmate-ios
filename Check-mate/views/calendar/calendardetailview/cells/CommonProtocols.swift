@@ -13,17 +13,5 @@ protocol PictureCellDelegate: class {
 }
 
 protocol TodayTimeCellDelegate: class {
-    func openPressed(_ cell: TodayTimeCell)
-}
-
-protocol DetailTimeCellDelegate: class {
-    func closedPressed(_ cell: DetailTimeCell)
-}
-
-protocol DetailMoneyCellDelegate: class {
-    func closedPressed(_ cell: DetailMoneyCell)
-}
-
-protocol TodayMoneyCellDelegate: class {
-    func openPressed(_ cell: TodayMoneyCell)
+    func buttonPressed(_ cell: TodayTimeCell)
 }

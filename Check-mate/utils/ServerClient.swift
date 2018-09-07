@@ -22,8 +22,7 @@ class ServerClient {
         Alamofire.request(url, method: method, parameters: parameters).response { response in
             let json = JSON(response.data!)
             let code = response.response!.statusCode
-            print(json)
-            print(code)
+            print("[HTTP] \(url) \(method) \(parameters) \(code) \(json)")
             callback?(json, code)
         }
     }

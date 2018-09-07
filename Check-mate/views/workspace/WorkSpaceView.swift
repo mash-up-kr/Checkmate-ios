@@ -65,7 +65,7 @@ class WorkSpaceView: UIView {
     func setWorkSpace(workSpace: WorkSpace) {
         self.workSpace = workSpace
         nameLabel.text = workSpace.name
-        payLabel.text = String(workSpace.wage)
+        payLabel.text = workSpace.wage.formattedWithSeparator
         locationLabel.text = workSpace.address
         probationLabel.text = "\(workSpace.probation) 개월"
     }

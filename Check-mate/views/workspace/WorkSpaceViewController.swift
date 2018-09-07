@@ -19,13 +19,17 @@ class WorkSpaceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UINib(nibName: "WorkSpaceTableViewCell", bundle: nil), forCellReuseIdentifier: CELL_ID)
+        self.tableView.register(UINib(nibName: "WorkSpaceTableViewCell", bundle: nil), forCellReuseIdentifier: CELL_ID)
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
         
+        refresh()
+    }
+    
+    func refresh() {
         ServerClient.getWorkSpaceList() { workSpaces in
             DispatchQueue.main.async {
                 self.workSpaces = workSpaces
-                self.tableView.dataSource = self
-                self.tableView.delegate = self
                 self.tableView.reloadData()
             }
         }

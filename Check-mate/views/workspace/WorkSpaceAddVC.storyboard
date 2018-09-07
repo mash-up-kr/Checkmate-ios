@@ -1263,6 +1263,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cvY-9e-uS8"/>
                     </view>
+                    <connections>
+                        <outlet property="btn1" destination="hZl-Kw-S8s" id="4N6-3d-tke"/>
+                        <outlet property="btn2" destination="PcW-Fz-GVR" id="CeX-Pf-Qdd"/>
+                        <outlet property="btn3" destination="uro-6j-Zqn" id="JWb-PK-ju7"/>
+                        <outlet property="btn4" destination="aZe-EQ-uTe" id="bTG-Jv-fx6"/>
+                        <outlet property="btn5" destination="qen-na-kJf" id="gA9-RL-TLV"/>
+                        <outlet property="btn6" destination="eP0-Jj-tEG" id="RqF-C3-fMs"/>
+                        <outlet property="btn7" destination="spt-cZ-Hke" id="wuU-o2-K1l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pn6-80-KXF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

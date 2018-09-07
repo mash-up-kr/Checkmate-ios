@@ -91,3 +91,20 @@ extension UIViewController {
         self.present(alert, animated: true)
     }
 }
+
+// From https://stackoverflow.com/a/29999137
+extension Formatter {
+    static let withSeparator: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.groupingSeparator = ","
+        formatter.numberStyle = .decimal
+        return formatter
+    }()
+}
+
+// From https://stackoverflow.com/a/29999137
+extension BinaryInteger {
+    var formattedWithSeparator: String {
+        return Formatter.withSeparator.string(for: self) ?? ""
+    }
+}

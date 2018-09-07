@@ -24,6 +24,7 @@ class WorkSpaceAddVC: UIViewController {
     var paydayIVC: WorkSpaceAddPaydayIVC!
     var taxIVC: WorkSpaceAddTAXIVC!
     var scaleIVC: WorkSpaceAddScaleIVC!
+    var weekIVC: WorkSpaceAddWeekIVC!
     
     var totalIndex: Int = 0
     var nowIndex: Int = 0
@@ -77,9 +78,7 @@ class WorkSpaceAddVC: UIViewController {
             nowIndex += 1
             pageIndicator.next()
             changePage()
-        }
-        
-        if nowIndex + 1 == totalIndex {
+        } else if nowIndex + 1 == totalIndex {
             finish()
         }
     }
@@ -135,8 +134,32 @@ class WorkSpaceAddVC: UIViewController {
         let address = "address"
         let latitude = 12.345
         let longitude = 23.456
-        let hourlyWage = Int(salaryIVC.textField.text ?? "0")
-        let probation = Int(probationIVC.textField.text ?? "0")
+        let hourlyWage = Int(salaryIVC.textField.text ?? "0") ?? 0
+        let probation = Int(probationIVC.textField.text ?? "0") ?? 0
+        let recess = Int(restIVC.textField.text ?? "0") ?? 0
+        let recessState = (restIVC.isYuSelected ?? false) ? 1 : 0
+        let payDay = Int(paydayIVC.textField.text ?? "1") ?? 1
+        let tax = taxIVC.tax
+        let fiveState = scaleIVC.isBiggerThan5 ? 1 : 0
+        let workingDay = weekIVC.workingDay
+        
+        ServerClient.addWorkSpace(name: name,
+                                  address: address,
+                                  latitude: latitude,
+                                  longitude: longitude,
+                                  hourlyWage: hourlyWage,
+                                  probation: probation,
+                                  recess: recess,
+                                  recessState: recessState,
+                                  payDay: payDay,
+                                  tax: tax,
+                                  fiveState: fiveState,
+                                  workingDay: workingDay) { success in
+            if (success) {
+                (self.presentingViewController as? WorkSpaceViewController)?.refresh()
+                self.dismiss(animated: true)
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -157,6 +180,8 @@ class WorkSpaceAddVC: UIViewController {
             taxIVC = vc as! WorkSpaceAddTAXIVC
         case is WorkSpaceAddScaleIVC:
             scaleIVC = vc as! WorkSpaceAddScaleIVC
+        case is WorkSpaceAddWeekIVC:
+            weekIVC = vc as! WorkSpaceAddWeekIVC
         default:
             return
         }
@@ -284,9 +309,10 @@ class WorkSpaceAddPaydayIVC: UIViewController {
 
 class WorkSpaceAddTAXIVC: UIViewController {
     @IBOutlet weak var btn: UIButton!
-    let TAX1 = "3.3%"
-    let TAX2 = "7.8% (4대보험 가입시)"
+    private let TAX1 = "3.3%"
+    private let TAX2 = "7.8% (4대보험 가입시)"
     var btnClickCallback: ((String) -> Void)?
+    var tax = 3.3
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -299,15 +325,17 @@ class WorkSpaceAddTAXIVC: UIViewController {
             guard let selected = item else { return }
             self.btn.setTitle(selected, for: .normal)
             self.btnClickCallback?(selected)
+            self.tax = (selected == self.TAX1) ? 3.3 : 7.8
         }
     }
 }
 
 class WorkSpaceAddScaleIVC: UIViewController {
     @IBOutlet weak var btn: UIButton!
-    let OPTION1 = "5인 이상 사업장"
-    let OPTION2 = "5인 미만 사업장"
+    private let OPTION1 = "5인 이상 사업장"
+    private let OPTION2 = "5인 미만 사업장"
     var btnClickCallback: ((String) -> Void)?
+    var isBiggerThan5 = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -320,18 +348,25 @@ class WorkSpaceAddScaleIVC: UIViewController {
             guard let selected = item else { return }
             self.btn.setTitle(selected, for: .normal)
             self.btnClickCallback?(selected)
+            self.isBiggerThan5 = selected == self.OPTION1
         }
     }
 }
 
 class WorkSpaceAddWeekIVC: UIViewController {
-    @IBOutlet weak var btn1: UIButton!
-    @IBOutlet weak var btn2: UIButton!
-    @IBOutlet weak var btn3: UIButton!
-    @IBOutlet weak var btn4: UIButton!
-    @IBOutlet weak var btn5: UIButton!
-    @IBOutlet weak var btn6: UIButton!
-    @IBOutlet weak var btn7: UIButton!
-    
+    @IBOutlet weak var btn1: OnOffButton!
+    @IBOutlet weak var btn2: OnOffButton!
+    @IBOutlet weak var btn3: OnOffButton!
+    @IBOutlet weak var btn4: OnOffButton!
+    @IBOutlet weak var btn5: OnOffButton!
+    @IBOutlet weak var btn6: OnOffButton!
+    @IBOutlet weak var btn7: OnOffButton!
+    var workingDay: String {
+        get {
+            return [btn1, btn2, btn3, btn4, btn5, btn6, btn7]
+                .map { $0!.isOn ? 1 : 0 }
+                .reduce("") { $0 + "\($1)" }
+        }
+    }
     
 }

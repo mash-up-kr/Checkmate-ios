@@ -53,10 +53,12 @@
 		27D1C47621391D6A007DEC2E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1C47521391D6A007DEC2E /* Color.swift */; };
 		27EEEA592142D00D00535363 /* strip-frameworks.sh in Resources */ = {isa = PBXBuildFile; fileRef = 27EEEA582142D00D00535363 /* strip-frameworks.sh */; };
 		760726952139321C00964D19 /* CountingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760726942139321B00964D19 /* CountingLabel.swift */; };
-		76429FC720E7A7E300B16DD4 /* UserButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76429FC620E7A7E300B16DD4 /* UserButton.swift */; };
+		76429FC720E7A7E300B16DD4 /* SideMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76429FC620E7A7E300B16DD4 /* SideMenuButton.swift */; };
 		76429FCB20E7AD1500B16DD4 /* CircularGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76429FCA20E7AD1400B16DD4 /* CircularGraph.swift */; };
 		76842E4A211DD7BD00D66357 /* TempJobData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76842E49211DD7BD00D66357 /* TempJobData.swift */; };
 		76B409992116F10800639082 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B409982116F10800639082 /* SideMenuViewController.swift */; };
+		76CFC7BF2142D07200D24B33 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CFC7BE2142D07200D24B33 /* PaddingLabel.swift */; };
+		76CFC7C12142D99300D24B33 /* WorkSpaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CFC7C02142D99300D24B33 /* WorkSpaceCell.swift */; };
 		BE2F09D920E7A64F00CEA36E /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F09D820E7A64F00CEA36E /* DateCollectionViewCell.swift */; };
 		BE2F09DB20E7A66400CEA36E /* CalendarVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F09DA20E7A66400CEA36E /* CalendarVars.swift */; };
 		BE2F09DD20E7B05800CEA36E /* CalendarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F09DC20E7B05800CEA36E /* CalendarDetailViewController.swift */; };
@@ -69,7 +71,6 @@
 		BECCBFB1212EE41500B953F4 /* DetailTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFB0212EE41500B953F4 /* DetailTimeCell.swift */; };
 		BECCBFB3212EE45600B953F4 /* DetailTimeHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFB2212EE45600B953F4 /* DetailTimeHistoryCell.swift */; };
 		BECCBFB5212EE47500B953F4 /* TodayTImeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFB4212EE47500B953F4 /* TodayTImeCell.swift */; };
-		BECCBFB7212EE49900B953F4 /* DetailMoneyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFB6212EE49900B953F4 /* DetailMoneyCell.swift */; };
 		BECCBFB9212EE4CA00B953F4 /* TodayMoneyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFB8212EE4CA00B953F4 /* TodayMoneyCell.swift */; };
 		BECCBFBB212EE4E400B953F4 /* CommonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFBA212EE4E400B953F4 /* CommonProtocols.swift */; };
 		BECCBFBD212EE50E00B953F4 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFBC212EE50E00B953F4 /* DayView.swift */; };
@@ -140,10 +141,12 @@
 		47C713CA9592953B4F324282 /* Pods-Check-mate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check-mate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Check-mate/Pods-Check-mate.debug.xcconfig"; sourceTree = "<group>"; };
 		54D76EF7D1B419B9D1AB895C /* Pods-Check-mate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check-mate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Check-mate/Pods-Check-mate.release.xcconfig"; sourceTree = "<group>"; };
 		760726942139321B00964D19 /* CountingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountingLabel.swift; sourceTree = "<group>"; };
-		76429FC620E7A7E300B16DD4 /* UserButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserButton.swift; sourceTree = "<group>"; };
+		76429FC620E7A7E300B16DD4 /* SideMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuButton.swift; sourceTree = "<group>"; usesTabs = 0; };
 		76429FCA20E7AD1400B16DD4 /* CircularGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularGraph.swift; sourceTree = "<group>"; };
 		76842E49211DD7BD00D66357 /* TempJobData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempJobData.swift; sourceTree = "<group>"; };
 		76B409982116F10800639082 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		76CFC7BE2142D07200D24B33 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		76CFC7C02142D99300D24B33 /* WorkSpaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceCell.swift; sourceTree = "<group>"; };
 		BE2F09D820E7A64F00CEA36E /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE2F09DA20E7A66400CEA36E /* CalendarVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVars.swift; sourceTree = "<group>"; };
 		BE2F09DC20E7B05800CEA36E /* CalendarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewController.swift; sourceTree = "<group>"; };
@@ -156,7 +159,6 @@
 		BECCBFB0212EE41500B953F4 /* DetailTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTimeCell.swift; sourceTree = "<group>"; };
 		BECCBFB2212EE45600B953F4 /* DetailTimeHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTimeHistoryCell.swift; sourceTree = "<group>"; };
 		BECCBFB4212EE47500B953F4 /* TodayTImeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTImeCell.swift; sourceTree = "<group>"; };
-		BECCBFB6212EE49900B953F4 /* DetailMoneyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMoneyCell.swift; sourceTree = "<group>"; };
 		BECCBFB8212EE4CA00B953F4 /* TodayMoneyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMoneyCell.swift; sourceTree = "<group>"; };
 		BECCBFBA212EE4E400B953F4 /* CommonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonProtocols.swift; sourceTree = "<group>"; };
 		BECCBFBC212EE50E00B953F4 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
@@ -249,9 +251,11 @@
 				27A55C6620E7972F0036BFB1 /* HomeNavigationController.storyboard */,
 				27A55C6820E797410036BFB1 /* HomeViewController.swift */,
 				27A55C7620E79B980036BFB1 /* HomeViewController.storyboard */,
-				76429FC620E7A7E300B16DD4 /* UserButton.swift */,
+				76429FC620E7A7E300B16DD4 /* SideMenuButton.swift */,
 				76B409982116F10800639082 /* SideMenuViewController.swift */,
+				76CFC7BE2142D07200D24B33 /* PaddingLabel.swift */,
 				76842E49211DD7BD00D66357 /* TempJobData.swift */,
+				76CFC7C02142D99300D24B33 /* WorkSpaceCell.swift */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -387,7 +391,6 @@
 				BECCBFB0212EE41500B953F4 /* DetailTimeCell.swift */,
 				BECCBFB2212EE45600B953F4 /* DetailTimeHistoryCell.swift */,
 				BECCBFB4212EE47500B953F4 /* TodayTImeCell.swift */,
-				BECCBFB6212EE49900B953F4 /* DetailMoneyCell.swift */,
 				BECCBFB8212EE4CA00B953F4 /* TodayMoneyCell.swift */,
 				BECCBFBA212EE4E400B953F4 /* CommonProtocols.swift */,
 			);
@@ -551,8 +554,8 @@
 				27BA3E8F21424E64001DE3A8 /* LoginViewController.swift in Sources */,
 				BECCBFB1212EE41500B953F4 /* DetailTimeCell.swift in Sources */,
 				BECCBFBD212EE50E00B953F4 /* DayView.swift in Sources */,
-				76429FC720E7A7E300B16DD4 /* UserButton.swift in Sources */,
 				27BA3EA82142CF16001DE3A8 /* NMapViewResources.swift in Sources */,
+				76429FC720E7A7E300B16DD4 /* SideMenuButton.swift in Sources */,
 				BECCBFB3212EE45600B953F4 /* DetailTimeHistoryCell.swift in Sources */,
 				27A55C6520E797270036BFB1 /* HomeNavigationController.swift in Sources */,
 				27A55C7D20E79FF70036BFB1 /* TabBarController.swift in Sources */,
@@ -571,7 +574,6 @@
 				2711E035213CFDD2003BAFED /* WorkSpace.swift in Sources */,
 				BECCBFAA212EE30F00B953F4 /* PictureCell.swift in Sources */,
 				276BAF1120E7924C0063D8B4 /* ViewController.swift in Sources */,
-				BECCBFB7212EE49900B953F4 /* DetailMoneyCell.swift in Sources */,
 				BE5A4F63211662D20067189D /* DetailDateModel.swift in Sources */,
 				27A55C8120E7A0440036BFB1 /* CalendarNavigationController.swift in Sources */,
 				27CD9CC120E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift in Sources */,
@@ -579,7 +581,9 @@
 				276BAF0F20E7924C0063D8B4 /* AppDelegate.swift in Sources */,
 				27D1C47621391D6A007DEC2E /* Color.swift in Sources */,
 				27A55C8620E7A1020036BFB1 /* WorkSpaceNavigationController.swift in Sources */,
+				76B4099B2116FA7E00639082 /* SideMenuViewNavigationController.swift in Sources */,
 				BECCBFAF212EE3E500B953F4 /* BenefitCell.swift in Sources */,
+				76CFC7BF2142D07200D24B33 /* PaddingLabel.swift in Sources */,
 				BE2F09DB20E7A66400CEA36E /* CalendarVars.swift in Sources */,
 				27BA3E9821425FDD001DE3A8 /* LoadingDialog.swift in Sources */,
 				BECCBFB9212EE4CA00B953F4 /* TodayMoneyCell.swift in Sources */,
@@ -592,6 +596,7 @@
 				BECCBFBB212EE4E400B953F4 /* CommonProtocols.swift in Sources */,
 				2711E032213CFAFE003BAFED /* ServerClient.swift in Sources */,
 				BE5A4F61211662C30067189D /* DateModel.swift in Sources */,
+				76CFC7C12142D99300D24B33 /* WorkSpaceCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,23 +12,35 @@ class HomeViewController: UIViewController {
     let circularGraph = CircularGraph()
     var workState: WorkState = .noWorking
     
-    var today = 28
+    @IBOutlet weak var jobLabel: UILabel!
+    var today = 23
     var lastday = 31
+    var pay: Int = 691200
+    var job: String = "Mash up"
+    var workTime: Int = 72
+    var payPerTime: Int = 8000
     
     enum WorkState {
         case working
         case noWorking
     }
     
+    @IBOutlet weak var todayLabel: UILabel!
     
     @IBOutlet weak var workStateButton: UIButton!
     @IBOutlet var payLabel: CountingLabel!
-
+    
+    @IBOutlet weak var payPerTimeLabel: UILabel!
     @IBOutlet weak var dDayLabel: UILabel!
     
+    @IBOutlet weak var workTimeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        payLabel.text = "\(pay)"
+        jobLabel.text = job
+        payPerTimeLabel.text = "\(payPerTime)"
+        workTimeLabel.text = "\(workTime)"
         workStateButton?.layer.cornerRadius = 25
         
         let graphCenterPos : CGPoint = CGPoint(x: view.center.x, y: payLabel.superview!.center.y)

@@ -11,7 +11,7 @@ class DayView: UIView {
         label.textColor = UIColor.init(red: 103/255, green: 103/255, blue: 103/255, alpha: 1.0)
         label.textAlignment = .center
         
-        label.font = UIFont(name: "AppleSDGothicNeo-Light", size: 13.0)
+        label.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 13.0)
         label.lineBreakMode = NSLineBreakMode.byWordWrapping
         label.numberOfLines = 0
         

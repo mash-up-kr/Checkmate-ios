@@ -186,6 +186,7 @@ class WorkSpaceAddProbationIVC: UIViewController {
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var bar2: UIView!
+    @IBOutlet weak var arrowDown: UIImageView!
     let EXIST = "있습니다"
     let NOTEXIST = "없습니다"
     var probationExist = false
@@ -212,6 +213,7 @@ class WorkSpaceAddProbationIVC: UIViewController {
         button2.setTitleColor(probationExist ? UIColor.grey85 : UIColor.grey136, for: .normal)
         textField.isEnabled = probationExist
         textField.isHidden = !probationExist
+        arrowDown.image = UIImage(named: probationExist ? "arrowDown2" : "arrowDown3")
         
         if probationExist {
             textField.becomeFirstResponder()

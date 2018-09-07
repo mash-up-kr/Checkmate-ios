@@ -458,6 +458,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epo-Ca-gcP" userLabel="Graphic View 1" customClass="GraphicView" customModule="Check_mate" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="37" width="294" height="54"/>
                                         <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowDown2" translatesAutoresizingMaskIntoConstraints="NO" id="yE2-ia-hmW">
+                                                <rect key="frame" x="250" y="11" width="32" height="32"/>
+                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUH-q7-GGg">
                                                 <rect key="frame" x="0.0" y="0.0" width="294" height="54"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="18"/>
@@ -472,6 +475,8 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="54" id="4dW-2f-0bW"/>
+                                            <constraint firstItem="yE2-ia-hmW" firstAttribute="centerY" secondItem="epo-Ca-gcP" secondAttribute="centerY" id="MTE-TN-ofj"/>
+                                            <constraint firstAttribute="trailing" secondItem="yE2-ia-hmW" secondAttribute="trailing" constant="12" id="W0a-4d-MfA"/>
                                             <constraint firstAttribute="bottom" secondItem="vUH-q7-GGg" secondAttribute="bottom" id="XDp-2V-YXa"/>
                                             <constraint firstAttribute="trailing" secondItem="vUH-q7-GGg" secondAttribute="trailing" id="Yj0-A4-hR0"/>
                                             <constraint firstAttribute="width" constant="294" id="eb1-Dl-q74"/>
@@ -493,6 +498,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OVW-Mz-XiS" userLabel="Graphic View 2" customClass="GraphicView" customModule="Check_mate" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="101" width="294" height="54"/>
                                         <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowDown3" translatesAutoresizingMaskIntoConstraints="NO" id="6GL-5E-myP">
+                                                <rect key="frame" x="250" y="11" width="32" height="32"/>
+                                            </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="49v-Mi-gcL">
                                                 <rect key="frame" x="0.0" y="0.0" width="146.5" height="54"/>
                                                 <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="deviceRGB"/>
@@ -526,12 +534,14 @@
                                             <constraint firstItem="U0M-T3-7Su" firstAttribute="top" secondItem="OVW-Mz-XiS" secondAttribute="top" id="O4A-8W-KlH"/>
                                             <constraint firstAttribute="bottom" secondItem="49v-Mi-gcL" secondAttribute="bottom" id="UB2-hX-gCL"/>
                                             <constraint firstAttribute="bottom" secondItem="AYc-a6-2yy" secondAttribute="bottom" id="VeJ-Rh-L0p"/>
+                                            <constraint firstAttribute="trailing" secondItem="6GL-5E-myP" secondAttribute="trailing" constant="12" id="Xr7-Z2-4DV"/>
                                             <constraint firstItem="U0M-T3-7Su" firstAttribute="leading" secondItem="49v-Mi-gcL" secondAttribute="trailing" id="bXO-rg-L9A"/>
                                             <constraint firstItem="U0M-T3-7Su" firstAttribute="centerX" secondItem="OVW-Mz-XiS" secondAttribute="centerX" id="dFS-nM-cwE"/>
                                             <constraint firstItem="AYc-a6-2yy" firstAttribute="leading" secondItem="U0M-T3-7Su" secondAttribute="trailing" id="dHx-Sh-kFi"/>
                                             <constraint firstAttribute="height" constant="54" id="hXZ-0s-LsV"/>
                                             <constraint firstAttribute="trailing" secondItem="AYc-a6-2yy" secondAttribute="trailing" id="mzA-5g-qdN"/>
                                             <constraint firstAttribute="width" constant="294" id="vEw-ZF-OnU"/>
+                                            <constraint firstItem="6GL-5E-myP" firstAttribute="centerY" secondItem="OVW-Mz-XiS" secondAttribute="centerY" id="znc-Bh-eSh"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -584,6 +594,7 @@
                         <viewLayoutGuide key="safeArea" id="yRs-wx-r07"/>
                     </view>
                     <connections>
+                        <outlet property="arrowDown" destination="6GL-5E-myP" id="EOo-zO-4G9"/>
                         <outlet property="bar2" destination="OVW-Mz-XiS" id="8sY-3b-5D1"/>
                         <outlet property="button" destination="vUH-q7-GGg" id="CrF-hJ-UUA"/>
                         <outlet property="button2" destination="AYc-a6-2yy" id="iKH-V7-Pw8"/>
@@ -787,6 +798,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kiu-yI-zXj" customClass="GraphicView" customModule="Check_mate" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="37" width="294" height="54"/>
                                         <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowDown2" translatesAutoresizingMaskIntoConstraints="NO" id="y02-F1-ueg">
+                                                <rect key="frame" x="242" y="11" width="32" height="32"/>
+                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4Q-6D-XEc">
                                                 <rect key="frame" x="0.0" y="0.0" width="294" height="54"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="18"/>
@@ -807,6 +821,8 @@
                                             <constraint firstAttribute="height" constant="54" id="cQG-hA-aar"/>
                                             <constraint firstItem="c4Q-6D-XEc" firstAttribute="top" secondItem="kiu-yI-zXj" secondAttribute="top" id="f43-tV-rua"/>
                                             <constraint firstAttribute="trailing" secondItem="c4Q-6D-XEc" secondAttribute="trailing" id="gRg-NS-SVo"/>
+                                            <constraint firstAttribute="trailing" secondItem="y02-F1-ueg" secondAttribute="trailing" constant="20" id="klT-O6-6f0"/>
+                                            <constraint firstItem="y02-F1-ueg" firstAttribute="centerY" secondItem="kiu-yI-zXj" secondAttribute="centerY" id="zhM-Gz-PwS"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -875,6 +891,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Tl-ob-Gwb" customClass="GraphicView" customModule="Check_mate" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="37" width="294" height="54"/>
                                         <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowDown2" translatesAutoresizingMaskIntoConstraints="NO" id="fnZ-TX-qPC">
+                                                <rect key="frame" x="242" y="11" width="32" height="32"/>
+                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxM-XB-DeK">
                                                 <rect key="frame" x="0.0" y="0.0" width="294" height="54"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="18"/>
@@ -891,6 +910,8 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="OxM-XB-DeK" secondAttribute="trailing" id="9r3-LR-PeS"/>
                                             <constraint firstItem="OxM-XB-DeK" firstAttribute="top" secondItem="9Tl-ob-Gwb" secondAttribute="top" id="BXa-Ic-1Ic"/>
+                                            <constraint firstItem="fnZ-TX-qPC" firstAttribute="centerY" secondItem="9Tl-ob-Gwb" secondAttribute="centerY" id="Hn4-Ze-0B3"/>
+                                            <constraint firstAttribute="trailing" secondItem="fnZ-TX-qPC" secondAttribute="trailing" constant="20" id="LM4-9J-KrZ"/>
                                             <constraint firstItem="OxM-XB-DeK" firstAttribute="leading" secondItem="9Tl-ob-Gwb" secondAttribute="leading" id="NkQ-W4-rQI"/>
                                             <constraint firstAttribute="bottom" secondItem="OxM-XB-DeK" secondAttribute="bottom" id="aHR-fH-sKJ"/>
                                             <constraint firstAttribute="height" constant="54" id="mkI-Ga-zGU"/>
@@ -1248,4 +1269,8 @@
             <point key="canvasLocation" x="5631" y="0.0"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrowDown2" width="32" height="32"/>
+        <image name="arrowDown3" width="32" height="32"/>
+    </resources>
 </document>

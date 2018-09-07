@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
         
         workStateButton?.layer.cornerRadius = 25
         
-        let graphCenterPos : CGPoint = CGPoint(x: view.center.x, y: view.center.y - 100)
+        let graphCenterPos : CGPoint = CGPoint(x: view.center.x, y: payLabel.superview!.center.y)
         self.circularGraph.center = graphCenterPos
         self.circularGraph.trackLayer.fillColor = UIColor.clear.cgColor
         self.circularGraph.trackLayer.lineWidth = 3

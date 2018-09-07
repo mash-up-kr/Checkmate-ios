@@ -11,5 +11,7 @@
 
 #import <KakaoOpenSDK/KakaoOpenSDK.h>
 #import <QuartzCore/QuartzCore.h>
+#import <NMapViewerSDK/NMapView.h>
+#import <NMapViewerSDK/NMapLocationManager.h>
 
 #endif /* Check_mate_Bridging_Header_h */

@@ -42,9 +42,16 @@
 		27BA3E9521425500001DE3A8 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BA3E9421425500001DE3A8 /* KakaoOpenSDK.framework */; };
 		27BA3E9821425FDD001DE3A8 /* LoadingDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BA3E9721425FDD001DE3A8 /* LoadingDialog.swift */; };
 		27BA3E9A2142A09A001DE3A8 /* WorkSpaceDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27BA3E992142A09A001DE3A8 /* WorkSpaceDetailViewController.storyboard */; };
+		27BA3E9D2142C40B001DE3A8 /* NMapViewerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BA3E9B2142C40A001DE3A8 /* NMapViewerSDK.framework */; };
+		27BA3E9F2142C454001DE3A8 /* ApiGatewayMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BA3E9C2142C40A001DE3A8 /* ApiGatewayMac.framework */; };
+		27BA3EA02142C454001DE3A8 /* ApiGatewayMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 27BA3E9C2142C40A001DE3A8 /* ApiGatewayMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		27BA3EA42142CD48001DE3A8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BA3EA32142CD48001DE3A8 /* MapViewController.swift */; };
+		27BA3EA62142CD54001DE3A8 /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27BA3EA52142CD54001DE3A8 /* MapViewController.storyboard */; };
+		27BA3EA82142CF16001DE3A8 /* NMapViewResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BA3EA72142CF16001DE3A8 /* NMapViewResources.swift */; };
 		27CD9CB720E7DDBF000F6CB3 /* WorkSpaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27CD9CB620E7DDBF000F6CB3 /* WorkSpaceTableViewCell.xib */; };
 		27CD9CC120E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD9CC020E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift */; };
 		27D1C47621391D6A007DEC2E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1C47521391D6A007DEC2E /* Color.swift */; };
+		27EEEA592142D00D00535363 /* strip-frameworks.sh in Resources */ = {isa = PBXBuildFile; fileRef = 27EEEA582142D00D00535363 /* strip-frameworks.sh */; };
 		760726952139321C00964D19 /* CountingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760726942139321B00964D19 /* CountingLabel.swift */; };
 		76429FC720E7A7E300B16DD4 /* UserButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76429FC620E7A7E300B16DD4 /* UserButton.swift */; };
 		76429FCB20E7AD1500B16DD4 /* CircularGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76429FCA20E7AD1400B16DD4 /* CircularGraph.swift */; };
@@ -67,6 +74,20 @@
 		BECCBFBB212EE4E400B953F4 /* CommonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFBA212EE4E400B953F4 /* CommonProtocols.swift */; };
 		BECCBFBD212EE50E00B953F4 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCBFBC212EE50E00B953F4 /* DayView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		27BA3EA12142C455001DE3A8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				27BA3EA02142C454001DE3A8 /* ApiGatewayMac.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		259D7447581CD69D898C8CF3 /* Pods_Check_mate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Check_mate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,9 +128,15 @@
 		27BA3E9621425A07001DE3A8 /* Check-mate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Check-mate-Bridging-Header.h"; sourceTree = "<group>"; };
 		27BA3E9721425FDD001DE3A8 /* LoadingDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDialog.swift; sourceTree = "<group>"; };
 		27BA3E992142A09A001DE3A8 /* WorkSpaceDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorkSpaceDetailViewController.storyboard; sourceTree = "<group>"; };
+		27BA3E9B2142C40A001DE3A8 /* NMapViewerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NMapViewerSDK.framework; sourceTree = "<group>"; };
+		27BA3E9C2142C40A001DE3A8 /* ApiGatewayMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ApiGatewayMac.framework; sourceTree = "<group>"; };
+		27BA3EA32142CD48001DE3A8 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		27BA3EA52142CD54001DE3A8 /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
+		27BA3EA72142CF16001DE3A8 /* NMapViewResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMapViewResources.swift; sourceTree = "<group>"; };
 		27CD9CB620E7DDBF000F6CB3 /* WorkSpaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkSpaceTableViewCell.xib; sourceTree = "<group>"; };
 		27CD9CC020E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceDetailViewController.swift; sourceTree = "<group>"; };
 		27D1C47521391D6A007DEC2E /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		27EEEA582142D00D00535363 /* strip-frameworks.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "strip-frameworks.sh"; sourceTree = "<group>"; };
 		47C713CA9592953B4F324282 /* Pods-Check-mate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check-mate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Check-mate/Pods-Check-mate.debug.xcconfig"; sourceTree = "<group>"; };
 		54D76EF7D1B419B9D1AB895C /* Pods-Check-mate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check-mate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Check-mate/Pods-Check-mate.release.xcconfig"; sourceTree = "<group>"; };
 		760726942139321B00964D19 /* CountingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountingLabel.swift; sourceTree = "<group>"; };
@@ -140,8 +167,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27BA3E9F2142C454001DE3A8 /* ApiGatewayMac.framework in Frameworks */,
 				046A1915D6A5D8AB6BF4A09A /* Pods_Check_mate.framework in Frameworks */,
 				27BA3E9521425500001DE3A8 /* KakaoOpenSDK.framework in Frameworks */,
+				27BA3E9D2142C40B001DE3A8 /* NMapViewerSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +196,7 @@
 		276BAF0220E7924C0063D8B4 = {
 			isa = PBXGroup;
 			children = (
+				27BA3EAA2142CFD0001DE3A8 /* Scripts */,
 				276BAF0D20E7924C0063D8B4 /* Check-mate */,
 				276BAF0C20E7924C0063D8B4 /* Products */,
 				A9702AA55629688ACC66E5A4 /* Pods */,
@@ -256,6 +286,7 @@
 				27D1C47521391D6A007DEC2E /* Color.swift */,
 				2711E031213CFAFE003BAFED /* ServerClient.swift */,
 				27BA3E9721425FDD001DE3A8 /* LoadingDialog.swift */,
+				27BA3EA72142CF16001DE3A8 /* NMapViewResources.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -284,6 +315,8 @@
 				27CD9CB620E7DDBF000F6CB3 /* WorkSpaceTableViewCell.xib */,
 				2766FDA82115A3FB00E713D6 /* WorkSpaceAddVC.swift */,
 				2766FDAA2115A47300E713D6 /* WorkSpaceAddVC.storyboard */,
+				27BA3EA32142CD48001DE3A8 /* MapViewController.swift */,
+				27BA3EA52142CD54001DE3A8 /* MapViewController.storyboard */,
 			);
 			path = workspace;
 			sourceTree = "<group>";
@@ -295,6 +328,14 @@
 				27BA3E9021424E70001DE3A8 /* LoginViewController.storyboard */,
 			);
 			path = login;
+			sourceTree = "<group>";
+		};
+		27BA3EAA2142CFD0001DE3A8 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				27EEEA582142D00D00535363 /* strip-frameworks.sh */,
+			);
+			path = Scripts;
 			sourceTree = "<group>";
 		};
 		A9702AA55629688ACC66E5A4 /* Pods */ = {
@@ -356,6 +397,8 @@
 		FDA9D081B46B93433A3880B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27BA3E9C2142C40A001DE3A8 /* ApiGatewayMac.framework */,
+				27BA3E9B2142C40A001DE3A8 /* NMapViewerSDK.framework */,
 				27BA3E9421425500001DE3A8 /* KakaoOpenSDK.framework */,
 				259D7447581CD69D898C8CF3 /* Pods_Check_mate.framework */,
 			);
@@ -374,6 +417,8 @@
 				276BAF0820E7924C0063D8B4 /* Frameworks */,
 				276BAF0920E7924C0063D8B4 /* Resources */,
 				9F770AF3806FFA1CD233DE01 /* [CP] Embed Pods Frameworks */,
+				27BA3EA12142C455001DE3A8 /* Embed Frameworks */,
+				27BA3EA22142CCA4001DE3A8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -422,6 +467,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27BA3EA62142CD54001DE3A8 /* MapViewController.storyboard in Resources */,
 				27A55C7F20E7A0040036BFB1 /* TabBarController.storyboard in Resources */,
 				276BAF1920E7924E0063D8B4 /* LaunchScreen.storyboard in Resources */,
 				27A55C6320E797040036BFB1 /* CalendarViewController.storyboard in Resources */,
@@ -437,12 +483,26 @@
 				27BA3E9121424E70001DE3A8 /* LoginViewController.storyboard in Resources */,
 				276BAF1620E7924E0063D8B4 /* Assets.xcassets in Resources */,
 				BE5A4F672116635D0067189D /* CalendarDetailViewController.storyboard in Resources */,
+				27EEEA592142D00D00535363 /* strip-frameworks.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		27BA3EA22142CCA4001DE3A8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "sh ./Scripts/strip-frameworks.sh";
+		};
 		8817F0CCE28B93E04EEB47BB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -492,6 +552,7 @@
 				BECCBFB1212EE41500B953F4 /* DetailTimeCell.swift in Sources */,
 				BECCBFBD212EE50E00B953F4 /* DayView.swift in Sources */,
 				76429FC720E7A7E300B16DD4 /* UserButton.swift in Sources */,
+				27BA3EA82142CF16001DE3A8 /* NMapViewResources.swift in Sources */,
 				BECCBFB3212EE45600B953F4 /* DetailTimeHistoryCell.swift in Sources */,
 				27A55C6520E797270036BFB1 /* HomeNavigationController.swift in Sources */,
 				27A55C7D20E79FF70036BFB1 /* TabBarController.swift in Sources */,
@@ -499,6 +560,7 @@
 				27A55C7120E797AF0036BFB1 /* MonthViewController.swift in Sources */,
 				2766FDA92115A3FB00E713D6 /* WorkSpaceAddVC.swift in Sources */,
 				BE2F09DD20E7B05800CEA36E /* CalendarDetailViewController.swift in Sources */,
+				27BA3EA42142CD48001DE3A8 /* MapViewController.swift in Sources */,
 				76B409992116F10800639082 /* SideMenuViewController.swift in Sources */,
 				27A55C9220E7B6AD0036BFB1 /* WorkSpaceTableViewCell.swift in Sources */,
 				76842E4A211DD7BD00D66357 /* TempJobData.swift in Sources */,
@@ -684,6 +746,8 @@
 					"-framework",
 					"\"SwiftyJSON\"",
 					"-all_load",
+					"-ObjC",
+					"-lxml2",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "mash-up-kr.Check-mate";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -716,6 +780,8 @@
 					"-framework",
 					"\"SwiftyJSON\"",
 					"-all_load",
+					"-ObjC",
+					"-lxml2",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "mash-up-kr.Check-mate";
 				PRODUCT_NAME = "$(TARGET_NAME)";

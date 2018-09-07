@@ -18,8 +18,9 @@ class ServerClient {
     static func request(url: String,
                         method: HTTPMethod,
                         parameters: Parameters,
+                        headers: HTTPHeaders = [:],
                         callback: ((JSON, Int) -> Void)? = nil) {
-        Alamofire.request(url, method: method, parameters: parameters).response { response in
+        Alamofire.request(url, method: method, parameters: parameters, headers: headers).response { response in
             let json = JSON(response.data!)
             let code = response.response!.statusCode
             print("[HTTP] \(url) \(method) \(parameters) \(code) \(json)")
@@ -122,6 +123,41 @@ class ServerClient {
         
         request(url: HOST+path, method: .delete, parameters: parameters) { (json, code) in
             callback?(code == 200)
+        }
+    }
+    
+    static func coordToAddress(latitude: Double,
+                                 longitude: Double,
+                                 callback: ((String?) -> Void)? = nil) {
+        let url = "https://dapi.kakao.com/v2/local/geo/coord2address.json"
+        let parameters: Parameters = [
+            "x": longitude,
+            "y": latitude
+        ]
+        let headers: HTTPHeaders = [
+            "Authorization": "KakaoAK d5ce672e16d3c781e1d03f0bd1f1755a"
+        ]
+        
+        request(url: url, method: .get, parameters: parameters, headers: headers) { (json, code) in
+            let num = json["meta"]["total_count"].intValue
+
+            if num <= 0 {
+                callback?(nil)
+                return
+            }
+            
+            let oldAddrJson = json["documents"].arrayValue[0]["address"]
+            let newAddrJson = json["documents"].arrayValue[0]["road_address"]
+            
+            if newAddrJson != JSON.null {
+                let address = newAddrJson["address_name"].stringValue
+                callback?(address)
+            } else if oldAddrJson != JSON.null {
+                let address = oldAddrJson["address_name"].stringValue
+                callback?(address)
+            } else {
+                callback?(nil)
+            }
         }
     }
 }

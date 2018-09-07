@@ -55,7 +55,7 @@ class WorkSpaceViewController: UIViewController {
 
     func cellDetailClicked(workSpace: WorkSpace) {
         let vc = UIStoryboard.instantiate(WorkSpaceDetailViewController.self, storyboardName: "WorkSpaceDetailViewController")
-        (vc as? WorkSpaceDetailViewController)?.workSpace = workSpace
+        vc.workSpace = workSpace
         self.navigationController?.pushViewController(vc, animated: true)
     }
 

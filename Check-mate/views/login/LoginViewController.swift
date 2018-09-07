@@ -69,6 +69,8 @@ class LoginViewController: UIViewController {
                 if (success) {
                     let vc = UIStoryboard.instantiate(TabBarController.self, storyboardName: "TabBarController")
                     self.present(vc, animated: false)
+//                    let vc = UIStoryboard.instantiate(MapViewController.self, storyboardName: "MapViewController")
+//                    self.present(vc, animated: false)
                 } else {
                     print("ServerClient.login failed")
                 }

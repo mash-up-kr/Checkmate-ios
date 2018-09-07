@@ -9,11 +9,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--Home Navigation Controller-->
         <scene sceneID="Xls-56-I4g">
             <objects>
                 <navigationController storyboardIdentifier="HomeNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="Hgg-DF-wXF" customClass="HomeNavigationController" customModule="Check_mate" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="mUv-6H-Mth"/>
+                    <tabBarItem key="tabBarItem" title="" image="homeOff" selectedImage="homeOn" id="mUv-6H-Mth">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-12"/>
+                    </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yCE-KW-Xbq">
                         <autoresizingMask key="autoresizingMask"/>
@@ -37,4 +39,8 @@
             <point key="canvasLocation" x="660" y="-1"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="homeOff" width="32" height="32"/>
+        <image name="homeOn" width="32" height="32"/>
+    </resources>
 </document>

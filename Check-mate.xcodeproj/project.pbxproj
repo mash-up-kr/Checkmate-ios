@@ -37,6 +37,10 @@
 		27A55C8E20E7A72B0036BFB1 /* WorkSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A55C8D20E7A72B0036BFB1 /* WorkSpaceView.swift */; };
 		27A55C9020E7A7360036BFB1 /* WorkSpaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27A55C8F20E7A7360036BFB1 /* WorkSpaceView.xib */; };
 		27A55C9220E7B6AD0036BFB1 /* WorkSpaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A55C9120E7B6AD0036BFB1 /* WorkSpaceTableViewCell.swift */; };
+		27BA3E8F21424E64001DE3A8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BA3E8E21424E64001DE3A8 /* LoginViewController.swift */; };
+		27BA3E9121424E70001DE3A8 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27BA3E9021424E70001DE3A8 /* LoginViewController.storyboard */; };
+		27BA3E9521425500001DE3A8 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BA3E9421425500001DE3A8 /* KakaoOpenSDK.framework */; };
+		27BA3E9821425FDD001DE3A8 /* LoadingDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BA3E9721425FDD001DE3A8 /* LoadingDialog.swift */; };
 		27CD9CB720E7DDBF000F6CB3 /* WorkSpaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27CD9CB620E7DDBF000F6CB3 /* WorkSpaceTableViewCell.xib */; };
 		27CD9CC120E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD9CC020E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift */; };
 		27D1C47621391D6A007DEC2E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1C47521391D6A007DEC2E /* Color.swift */; };
@@ -96,6 +100,11 @@
 		27A55C8D20E7A72B0036BFB1 /* WorkSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceView.swift; sourceTree = "<group>"; };
 		27A55C8F20E7A7360036BFB1 /* WorkSpaceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkSpaceView.xib; sourceTree = "<group>"; };
 		27A55C9120E7B6AD0036BFB1 /* WorkSpaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceTableViewCell.swift; sourceTree = "<group>"; };
+		27BA3E8E21424E64001DE3A8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		27BA3E9021424E70001DE3A8 /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
+		27BA3E9421425500001DE3A8 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		27BA3E9621425A07001DE3A8 /* Check-mate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Check-mate-Bridging-Header.h"; sourceTree = "<group>"; };
+		27BA3E9721425FDD001DE3A8 /* LoadingDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDialog.swift; sourceTree = "<group>"; };
 		27CD9CB620E7DDBF000F6CB3 /* WorkSpaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkSpaceTableViewCell.xib; sourceTree = "<group>"; };
 		27CD9CC020E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceDetailViewController.swift; sourceTree = "<group>"; };
 		27D1C47521391D6A007DEC2E /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -130,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				046A1915D6A5D8AB6BF4A09A /* Pods_Check_mate.framework in Frameworks */,
+				27BA3E9521425500001DE3A8 /* KakaoOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +191,7 @@
 				276BAF1520E7924E0063D8B4 /* Assets.xcassets */,
 				276BAF1720E7924E0063D8B4 /* LaunchScreen.storyboard */,
 				276BAF1A20E7924E0063D8B4 /* Info.plist */,
+				27BA3E9621425A07001DE3A8 /* Check-mate-Bridging-Header.h */,
 			);
 			path = "Check-mate";
 			sourceTree = "<group>";
@@ -188,6 +199,7 @@
 		27A55C5820E794DC0036BFB1 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				27BA3E8921424CFE001DE3A8 /* login */,
 				27A55C7B20E79FD00036BFB1 /* tab */,
 				27A55C5920E794E20036BFB1 /* home */,
 				27A55C5B20E794F30036BFB1 /* month */,
@@ -241,6 +253,7 @@
 				2766FDAC2115AC8400E713D6 /* GraphicView.swift */,
 				27D1C47521391D6A007DEC2E /* Color.swift */,
 				2711E031213CFAFE003BAFED /* ServerClient.swift */,
+				27BA3E9721425FDD001DE3A8 /* LoadingDialog.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -270,6 +283,15 @@
 				2766FDAA2115A47300E713D6 /* WorkSpaceAddVC.storyboard */,
 			);
 			path = workspace;
+			sourceTree = "<group>";
+		};
+		27BA3E8921424CFE001DE3A8 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				27BA3E8E21424E64001DE3A8 /* LoginViewController.swift */,
+				27BA3E9021424E70001DE3A8 /* LoginViewController.storyboard */,
+			);
+			path = login;
 			sourceTree = "<group>";
 		};
 		A9702AA55629688ACC66E5A4 /* Pods */ = {
@@ -331,6 +353,7 @@
 		FDA9D081B46B93433A3880B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27BA3E9421425500001DE3A8 /* KakaoOpenSDK.framework */,
 				259D7447581CD69D898C8CF3 /* Pods_Check_mate.framework */,
 			);
 			name = Frameworks;
@@ -407,6 +430,7 @@
 				27A55C9020E7A7360036BFB1 /* WorkSpaceView.xib in Resources */,
 				2766FDAB2115A47300E713D6 /* WorkSpaceAddVC.storyboard in Resources */,
 				27A55C7320E797B60036BFB1 /* MonthViewController.storyboard in Resources */,
+				27BA3E9121424E70001DE3A8 /* LoginViewController.storyboard in Resources */,
 				276BAF1620E7924E0063D8B4 /* Assets.xcassets in Resources */,
 				BE5A4F672116635D0067189D /* CalendarDetailViewController.storyboard in Resources */,
 			);
@@ -460,6 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27BA3E8F21424E64001DE3A8 /* LoginViewController.swift in Sources */,
 				BECCBFB1212EE41500B953F4 /* DetailTimeCell.swift in Sources */,
 				BECCBFBD212EE50E00B953F4 /* DayView.swift in Sources */,
 				76429FC720E7A7E300B16DD4 /* UserButton.swift in Sources */,
@@ -490,6 +515,7 @@
 				27A55C8620E7A1020036BFB1 /* WorkSpaceNavigationController.swift in Sources */,
 				BECCBFAF212EE3E500B953F4 /* BenefitCell.swift in Sources */,
 				BE2F09DB20E7A66400CEA36E /* CalendarVars.swift in Sources */,
+				27BA3E9821425FDD001DE3A8 /* LoadingDialog.swift in Sources */,
 				BECCBFB9212EE4CA00B953F4 /* TodayMoneyCell.swift in Sources */,
 				27A55C8E20E7A72B0036BFB1 /* WorkSpaceView.swift in Sources */,
 				BECCBFAD212EE39E00B953F4 /* EtcCell.swift in Sources */,
@@ -638,13 +664,26 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Check-mate/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "mash-up-kr.Check-mate";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Check-mate/Check-mate-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -657,13 +696,26 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Check-mate/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "mash-up-kr.Check-mate";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Check-mate/Check-mate-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cwl-Jd-fgL">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="QvL-Rr-4cL">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cwl-Jd-fgL" customClass="LoginViewController" customModule="Check_mate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WDQ-d2-b3d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 권리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDW-eh-taI">
+                                <rect key="frame" x="31" y="115" width="69" height="29"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="24"/>
+                                <color key="textColor" red="0.18823529410000001" green="0.30980392159999998" blue="0.99607843139999996" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내가 찾자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKB-db-0iL">
+                                <rect key="frame" x="31" y="144" width="89.5" height="29"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="24"/>
+                                <color key="textColor" red="0.18823529410000001" green="0.30980392159999998" blue="0.99607843139999996" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check-Mate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFM-Ha-SGT">
+                                <rect key="frame" x="31" y="173" width="127.5" height="29"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="24"/>
+                                <color key="textColor" red="0.18823529410000001" green="0.30980392159999998" blue="0.99607843139999996" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sH5-eB-0hL" customClass="GraphicView" customModule="Check_mate" customModuleProvider="target">
+                                <rect key="frame" x="40.5" y="497" width="293" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카카오톡 계정으로 로그인하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMa-AV-nLq">
+                                        <rect key="frame" x="70" y="16.5" width="165" height="17"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="14"/>
+                                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kakao" translatesAutoresizingMaskIntoConstraints="NO" id="NJd-fU-hMZ">
+                                        <rect key="frame" x="14" y="4" width="42" height="42"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.92156862745098034" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstItem="NJd-fU-hMZ" firstAttribute="centerY" secondItem="sH5-eB-0hL" secondAttribute="centerY" id="84f-sc-e5i"/>
+                                    <constraint firstAttribute="height" constant="50" id="9cb-de-aMq"/>
+                                    <constraint firstItem="NJd-fU-hMZ" firstAttribute="leading" secondItem="sH5-eB-0hL" secondAttribute="leading" constant="14" id="Hp5-yP-LlC"/>
+                                    <constraint firstAttribute="width" constant="293" id="MTU-VM-Ehm"/>
+                                    <constraint firstItem="sMa-AV-nLq" firstAttribute="leading" secondItem="NJd-fU-hMZ" secondAttribute="trailing" constant="14" id="QhF-4y-fH6"/>
+                                    <constraint firstItem="sMa-AV-nLq" firstAttribute="centerY" secondItem="sH5-eB-0hL" secondAttribute="centerY" id="gtP-7w-PbL"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kFM-Ha-SGT" firstAttribute="top" secondItem="uKB-db-0iL" secondAttribute="bottom" id="2sq-RW-WR1"/>
+                            <constraint firstItem="uKB-db-0iL" firstAttribute="leading" secondItem="hDW-eh-taI" secondAttribute="leading" id="7lo-rU-0Ns"/>
+                            <constraint firstItem="sH5-eB-0hL" firstAttribute="centerX" secondItem="WDQ-d2-b3d" secondAttribute="centerX" id="9f0-yf-Aoz"/>
+                            <constraint firstItem="hDW-eh-taI" firstAttribute="top" secondItem="WDQ-d2-b3d" secondAttribute="top" constant="115" id="HE4-1M-vcU"/>
+                            <constraint firstItem="hDW-eh-taI" firstAttribute="leading" secondItem="G6D-cr-hvL" secondAttribute="leading" constant="31" id="NMR-MY-U5R"/>
+                            <constraint firstItem="uKB-db-0iL" firstAttribute="top" secondItem="hDW-eh-taI" secondAttribute="bottom" id="WSQ-UJ-8E6"/>
+                            <constraint firstItem="G6D-cr-hvL" firstAttribute="bottom" secondItem="sH5-eB-0hL" secondAttribute="bottom" constant="120" id="Xgs-HG-iHO"/>
+                            <constraint firstItem="kFM-Ha-SGT" firstAttribute="leading" secondItem="uKB-db-0iL" secondAttribute="leading" id="YQR-t0-W3F"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="G6D-cr-hvL"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginBtn" destination="sH5-eB-0hL" id="Ofy-4k-eXd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fYC-8O-LZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="kakao" width="42" height="42"/>
+    </resources>
+</document>

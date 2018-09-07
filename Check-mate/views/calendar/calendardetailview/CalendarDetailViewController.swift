@@ -14,15 +14,14 @@ class CalendarDetailViewController: UIViewController {
     
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var weekdayLabel: UILabel!
-    
     @IBOutlet weak var MonthLabel: UILabel!
+    @IBOutlet weak var HighlightView: UIView!
     
     @IBOutlet weak var dayStackView: UIStackView!
     var DayViews: [DayView] = []
     
     var selectedModel: DetailDateModel = DetailDateModel()
     
-    var boolDetailMoney: Bool = false
     var boolDetailTime: Bool = false
     var boolPicture: Bool = false
     
@@ -30,6 +29,8 @@ class CalendarDetailViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        HighlightView.layer.cornerRadius = HighlightView.bounds.size.height / 2
+        
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false;
         tableView.allowsSelection = false
@@ -122,43 +123,12 @@ extension Date {
     }
 }
 
-extension CalendarDetailViewController: TodayMoneyCellDelegate {
-    func openPressed(_ cell: TodayMoneyCell) {
-        boolDetailMoney = true
-        self.tableView.beginUpdates()
-        self.tableView.endUpdates()
-    }
-}
-
-extension CalendarDetailViewController: DetailMoneyCellDelegate {
-    func closedPressed(_ cell: DetailMoneyCell) {
-        boolDetailMoney = false
-        self.tableView.beginUpdates()
-        self.tableView.endUpdates()
-        
-        if let cell = self.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? TodayMoneyCell {
-            cell.showButton()
-        }
-    }
-}
-
 extension CalendarDetailViewController: TodayTimeCellDelegate {
-    func openPressed(_ cell: TodayTimeCell) {
-        boolDetailTime = true
-        self.tableView.beginUpdates()
-        self.tableView.endUpdates()
-    }
-}
-
-extension CalendarDetailViewController: DetailTimeCellDelegate {
-    func closedPressed(_ cell: DetailTimeCell) {
-        boolDetailTime = false
-        self.tableView.beginUpdates()
-        self.tableView.endUpdates()
+    func buttonPressed(_ cell: TodayTimeCell) {
+        boolDetailTime = !boolDetailTime
         
-        if let cell = self.tableView.cellForRow(at: IndexPath(row: 2, section: 0)) as? TodayTimeCell {
-            cell.showButton()
-        }
+        self.tableView.beginUpdates()
+        self.tableView.endUpdates()
     }
 }
 
@@ -180,7 +150,7 @@ extension CalendarDetailViewController: PictureCellDelegate {
 
 extension CalendarDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -190,41 +160,11 @@ extension CalendarDetailViewController: UITableViewDelegate, UITableViewDataSour
                 return UITableViewCell()
             }
             
-            let numberFormatter = NumberFormatter()
-            numberFormatter.numberStyle = .decimal
-            
-            if let strDailyWage = numberFormatter.string(from: NSNumber(value: selectedModel.dailyWage)) {
-                cell.lblMoney.text = "\(strDailyWage) won"
-            }
-            else {
-                cell.lblMoney.text = "\(selectedModel.dailyWage) won"
-            }
-            
-            cell.delegate = self
-            // cell.showSeparator()
+            cell.setMoney(money: selectedModel.dailyWage)
             
             return cell
         }
         else if indexPath.row == 1 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "detailMoneyCell", for: indexPath) as? DetailMoneyCell else {
-                return UITableViewCell()
-            }
-
-            cell.setHourlyWage(selectedModel.hourlyWage)
-            cell.setHour(selectedModel.workingHour)
-            cell.delegate = self
-            
-//            cell.layer.shadowOffset = CGSize(width: 0, height: 0)
-//            cell.layer.shadowColor = UIColor.black.cgColor
-//            cell.layer.shadowRadius = 5
-//
-//            cell.layer.shadowOpacity = 0.40
-//            cell.layer.masksToBounds = false;
-//            cell.clipsToBounds = false;
-            
-            return cell
-        }
-        else if indexPath.row == 2 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "todayTimeCell", for: indexPath) as? TodayTimeCell else {
                 return UITableViewCell()
             }
@@ -243,30 +183,19 @@ extension CalendarDetailViewController: UITableViewDelegate, UITableViewDataSour
             }
             
             cell.delegate = self
-            // cell.showSeparator()
             
             return cell
         }
-        else if indexPath.row == 3 {
+        else if indexPath.row == 2 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "detailTimeCell", for: indexPath) as? DetailTimeCell else {
                 return UITableViewCell()
             }
             
             cell.setTimes(selectedModel.times)
             
-            cell.delegate = self
-            
-//            cell.layer.shadowOffset = CGSize(width: 0, height: 0)
-//            cell.layer.shadowColor = UIColor.black.cgColor
-//            cell.layer.shadowRadius = 5
-//
-//            cell.layer.shadowOpacity = 0.40
-//            cell.layer.masksToBounds = false;
-//            cell.clipsToBounds = false;
-            
             return cell
         }
-        else if indexPath.row == 4 {
+        else if indexPath.row == 3 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "pictureCell", for: indexPath) as? PictureCell else {
                 return UITableViewCell()
             }
@@ -278,7 +207,7 @@ extension CalendarDetailViewController: UITableViewDelegate, UITableViewDataSour
             
             return cell
         }
-        else if indexPath.row == 5 {
+        else if indexPath.row == 4 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "etcCell", for: indexPath) as? EtcCell else {
                 return UITableViewCell()
             }
@@ -293,34 +222,20 @@ extension CalendarDetailViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 88.0
+            return 77.0 + 1.0
         }
         else if indexPath.row == 1 {
-            guard let cell = self.tableView.cellForRow(at: indexPath) as? DetailMoneyCell else {
-                return 10
-            }
-            
-            if boolDetailMoney {
-                
-                return 101
-            }
-            else {
-                
-                return 10
-            }
+            return 74.0
         }
         else if indexPath.row == 2 {
-            return 146.0
-        }
-        else if indexPath.row == 3 {
             if boolDetailTime {
-                return 204.0
+                return 113.0 + 53.0 * CGFloat(selectedModel.times.count)
             }
             else {
                 return 10
             }
         }
-        else if indexPath.row == 4 {
+        else if indexPath.row == 3 {
             if boolPicture {
                 return 223.0 + 10.0
             }
@@ -328,8 +243,8 @@ extension CalendarDetailViewController: UITableViewDelegate, UITableViewDataSour
                 return 83 + 10.0
             }
         }
-        else if indexPath.row == 5 {
-            return 247.0
+        else if indexPath.row == 4 {
+            return 223.0
         }
         
         return 60.0

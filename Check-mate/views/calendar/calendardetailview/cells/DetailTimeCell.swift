@@ -2,7 +2,6 @@ import UIKit
 
 class DetailTimeCell: UITableViewCell {
     
-    weak var delegate: DetailTimeCellDelegate?
     @IBOutlet weak var timeTableView: UITableView!
     var times: [Date] = []
     
@@ -16,10 +15,6 @@ class DetailTimeCell: UITableViewCell {
         timeTableView.separatorStyle = .none
         timeTableView.showsVerticalScrollIndicator = false;
         timeTableView.allowsSelection = false
-    }
-    
-    @IBAction func buttonPressed(_ sender: Any) {
-        delegate?.closedPressed(self)
     }
     
     func setTimes(_ times: [Date]) {

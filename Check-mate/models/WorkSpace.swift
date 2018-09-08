@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class WorkSpace {
+class WorkSpace : Codable{
     let id: String
     let userId: String
     let name: String

@@ -24,7 +24,10 @@ class HomeViewController: UIViewController {
         case working
         case noWorking
     }
-    
+    func updateHomeView(workSpace: WorkSpace){
+        jobLabel.text = workSpace.name
+        payPerTimeLabel.text = "\(workSpace.wage)"
+    }
     @IBOutlet weak var todayLabel: UILabel!
     
     @IBOutlet weak var workStateButton: UIButton!
@@ -41,6 +44,7 @@ class HomeViewController: UIViewController {
         jobLabel.text = job
         payPerTimeLabel.text = "\(payPerTime)"
         workTimeLabel.text = "\(workTime)"
+        
         workStateButton?.layer.cornerRadius = 25
         
         var graphSpace: CGFloat = 80
@@ -80,6 +84,11 @@ class HomeViewController: UIViewController {
         circleNumber.textColor = UIColor.white
         circleNumber.backgroundColor = UIColor.init(red: 48/255, green: 79/255, blue: 254/255, alpha: 1.0)
         view.addSubview(circleNumber)
+        
+        if let parent = self.parent as? SideMenuViewController{
+            print("hi")
+            print(parent.getWorkSpaceUserDefault())
+        }
     }
 
     

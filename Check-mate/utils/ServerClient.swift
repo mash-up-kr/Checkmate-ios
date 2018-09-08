@@ -100,24 +100,21 @@ class ServerClient {
         let parameters: Parameters = [:]
         
         request(url: HOST+path, method: .get, parameters: parameters) { (json, code) in
-            let dateModel = DateModel()
-            var salaryData: [Int: Int] = Dictionary()
-            
-            dateModel.setPayDay(payDay: 25)
-            
-            for inner in json.arrayValue {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-                dateFormatter.timeZone = TimeZone.current
-                
-                if let date = dateFormatter.date(from: inner["date"].stringValue) {
-                    salaryData[date.day] = inner["daily_wage"].intValue
-                }
-            }
-            
-            dateModel.setSalaryData(salaryData: salaryData)
-            
+            let dateModel = DateModel(json)
             callback?(code, dateModel)
+        }
+    }
+    
+    static func getCalendarDetail(year: Int,
+                                  month: Int,
+                                  day: Int,
+                                  callback: ((Int, DetailDateModel) -> Void)? = nil) {
+        let path = "/user/\(userId)/work/WO123456789A0/main/calendar/\(year)/\(month)/\(day)"
+        let parameters: Parameters = [:]
+        
+        request(url: HOST+path, method: .get, parameters: parameters) { (json, code) in
+            let detailDateModel: DetailDateModel = DetailDateModel(json)
+            callback?(code, detailDateModel)
         }
     }
     

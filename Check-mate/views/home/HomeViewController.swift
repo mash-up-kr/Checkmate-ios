@@ -24,7 +24,10 @@ class HomeViewController: UIViewController {
         case working
         case noWorking
     }
-    
+    func updateHomeView(workSpace: WorkSpace){
+        jobLabel.text = workSpace.name
+        payPerTimeLabel.text = "\(workSpace.wage)"
+    }
     @IBOutlet weak var todayLabel: UILabel!
     
     @IBOutlet weak var workStateButton: UIButton!
@@ -41,6 +44,7 @@ class HomeViewController: UIViewController {
         jobLabel.text = job
         payPerTimeLabel.text = "\(payPerTime)"
         workTimeLabel.text = "\(workTime)"
+        
         workStateButton?.layer.cornerRadius = 25
         
         let graphCenterPos : CGPoint = CGPoint(x: view.center.x, y: payLabel.superview!.center.y)

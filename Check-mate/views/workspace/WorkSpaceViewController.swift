@@ -12,48 +12,60 @@ class WorkSpaceViewController: UIViewController {
 
     let CELL_ID = "cell"
 
-    var workSpaces: [String] = ["파리바게트", "백다방"]
-
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var deleteBtn: UIButton!
+    var views = [WorkSpaceView]()
+    var workSpaces: [WorkSpace] = []
+    var isDeleteMode = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UINib(nibName: "WorkSpaceTableViewCell", bundle: nil), forCellReuseIdentifier: CELL_ID)
+        
+        self.tableView.register(UINib(nibName: "WorkSpaceTableViewCell", bundle: nil), forCellReuseIdentifier: CELL_ID)
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        
+        refresh()
+    }
+    
+    func refresh() {
+        ServerClient.getWorkSpaceList() { workSpaces in
+            DispatchQueue.main.async {
+                self.workSpaces = workSpaces
+                self.tableView.reloadData()
+            }
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func deleteBtnClicked() {
+        deleteBtn.isSelected = !deleteBtn.isSelected
+        isDeleteMode = deleteBtn.isSelected
+        views.forEach { $0.modeToDelete(on: self.isDeleteMode) }
     }
-
-    func addBtnClicked() {
+    
+    func cellAddBtnClicked() {
         let vc = UIStoryboard.instantiate(WorkSpaceAddVC.self)
         self.present(vc, animated: true)
     }
 
-    func detailClicked() {
-        let vc = UIStoryboard.instantiate(WorkSpaceDetailViewController.self, storyboardName: "WorkSpaceNavigationController")
+    func cellDetailClicked(workSpace: WorkSpace) {
+        let vc = UIStoryboard.instantiate(WorkSpaceDetailViewController.self, storyboardName: "WorkSpaceDetailViewController")
+        vc.workSpace = workSpace
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func cellDeleteClicked(workSpace: WorkSpace) {
+        ServerClient.deleteWorkSpace(workSpaceId: workSpace.id) { success in
+            DispatchQueue.main.async {
+                self.refresh()
+            }
+        }
     }
-    */
-
 }
 
 extension WorkSpaceViewController: UITableViewDataSource {
@@ -68,8 +80,18 @@ extension WorkSpaceViewController: UITableViewDataSource {
         }
         
         cell.isLastCell = indexPath.row == workSpaces.count
-        cell.workSpaceView.addBtnCallback = addBtnClicked
-        cell.workSpaceView.detailCallback = detailClicked
+        cell.workSpaceView.addBtnCallback = cellAddBtnClicked
+        cell.workSpaceView.detailCallback = cellDetailClicked
+        cell.workSpaceView.deleteCallback = cellDeleteClicked
+        cell.workSpaceView.modeToDelete(on: isDeleteMode)
+        
+        if (!cell.isLastCell) {
+            cell.workSpaceView.setWorkSpace(workSpace: workSpaces[indexPath.row])
+        }
+        
+        if (!views.contains(cell.workSpaceView)) {
+            views.append(cell.workSpaceView)
+        }
 
         return cell
     }
@@ -77,6 +99,7 @@ extension WorkSpaceViewController: UITableViewDataSource {
 
 extension WorkSpaceViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200 + (indexPath.row == workSpaces.count ? WorkSpaceTableViewCell.workSpaceViewBottomOrigin : 0)
+        let isLastView = indexPath.row == workSpaces.count
+        return CGFloat(isLastView ? WorkSpaceView.addBtnStatusHeight : WorkSpaceView.normalStatusHeight) + CGFloat(10.0)
     }
 }

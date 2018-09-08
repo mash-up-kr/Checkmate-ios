@@ -43,13 +43,7 @@ class HomeViewController: UIViewController {
         workTimeLabel.text = "\(workTime)"
         workStateButton?.layer.cornerRadius = 25
         
-        var graphSpace: CGFloat = 80
-        if UIScreen.main.bounds.size.width > 400.0 {
-            graphSpace = 100
-        }else{
-            graphSpace = 70
-        }
-        let graphCenterPos : CGPoint = CGPoint(x: view.center.x, y: view.center.y - graphSpace)
+        let graphCenterPos : CGPoint = CGPoint(x: view.center.x, y: payLabel.superview!.center.y)
         self.circularGraph.center = graphCenterPos
         self.circularGraph.trackLayer.fillColor = UIColor.clear.cgColor
         self.circularGraph.trackLayer.lineWidth = 3

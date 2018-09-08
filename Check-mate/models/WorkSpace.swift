@@ -10,20 +10,20 @@ import Foundation
 import SwiftyJSON
 
 class WorkSpace {
-    let id: String
-    let userId: String
-    let name: String
-    let address: String
-    let latitude: Double
-    let longitude: Double
-    let wage: Int
-    let probation: Int
-    let recess: Int
-    let recessStatus: Int
-    let payDay: Int
-    let tax: Double
-    let fiveState: Int
-    let workingDay: String
+    var id: String
+    var userId: String
+    var name: String
+    var address: String
+    var latitude: Double
+    var longitude: Double
+    var wage: Int
+    var probation: Int
+    var recess: Int
+    var recessStatus: Int
+    var payDay: Int
+    var tax: Double
+    var fiveState: Int
+    var workingDay: String
     
     init(_ json: JSON) {
         self.id = json["id"].stringValue

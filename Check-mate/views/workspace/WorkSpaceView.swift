@@ -9,14 +9,23 @@
 import UIKit
 
 class WorkSpaceView: UIView {
-
-    static var ORIGIN_BACKGROUND: UIColor = UIColor.black
+    static var normalStatusHeight = 200.0
+    static var addBtnStatusHeight = 60.0
 
     @IBOutlet weak var rootView: UIView!
+    @IBOutlet weak var view1: UIView!
+    @IBOutlet weak var view2: UIView!
     @IBOutlet weak var addBtn: UIView!
+    @IBOutlet weak var deleteLayout: UIView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var payLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var probationLabel: UILabel!
+    var workSpace: WorkSpace?
 
     var addBtnCallback: (() -> Void)?
-    var detailCallback: (() -> Void)?
+    var detailCallback: ((WorkSpace) -> Void)?
+    var deleteCallback: ((WorkSpace) -> Void)?
 
     private var mIsLastCardView = false
     var isLastCardView: Bool {
@@ -25,8 +34,9 @@ class WorkSpaceView: UIView {
         }
         set(b) {
             mIsLastCardView = b
+            view1.isHidden = mIsLastCardView
+            view2.isHidden = mIsLastCardView
             addBtn.isHidden = !mIsLastCardView
-            rootView.backgroundColor = b ? UIColor.white : WorkSpaceView.ORIGIN_BACKGROUND
         }
     }
 
@@ -43,17 +53,31 @@ class WorkSpaceView: UIView {
     private func setup() {
         self.loadNib(String(describing: WorkSpaceView.self))
 
-        WorkSpaceView.ORIGIN_BACKGROUND = rootView.backgroundColor!
-
-        rootView.layer.cornerRadius = 5.0
-        rootView.layer.shadowColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.1).cgColor
-        rootView.layer.shadowRadius = 4
+        rootView.layer.cornerRadius = 2.0
+        rootView.layer.shadowColor = UIColor(red: 102/255, green: 102/255, blue: 102/255, alpha: 0.5).cgColor
+        rootView.layer.shadowRadius = 3
         rootView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
         rootView.layer.shadowOpacity = 1.0
         rootView.layer.masksToBounds = false
 
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(detailClicked)))
         self.addBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addBtnClicked)))
+    }
+    
+    func setWorkSpace(workSpace: WorkSpace) {
+        self.workSpace = workSpace
+        nameLabel.text = workSpace.name
+        payLabel.text = workSpace.wage.formattedWithSeparator
+        locationLabel.text = workSpace.address
+        probationLabel.text = "\(workSpace.probation) 개월"
+    }
+    
+    func modeToDelete(on: Bool) {
+        if !isLastCardView {
+            deleteLayout.isHidden = !on
+        } else {
+            deleteLayout.isHidden = true
+        }
     }
 
     @IBAction func addBtnClicked() {
@@ -62,7 +86,13 @@ class WorkSpaceView: UIView {
 
     @IBAction func detailClicked() {
         if !isLastCardView {
-            detailCallback?()
+            guard let ws = workSpace else { return }
+            detailCallback?(ws)
         }
+    }
+    
+    @IBAction func deleteBtnClicked() {
+        guard let ws = workSpace else { return }
+        deleteCallback?(ws)
     }
 }

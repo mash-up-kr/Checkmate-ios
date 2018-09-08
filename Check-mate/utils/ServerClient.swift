@@ -92,4 +92,32 @@ class ServerClient {
             callback?(code == 200)
         }
     }
+    
+    static func getCalendarMain(year: Int,
+                                month: Int,
+                                callback: ((Int, DateModel) -> Void)? = nil) {
+        let path = "/user/\(userId)/work/WO123456789A0/main/calendar/\(year)/\(month)"
+        let parameters: Parameters = [:]
+        
+        request(url: HOST+path, method: .get, parameters: parameters) { (json, code) in
+            let dateModel = DateModel()
+            var salaryData: [Int: Int] = Dictionary()
+            
+            dateModel.setPayDay(payDay: 25)
+            
+            for inner in json.arrayValue {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                dateFormatter.timeZone = TimeZone.current
+                
+                if let date = dateFormatter.date(from: inner["date"].stringValue) {
+                    salaryData[date.day] = inner["daily_wage"].intValue
+                }
+            }
+            
+            dateModel.setSalaryData(salaryData: salaryData)
+            
+            callback?(code, dateModel)
+        }
+    }
 }

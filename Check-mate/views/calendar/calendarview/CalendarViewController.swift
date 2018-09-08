@@ -23,8 +23,14 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Calendar.delegate       = self
-        Calendar.dataSource     = self
+        ServerClient.getCalendarMain(year: year, month: month + 1, callback: { (code: Int, dateModel: DateModel) -> Void in
+            
+            self.model = dateModel
+            self.Calendar.reloadData()
+        })
+        
+        Calendar.delegate = self
+        Calendar.dataSource = self
         
         YearLabel.text          = "\(year)"
         MonthLabel.text         = "\(getCurrentMonth())"
@@ -45,8 +51,6 @@ class CalendarViewController: UIViewController {
         
         Calendar.addGestureRecognizer(leftGesture)
         Calendar.addGestureRecognizer(rightGesture)
-        
-        model.setDummyData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,7 +84,12 @@ extension CalendarViewController {
         
         YearLabel.text = "\(year)"
         MonthLabel.text = "\(getCurrentMonth())"
-        Calendar.reloadData()
+        
+        ServerClient.getCalendarMain(year: year, month: month + 1, callback: { (code: Int, dateModel: DateModel) -> Void in
+            
+            self.model = dateModel
+            self.Calendar.reloadData()
+        })
     }
     
     @IBAction func Back(_ sender: Any?) {
@@ -101,7 +110,12 @@ extension CalendarViewController {
         
         YearLabel.text = "\(year)"
         MonthLabel.text = "\(getCurrentMonth())"
-        Calendar.reloadData()
+        
+        ServerClient.getCalendarMain(year: year, month: month + 1, callback: { (code: Int, dateModel: DateModel) -> Void in
+            
+            self.model = dateModel
+            self.Calendar.reloadData()
+        })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -189,7 +203,6 @@ extension CalendarViewController: UICollectionViewDataSource {
             cell.cellHide()
         }
         
-        // MOCK 모델 데이터
         for (day, value) in model.salaryData {
             if currentDay == day {
                 cell.ToggleHighlight()

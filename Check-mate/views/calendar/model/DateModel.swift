@@ -7,17 +7,13 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class DateModel {
-    var year: Int = Int()
-    var month: Int = Int()
-    
     var payDay: Int = Int()
     var salaryData: [Int: Int] = Dictionary()
     
-    init() {
-        
-    }
+    init() { }
     
     func setPayDay(payDay: Int) {
         self.payDay = payDay

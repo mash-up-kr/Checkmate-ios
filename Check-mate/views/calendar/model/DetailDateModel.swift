@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 enum ExtraPayType {
     case night
@@ -61,6 +62,31 @@ class DetailDateModel {
     
     init() {
         
+    }
+    
+    init(_ json: JSON) {
+        var times: [Date] = []
+        
+        self.dailyWage = json["daily_wage"].intValue
+        self.hourlyWage = json["hourly_wage"].intValue
+        self.workingHour = json["working_hour"].intValue
+        
+        for inner in json["time"].arrayValue {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yy-MM-dd HH:mm:ss"
+            dateFormatter.timeZone = TimeZone.current
+            
+            if let date = dateFormatter.date(from: inner["timestamp"].stringValue) {
+                times.append(date)
+            }
+        }
+        
+        setTimes(times: times)
+        
+        pushExtraPay(type: .night, value: json["night_allowance"].intValue)
+        pushExtraPay(type: .holiday, value: json["holiday_allowance"].intValue)
+        pushExtraPay(type: .week, value: json["weekly_holiday_allowance"].intValue)
+        pushExtraPay(type: .overtime, value: json["overtime_allowance"].intValue)
     }
     
     func setDailyWage(dailyWage: Int) {

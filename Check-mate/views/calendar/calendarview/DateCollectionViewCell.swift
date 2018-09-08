@@ -26,6 +26,10 @@ class DateCollectionViewCell: UICollectionViewCell {
         PriceLabel.isHidden = false
         PriceLabel.text = ""
         
+        isHighlight = true
+        isHistory = true
+        isPayDay = true
+        
         if isHistory {
             ToggleHistory()
         }
@@ -51,6 +55,7 @@ class DateCollectionViewCell: UICollectionViewCell {
     
     func ToggleHistory() {
         isHistory = !isHistory
+        DateLabel.textColor = UIColor.init(red: 158/255, green: 158/255, blue: 158/255, alpha: 1)
         
         if isHistory {
             CircleView.isHidden = false
@@ -58,10 +63,11 @@ class DateCollectionViewCell: UICollectionViewCell {
             CircleView.layer.borderWidth = 1
             CircleView.layer.borderColor = UIColor.init(red: 155 / 255, green: 155 / 255, blue: 155 / 255, alpha: 1.0).cgColor
             CircleView.layer.backgroundColor = UIColor.init(red: 1, green: 1, blue: 1, alpha: 0).cgColor
-            DateLabel.textColor = UIColor.init(red: 158/255, green: 158/255, blue: 158/255, alpha: 1)
+            DateLabel.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 14)
         }
         else {
             CircleView.isHidden = true
+            DateLabel.font = UIFont(name: "HelveticaNeue-Thin", size: 12)
         }
     }
     

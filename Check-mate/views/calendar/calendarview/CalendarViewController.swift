@@ -23,8 +23,15 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Calendar.delegate       = self
-        Calendar.dataSource     = self
+        ServerClient.getCalendarMain(year: year, month: month + 1) { (code: Int, dateModel: DateModel) in
+            DispatchQueue.main.async {
+                self.model = dateModel
+                self.Calendar.reloadData()
+            }
+        }
+        
+        Calendar.delegate = self
+        Calendar.dataSource = self
         
         YearLabel.text          = "\(year)"
         MonthLabel.text         = "\(getCurrentMonth())"
@@ -45,8 +52,6 @@ class CalendarViewController: UIViewController {
         
         Calendar.addGestureRecognizer(leftGesture)
         Calendar.addGestureRecognizer(rightGesture)
-        
-        model.setDummyData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,7 +85,12 @@ extension CalendarViewController {
         
         YearLabel.text = "\(year)"
         MonthLabel.text = "\(getCurrentMonth())"
-        Calendar.reloadData()
+        
+        ServerClient.getCalendarMain(year: year, month: month + 1, callback: { (code: Int, dateModel: DateModel) -> Void in
+            
+            self.model = dateModel
+            self.Calendar.reloadData()
+        })
     }
     
     @IBAction func Back(_ sender: Any?) {
@@ -101,36 +111,21 @@ extension CalendarViewController {
         
         YearLabel.text = "\(year)"
         MonthLabel.text = "\(getCurrentMonth())"
-        Calendar.reloadData()
+        
+        ServerClient.getCalendarMain(year: year, month: month + 1, callback: { (code: Int, dateModel: DateModel) -> Void in
+            
+            self.model = dateModel
+            self.Calendar.reloadData()
+        })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationVC = segue.destination as? CalendarDetailViewController {
-            guard let indexPath = sender as? IndexPath else {
+            guard let detail = sender as? DetailDateModel else {
                 return
             }
             
-            guard let cell = Calendar.cellForItem(at: indexPath) as? DateCollectionViewCell else {
-                return
-            }
-            
-            let detail: DetailDateModel = DetailDateModel()
             destinationVC.selectedModel = detail
-            
-            detail.year = year;
-            detail.month = month;
-            detail.weekday = indexPath.row % 7
-            
-            if let day = Int(cell.DateLabel.text!) {
-                detail.day = day
-            }
-            else {
-                return
-            }
-            
-            if !cell.CircleView.isHidden {
-                detail.setDummyData()
-            }
         }
     }
 }
@@ -148,7 +143,21 @@ extension CalendarViewController: UICollectionViewDelegate {
         else {
             if cell.isHistory
             {
-                self.performSegue(withIdentifier: "DetailSegue", sender: indexPath)
+                if let day = Int(cell.DateLabel.text!) {
+                    ServerClient.getCalendarDetail(year: year, month: month + 1, day: day) { (code: Int, detailDateModel: DetailDateModel) in
+                        DispatchQueue.main.async {
+                            detailDateModel.year = year
+                            detailDateModel.month = month
+                            detailDateModel.day = day
+                            detailDateModel.weekday = indexPath.row % 7
+                            
+                            self.performSegue(withIdentifier: "DetailSegue", sender: detailDateModel)
+                        }
+                    }
+                }
+                else {
+                    return
+                }
             }
         }
     }
@@ -189,7 +198,6 @@ extension CalendarViewController: UICollectionViewDataSource {
             cell.cellHide()
         }
         
-        // MOCK 모델 데이터
         for (day, value) in model.salaryData {
             if currentDay == day {
                 cell.ToggleHighlight()

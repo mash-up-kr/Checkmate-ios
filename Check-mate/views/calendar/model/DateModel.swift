@@ -7,16 +7,30 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class DateModel {
-    var year: Int = Int()
-    var month: Int = Int()
-    
     var payDay: Int = Int()
     var salaryData: [Int: Int] = Dictionary()
     
-    init() {
+    init() { }
+    
+    init(_ json: JSON) {
+        var salaryData: [Int: Int] = Dictionary()
         
+        setPayDay(payDay: 25)
+        
+        for inner in json.arrayValue {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            dateFormatter.timeZone = TimeZone.current
+            
+            if let date = dateFormatter.date(from: inner["date"].stringValue) {
+                salaryData[date.day] = inner["daily_wage"].intValue
+            }
+        }
+        
+        setSalaryData(salaryData: salaryData)
     }
     
     func setPayDay(payDay: Int) {

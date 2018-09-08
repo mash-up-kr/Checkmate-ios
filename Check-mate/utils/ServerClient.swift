@@ -93,6 +93,31 @@ class ServerClient {
         }
     }
     
+    static func getCalendarMain(year: Int,
+                                month: Int,
+                                callback: ((Int, DateModel) -> Void)? = nil) {
+        let path = "/user/\(userId)/work/WO123456789A0/main/calendar/\(year)/\(month)"
+        let parameters: Parameters = [:]
+        
+        request(url: HOST+path, method: .get, parameters: parameters) { (json, code) in
+            let dateModel = DateModel(json)
+            callback?(code, dateModel)
+        }
+    }
+    
+    static func getCalendarDetail(year: Int,
+                                  month: Int,
+                                  day: Int,
+                                  callback: ((Int, DetailDateModel) -> Void)? = nil) {
+        let path = "/user/\(userId)/work/WO123456789A0/main/calendar/\(year)/\(month)/\(day)"
+        let parameters: Parameters = [:]
+        
+        request(url: HOST+path, method: .get, parameters: parameters) { (json, code) in
+            let detailDateModel: DetailDateModel = DetailDateModel(json)
+            callback?(code, detailDateModel)
+        }
+    }
+    
     static func modifyWorkSpace(workSpace: WorkSpace,
                                 callback: ((Bool) -> Void)? = nil) {
         let path = "/user/\(userId)/work/\(workSpace.id)"

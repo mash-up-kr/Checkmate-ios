@@ -581,7 +581,6 @@
 				276BAF0F20E7924C0063D8B4 /* AppDelegate.swift in Sources */,
 				27D1C47621391D6A007DEC2E /* Color.swift in Sources */,
 				27A55C8620E7A1020036BFB1 /* WorkSpaceNavigationController.swift in Sources */,
-				76B4099B2116FA7E00639082 /* SideMenuViewNavigationController.swift in Sources */,
 				BECCBFAF212EE3E500B953F4 /* BenefitCell.swift in Sources */,
 				76CFC7BF2142D07200D24B33 /* PaddingLabel.swift in Sources */,
 				BE2F09DB20E7A66400CEA36E /* CalendarVars.swift in Sources */,

@@ -94,7 +94,7 @@ class CountingLabel: UILabel {
     func updateText(value: Float){
         switch counterType! {
         case .Int:
-            self.text = "\(Int(value))"
+            self.text = Int(value).formattedWithSeparator
         case .Float:
             self.text = String(format: "%.2f", value)
         }
@@ -110,9 +110,4 @@ class CountingLabel: UILabel {
             return 1.0 - powf(1.0 - counterValue, CounterVelocity)
         }
     }
-    
-    
-    
-    
-    
 }

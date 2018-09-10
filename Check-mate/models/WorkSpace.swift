@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class WorkSpace {
+class WorkSpace{
     var id: String
     var userId: String
     var name: String

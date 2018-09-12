@@ -16,15 +16,11 @@ class EtcCell: UITableViewCell {
         
         extraCollectionView.delegate = self
         extraCollectionView.dataSource = self
+        
         extraCollectionView.allowsSelection = false
-        
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 86, height: 91)
-        
-        layout.scrollDirection = .horizontal
-        
-        self.extraCollectionView.setCollectionViewLayout(layout, animated: true)
-        self.extraCollectionView.isPagingEnabled = true
+        extraCollectionView.isScrollEnabled = false
+        extraCollectionView.isPagingEnabled = true
+
     }
     
     func setExtras(_ extras: [ExtraPay]) {
@@ -41,14 +37,13 @@ extension EtcCell: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (self.bounds.width - 44) / 4.0, height: 103)
+        return CGSize(width: (self.extraCollectionView.bounds.width) / CGFloat(extras.count), height: 103)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = extraCollectionView.dequeueReusableCell(withReuseIdentifier: "benefitCell", for: indexPath) as? BenefitCell else {
             return UICollectionViewCell()
         }
-        
         let extra = extras[indexPath.row]
         
         let description = extra.type.description()

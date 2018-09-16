@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     let circularGraph = CircularGraph()
     var workState: WorkState = .noWorking
     var workSpace: WorkSpace!
+    var workRecord: WorkRecord!
     
     @IBOutlet weak var jobLabel: UILabel!
     var today = 23
@@ -33,6 +34,14 @@ class HomeViewController: UIViewController {
         self.workSpace = workSpace
     }
     
+    func setWorkRecordFromServer(){
+        ServerClient.getWorkRecord(workSpace: self.workSpace){ workRecord in
+            DispatchQueue.main.async {
+                self.workRecord = workRecord
+                //workRecord.
+            }
+        }
+    }
     @IBOutlet weak var todayLabel: UILabel!
     
     @IBOutlet weak var workStateButton: UIButton!

@@ -289,15 +289,24 @@
                                     <action selector="touchUpSideMenuButton:" destination="OpR-O9-e13" eventType="touchUpInside" id="OcL-yA-L0H"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="mainOn" translatesAutoresizingMaskIntoConstraints="NO" id="5Q5-Ew-fM2">
+                                <rect key="frame" x="267" y="243" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="QRF-Yv-ZZo"/>
+                                    <constraint firstAttribute="width" constant="24" id="xUT-tC-tA8"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="eqD-Ik-toN" firstAttribute="top" secondItem="lN1-q5-czX" secondAttribute="bottom" constant="149" id="2Fy-U1-L3R"/>
                             <constraint firstItem="B0q-4t-H3e" firstAttribute="centerX" secondItem="84A-BH-b7o" secondAttribute="centerX" id="7Aa-mB-ZDe"/>
                             <constraint firstAttribute="bottom" secondItem="1oR-17-gmd" secondAttribute="bottom" constant="37" id="8Io-v7-83C"/>
+                            <constraint firstItem="5Q5-Ew-fM2" firstAttribute="top" secondItem="eqD-Ik-toN" secondAttribute="bottom" constant="2.3333333333333428" id="AXv-7i-at0"/>
                             <constraint firstItem="hyu-7U-zNN" firstAttribute="top" secondItem="jg0-L6-muK" secondAttribute="bottom" constant="14" id="Cdh-VB-lI7"/>
                             <constraint firstItem="1cs-Kh-QqV" firstAttribute="centerX" secondItem="84A-BH-b7o" secondAttribute="centerX" id="EBz-08-BgP"/>
                             <constraint firstItem="lN1-q5-czX" firstAttribute="centerX" secondItem="84A-BH-b7o" secondAttribute="centerX" id="FF4-Ea-PjZ"/>
+                            <constraint firstItem="5Q5-Ew-fM2" firstAttribute="leading" secondItem="B0q-4t-H3e" secondAttribute="trailing" constant="-50" id="IL5-hy-lgF"/>
                             <constraint firstItem="lN1-q5-czX" firstAttribute="top" secondItem="1cs-Kh-QqV" secondAttribute="bottom" constant="10" id="JF3-6m-nh6"/>
                             <constraint firstItem="eqD-Ik-toN" firstAttribute="centerX" secondItem="84A-BH-b7o" secondAttribute="centerX" id="KUc-Cz-v1M"/>
                             <constraint firstItem="1oR-17-gmd" firstAttribute="top" secondItem="B0q-4t-H3e" secondAttribute="bottom" constant="52" id="OjM-Ob-wct"/>
@@ -321,7 +330,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhy-Kw-HM2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1029.5999999999999" y="686.80659670164926"/>
+            <point key="canvasLocation" x="1028.985507246377" y="685.59782608695662"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zZi-rb-52m">
@@ -419,5 +428,6 @@
         <image name="iconProvision" width="30" height="30"/>
         <image name="iconWork" width="30" height="30"/>
         <image name="mainCopy2" width="54" height="54"/>
+        <image name="mainOn" width="24" height="24"/>
     </resources>
 </document>

@@ -199,5 +199,13 @@ class ServerClient {
         }
     }
     
+    static func getWorkRecord(workSpace: WorkSpace, callback: ((WorkRecord)-> Void)?) {
+        let path = "/user/\(userId)/work/\(workSpace.id)/main"
+        let parameters: Parameters = [:]
+        request(url: HOST+path, method: .get, parameters: parameters) { (json, code) in
+            let workRecord = WorkRecord(json)
+            callback?(workRecord)
+        }
+    }
     
 }

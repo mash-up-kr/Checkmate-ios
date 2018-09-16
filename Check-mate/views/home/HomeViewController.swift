@@ -8,9 +8,15 @@
 
 import UIKit
 
+enum WorkState : Int{
+    case working = 1
+    case noWorking = 0
+}
+
 class HomeViewController: UIViewController {
     let circularGraph = CircularGraph()
     var workState: WorkState = .noWorking
+    var workSpace: WorkSpace!
     
     @IBOutlet weak var jobLabel: UILabel!
     var today = 23
@@ -20,14 +26,13 @@ class HomeViewController: UIViewController {
     var workTime: Int = 72
     var payPerTime: Int = 8000
     
-    enum WorkState {
-        case working
-        case noWorking
-    }
+    
     func updateHomeView(workSpace: WorkSpace){
         jobLabel.text = workSpace.name
         payPerTimeLabel.text = "\(workSpace.wage)"
+        self.workSpace = workSpace
     }
+    
     @IBOutlet weak var todayLabel: UILabel!
     
     @IBOutlet weak var workStateButton: UIButton!
@@ -108,7 +113,7 @@ class HomeViewController: UIViewController {
     
     @IBAction func touchUpWorkStateButton(){
         //off로 가면 post요청
-        
+        ServerClient.setWorkState(workSpace: self.workSpace, workState: self.workState)
         if workState == .noWorking{
             workState = .working
             self.workStateButton.setTitle("Stop Work", for: .normal)

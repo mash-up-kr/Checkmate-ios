@@ -185,4 +185,19 @@ class ServerClient {
             }
         }
     }
+    
+    static func setWorkState(workSpace: WorkSpace,
+                             workState: WorkState,
+                             callback: ((Bool) -> Void)? = nil){
+        let path = "/user/\(userId)/work/\(workSpace.id)/main"
+        let parameters: Parameters = [
+            "working_state" : workState.rawValue
+        ]
+        
+        request(url: HOST+path, method: .post, parameters: parameters) { (json, code) in
+            callback?(code == 200)
+        }
+    }
+    
+    
 }

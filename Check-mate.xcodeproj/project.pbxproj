@@ -60,6 +60,7 @@
 		76CFC7BF2142D07200D24B33 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CFC7BE2142D07200D24B33 /* PaddingLabel.swift */; };
 		76CFC7C12142D99300D24B33 /* WorkSpaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CFC7C02142D99300D24B33 /* WorkSpaceCell.swift */; };
 		76E2F780214E7FCF001B7D74 /* WorkRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2F77F214E7FCF001B7D74 /* WorkRecord.swift */; };
+		76E2F78221566DA7001B7D74 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2F78121566DA7001B7D74 /* WebViewController.swift */; };
 		BE2F09D920E7A64F00CEA36E /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F09D820E7A64F00CEA36E /* DateCollectionViewCell.swift */; };
 		BE2F09DB20E7A66400CEA36E /* CalendarVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F09DA20E7A66400CEA36E /* CalendarVars.swift */; };
 		BE2F09DD20E7B05800CEA36E /* CalendarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F09DC20E7B05800CEA36E /* CalendarDetailViewController.swift */; };
@@ -149,6 +150,7 @@
 		76CFC7BE2142D07200D24B33 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		76CFC7C02142D99300D24B33 /* WorkSpaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceCell.swift; sourceTree = "<group>"; };
 		76E2F77F214E7FCF001B7D74 /* WorkRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkRecord.swift; sourceTree = "<group>"; };
+		76E2F78121566DA7001B7D74 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		BE2F09D820E7A64F00CEA36E /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE2F09DA20E7A66400CEA36E /* CalendarVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVars.swift; sourceTree = "<group>"; };
 		BE2F09DC20E7B05800CEA36E /* CalendarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				27A55C7620E79B980036BFB1 /* HomeViewController.storyboard */,
 				76429FC620E7A7E300B16DD4 /* SideMenuButton.swift */,
 				76B409982116F10800639082 /* SideMenuViewController.swift */,
+				76E2F78121566DA7001B7D74 /* WebViewController.swift */,
 				76CFC7BE2142D07200D24B33 /* PaddingLabel.swift */,
 				76842E49211DD7BD00D66357 /* TempJobData.swift */,
 				76CFC7C02142D99300D24B33 /* WorkSpaceCell.swift */,
@@ -578,6 +581,7 @@
 				76E2F780214E7FCF001B7D74 /* WorkRecord.swift in Sources */,
 				BECCBFAA212EE30F00B953F4 /* PictureCell.swift in Sources */,
 				276BAF1120E7924C0063D8B4 /* ViewController.swift in Sources */,
+				76E2F78221566DA7001B7D74 /* WebViewController.swift in Sources */,
 				BE5A4F63211662D20067189D /* DetailDateModel.swift in Sources */,
 				27A55C8120E7A0440036BFB1 /* CalendarNavigationController.swift in Sources */,
 				27CD9CC120E7EAAE000F6CB3 /* WorkSpaceDetailViewController.swift in Sources */,

@@ -24,6 +24,10 @@ class SideMenuViewController: UIViewController {
     @IBOutlet weak var sideMenuLeadingConstraint: NSLayoutConstraint!
     @IBOutlet var shadowView: UIView!
     
+    @IBAction func touchUpLaborOfficeButton(_ sender: UIButton){
+        
+    }
+    
     func setWorkSpaces(spaces: [WorkSpace]){
         
         workSpaces = spaces

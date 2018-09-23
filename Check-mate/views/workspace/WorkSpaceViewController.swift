@@ -24,8 +24,6 @@ class WorkSpaceViewController: UIViewController {
         self.tableView.register(UINib(nibName: "WorkSpaceTableViewCell", bundle: nil), forCellReuseIdentifier: CELL_ID)
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        
-        refresh()
     }
     
     func refresh() {
@@ -40,6 +38,7 @@ class WorkSpaceViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        refresh()
     }
     
     @IBAction func deleteBtnClicked() {

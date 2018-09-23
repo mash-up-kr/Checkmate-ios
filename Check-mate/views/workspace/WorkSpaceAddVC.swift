@@ -160,7 +160,6 @@ class WorkSpaceAddVC: UIViewController {
                                   fiveState: fiveState,
                                   workingDay: workingDay) { success in
             if (success) {
-                (self.presentingViewController as? WorkSpaceViewController)?.refresh()
                 self.dismiss(animated: true)
             }
         }

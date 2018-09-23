@@ -112,6 +112,8 @@ class HomeViewController: UIViewController {
         circleNumber.textColor = UIColor.white
         circleNumber.backgroundColor = UIColor.init(red: 48/255, green: 79/255, blue: 254/255, alpha: 1.0)
         view.addSubview(circleNumber)
+        
+        self.payLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(payLabelClicked)))
     }
 
     
@@ -128,6 +130,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+
     }
     /*
     // MARK: - Navigation
@@ -161,6 +164,10 @@ class HomeViewController: UIViewController {
         parentController.modalSidebarMenu()
     }
 
+    @IBAction func payLabelClicked() {
+        let vc = UIStoryboard.instantiate(MonthViewController.self, storyboardName: "MonthViewController")
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension Date {

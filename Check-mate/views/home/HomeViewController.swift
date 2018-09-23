@@ -71,7 +71,15 @@ class HomeViewController: UIViewController {
         self.circularGraph.shapeLayer.strokeColor = UIColor(displayP3Red: 48/255, green: 79/255, blue: 254/255, alpha: 1.0).cgColor
         self.view.addSubview(circularGraph)
         
+        //오늘 날짜 구하기
+        let datefomatter: DateFormatter = DateFormatter()
+        datefomatter.dateFormat = "yyyy년 MM월 dd일"
+        let now = Date()
+        let last = now.endOfMonth()
+        today = now.day
+        lastday = last.day
         
+        todayLabel.text = datefomatter.string(for: now)
         
         self.circularGraph.percentage = CGFloat.init(Double(today)/Double(lastday))
         let d_day = lastday - today
@@ -92,6 +100,10 @@ class HomeViewController: UIViewController {
         circleNumber.textColor = UIColor.white
         circleNumber.backgroundColor = UIColor.init(red: 48/255, green: 79/255, blue: 254/255, alpha: 1.0)
         view.addSubview(circleNumber)
+        
+        
+
+        //직장 상세 정보 얻기
     }
 
     
@@ -142,4 +154,14 @@ class HomeViewController: UIViewController {
         parentController.modalSidebarMenu()
     }
 
+}
+
+extension Date {
+    func startOfMonth() -> Date {
+        return Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self)))!
+    }
+    
+    func endOfMonth() -> Date {
+        return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
+    }
 }

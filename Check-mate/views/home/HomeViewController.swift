@@ -24,23 +24,30 @@ class HomeViewController: UIViewController {
     var lastday = 31
     var pay: Int = 691200
     var job: String = "Mash up"
-    var workTime: Int = 72
+    var totalworkTime: Int = 72
     var payPerTime: Int = 8000
     
     
     func updateHomeView(workSpace: WorkSpace){
+        setWorkRecordFromServer(workSpace)
         jobLabel.text = workSpace.name
         payPerTimeLabel.text = "\(workSpace.wage)"
         self.workSpace = workSpace
     }
     
-    func setWorkRecordFromServer(){
-        ServerClient.getWorkRecord(workSpace: self.workSpace){ workRecord in
+    func setWorkRecordFromServer(_ workSpace: WorkSpace){
+        ServerClient.getWorkRecord(workSpace: workSpace){ workRecord in
             DispatchQueue.main.async {
                 self.workRecord = workRecord
-                //workRecord.
+                self.totalworkTime = workRecord.totalHour
+                self.payPerTime = workRecord.hourlyWage
+                self.pay = workRecord.totalMoney
+                self.payLabel.text = "\(workRecord.totalMoney)"
+                self.dDayLabel.text = "\(workRecord.totalDay)일"
+                self.payLabel.count(fromValue: 0, to: Float(self.pay), withDuration: 0.8, andAnimationType: .EaseOut, andCouterType: .Int)
             }
         }
+
     }
     @IBOutlet weak var todayLabel: UILabel!
     
@@ -51,13 +58,26 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var dDayLabel: UILabel!
     
     @IBOutlet weak var workTimeLabel: UILabel!
+    
+    func getTodayInfo(){
+        //오늘 날짜 구하기
+        let datefomatter: DateFormatter = DateFormatter()
+        datefomatter.dateFormat = "yyyy년 MM월 dd일"
+        let now = Date()
+        let last = now.endOfMonth()
+        today = now.day
+        lastday = last.day
+        
+        todayLabel.text = datefomatter.string(for: now)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         payLabel.text = "\(pay)"
         jobLabel.text = job
         payPerTimeLabel.text = "\(payPerTime)"
-        workTimeLabel.text = "\(workTime)"
+        workTimeLabel.text = "\(totalworkTime)"
         
         workStateButton?.layer.cornerRadius = 25
         
@@ -71,15 +91,7 @@ class HomeViewController: UIViewController {
         self.circularGraph.shapeLayer.strokeColor = UIColor(displayP3Red: 48/255, green: 79/255, blue: 254/255, alpha: 1.0).cgColor
         self.view.addSubview(circularGraph)
         
-        //오늘 날짜 구하기
-        let datefomatter: DateFormatter = DateFormatter()
-        datefomatter.dateFormat = "yyyy년 MM월 dd일"
-        let now = Date()
-        let last = now.endOfMonth()
-        today = now.day
-        lastday = last.day
-        
-        todayLabel.text = datefomatter.string(for: now)
+        getTodayInfo()
         
         self.circularGraph.percentage = CGFloat.init(Double(today)/Double(lastday))
         let d_day = lastday - today
@@ -100,10 +112,6 @@ class HomeViewController: UIViewController {
         circleNumber.textColor = UIColor.white
         circleNumber.backgroundColor = UIColor.init(red: 48/255, green: 79/255, blue: 254/255, alpha: 1.0)
         view.addSubview(circleNumber)
-        
-        
-
-        //직장 상세 정보 얻기
     }
 
     
@@ -120,7 +128,6 @@ class HomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.payLabel.count(fromValue: 0, to: 691200, withDuration: 0.8, andAnimationType: .EaseOut, andCouterType: .Int)
     }
     /*
     // MARK: - Navigation

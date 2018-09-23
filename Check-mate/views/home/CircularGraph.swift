@@ -53,22 +53,22 @@ class CircularGraph: UIView {
     
     func setupCircularGraph(view: UIView, percentage: CGFloat){
         
-        var lineWidth: CGFloat = 20
+        var lineWidth: CGFloat = 3
         var center: CGPoint = view.center
         
         
         var circularPath = UIBezierPath(arcCenter: .zero, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
         
         trackLayer.path = circularPath.cgPath
-        trackLayer.strokeColor = UIColor.lightGray.cgColor
+        trackLayer.strokeColor = UIColor(displayP3Red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0).cgColor
         trackLayer.lineWidth = lineWidth
-        trackLayer.fillColor = UIColor.brown.cgColor
+        trackLayer.fillColor = UIColor.clear.cgColor
         trackLayer.position = center
-        
+
         view.layer.addSublayer(trackLayer)
         
         shapeLayer.path = circularPath.cgPath
-        shapeLayer.strokeColor = UIColor.blue.cgColor
+        shapeLayer.strokeColor = UIColor(displayP3Red: 48/255, green: 79/255, blue: 254/255, alpha: 1.0).cgColor
         shapeLayer.lineWidth = lineWidth
         shapeLayer.lineCap = kCALineCapSquare
         shapeLayer.fillColor = UIColor.clear.cgColor
@@ -77,6 +77,7 @@ class CircularGraph: UIView {
         
         shapeLayer.strokeEnd = percentage
         view.layer.addSublayer(shapeLayer)
+        
     }
     
     func loadViewFromNib() -> UIView! {

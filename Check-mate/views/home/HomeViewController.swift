@@ -47,7 +47,7 @@ class HomeViewController: UIViewController {
                 self.dDayLabel.text = "\(workRecord.totalDay)일"
                 self.payLabel.count(fromValue: 0, to: Float(self.pay), withDuration: 0.8, andAnimationType: .EaseOut, andCouterType: .Int)
                 self.circularGraph.percentage = CGFloat(workRecord.baseDay - workRecord.totalDay)/CGFloat(workRecord.baseDay)
-                self.drawGraphPoint(day: workRecord.totalDay, center: CGPoint(x: self.view.center.x, y: self.payLabel.superview!.center.y))
+                self.drawGraphPoint(day: workRecord.baseDay - workRecord.totalDay, center: CGPoint(x: self.view.center.x, y: self.payLabel.superview!.center.y))
             //}
         }
     }

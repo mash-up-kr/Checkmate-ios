@@ -18,7 +18,6 @@ class WebViewController: UIViewController {
         let url : URL = URL(string: "http://www.moel.go.kr/")!
         let urlRequest: URLRequest = URLRequest(url: url)
         webView.loadRequest(urlRequest)
-        
     }
 
     override func didReceiveMemoryWarning() {

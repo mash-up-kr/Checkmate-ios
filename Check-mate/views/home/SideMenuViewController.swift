@@ -8,9 +8,6 @@
 
 import UIKit
 
-var tableData: [TempJobData] = [TempJobData(name: "Mash up", pay: 0, location: "서울시 강남구"),
-                                TempJobData(name: "Worksmobile", pay: 20000, location:"성남시 분당구")]
-
 class SideMenuViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var jobNameLabel : UILabel!
@@ -29,12 +26,22 @@ class SideMenuViewController: UIViewController {
     }
     
     func setWorkSpaces(spaces: [WorkSpace]){
-        
         workSpaces = spaces
-        tableView.reloadData()
+        
+        if self.workSpaces.count == 0{
+            let alert: UIAlertController = UIAlertController(title: "통신 에러", message: "서버로 부터 데이터를 불러 올 수 없습니다.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.destructive, handler : nil)
+            alert.addAction(defaultAction)
+            present(alert, animated: false, completion: nil)
+            return
+        }
+        
         if workSpaces.count < 2{
             selectedWorkSpace = 0
         }
+        
+        tableView.reloadData()
+        
         let indexPath: IndexPath = IndexPath(row: selectedWorkSpace, section: 0)
         tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
         initLabel(workSpaces: workSpaces, index: indexPath.row)
@@ -49,16 +56,8 @@ class SideMenuViewController: UIViewController {
             }
         }
     }
-
-    override func viewDidLoad() {
-        // Do any additional setup after loading the view.
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
-        
-        ServerClient.getWorkSpaceList(callback: self.setWorkSpaces)
-        
-        print(self.workSpaces)
-        
+    
+    func initSideMenu(){
         sideMenuLeadingConstraint.constant = -1 * UIScreen.main.bounds.size.width
         
         let tabShadowViewGesture = UITapGestureRecognizer.init(target: self, action: #selector(tabShadowView))
@@ -73,9 +72,18 @@ class SideMenuViewController: UIViewController {
         self.view.addGestureRecognizer(swipeRight)
         self.view.addGestureRecognizer(swipeLeft)
         
-        jobNameLabel.layer.cornerRadius = 10
+        jobNameLabel.layer.cornerRadius = 20
         jobNameLabel.layer.masksToBounds = true
+    }
+    
+    override func viewDidLoad() {
+        // Do any additional setup after loading the view.
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
         
+        initSideMenu();
+        
+        ServerClient.getWorkSpaceList(callback: self.setWorkSpaces)
     }
     
     @objc func tabShadowView(){
@@ -130,6 +138,8 @@ class SideMenuViewController: UIViewController {
         }else {
             self.jobLocationLabel.text = splitedAddress[0] + " " + splitedAddress[1]
         }
+        jobNameLabel.layer.cornerRadius = 20
+        jobNameLabel.layer.masksToBounds = true
     }
 }
 
@@ -149,14 +159,5 @@ extension SideMenuViewController: UITableViewDataSource, UITableViewDelegate {
         //code to execute on click
         initLabel(workSpaces: workSpaces, index: indexPath.row)
         updateHomeView(workSpaces[indexPath.row])
-        /*
-        self.jobNameLabel.text = workSpaces[indexPath.row].name
-        self.jobPayLabel.text = String(workSpaces[indexPath.row].wage)
-        let splitedAddress = workSpaces[indexPath.row].address.components(separatedBy: " ")
-        if splitedAddress.count < 2{
-            self.jobLocationLabel.text = splitedAddress[0]
-        }else {
-            self.jobLocationLabel.text = splitedAddress[0] + " " + splitedAddress[1]
-        }*/
     }
 }

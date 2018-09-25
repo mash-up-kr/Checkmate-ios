@@ -24,8 +24,8 @@ class HomeViewController: UIViewController {
     var today = 23
     var lastday = 31
     var pay: Int = 691200
-    var job: String = "Mash up"
-    var totalworkTime: Int = 72
+    var job: String = "알바가 없습니다."
+    var totalworkTime: Int = 66
     var payPerTime: Int = 8000
     
     
@@ -39,14 +39,16 @@ class HomeViewController: UIViewController {
     func setWorkRecordFromServer(_ workSpace: WorkSpace){
         ServerClient.getWorkRecord(workSpace: workSpace){ workRecord in
             DispatchQueue.main.async {
+                print(workRecord)
                 self.workRecord = workRecord
-                self.totalworkTime = workRecord.totalHour
+                self.workTimeLabel.text = "\(workRecord.totalHour)"
                 self.payPerTime = workRecord.hourlyWage
                 self.pay = workRecord.totalMoney
                 self.payLabel.text = "\(workRecord.totalMoney)"
                 self.dDayLabel.text = "\(workRecord.totalDay)일"
                 self.payLabel.count(fromValue: 0, to: Float(self.pay), withDuration: 0.8, andAnimationType: .EaseOut, andCouterType: .Int)
                 self.circularGraph.percentage = CGFloat(workRecord.baseDay - workRecord.totalDay)/CGFloat(workRecord.baseDay)
+
                 self.drawGraphPoint(day: workRecord.baseDay - workRecord.totalDay, center: CGPoint(x: self.view.center.x, y: self.payLabel.superview!.center.y))
             }
         }

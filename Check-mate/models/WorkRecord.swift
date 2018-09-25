@@ -21,6 +21,6 @@ class WorkRecord{
         self.totalDay = json["total_day"].intValue
         self.totalMoney = json["total_money"].intValue
         self.totalHour = json["total_hour"].intValue
-        self.hourlyWage = json["hourlyWage"].intValue
+        self.hourlyWage = json["hourly_wage"].intValue
     }
 }

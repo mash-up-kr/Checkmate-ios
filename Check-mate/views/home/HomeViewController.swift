@@ -14,6 +14,13 @@ enum WorkState : Int{
 }
 
 class HomeViewController: UIViewController {
+    var today = 23
+    var lastday = 31
+    var pay: Int = 691200
+    var job: String = "알바가 없습니다."
+    var totalworkTime: Int = 66
+    var payPerTime: Int = 8000
+    
     let circularGraph = CircularGraph()
     var circleNumber: UILabel!
     var workState: WorkState = .noWorking
@@ -21,12 +28,6 @@ class HomeViewController: UIViewController {
     var workRecord: WorkRecord!
     
     @IBOutlet weak var jobLabel: UILabel!
-    var today = 23
-    var lastday = 31
-    var pay: Int = 691200
-    var job: String = "알바가 없습니다."
-    var totalworkTime: Int = 66
-    var payPerTime: Int = 8000
     
     
     func updateHomeView(workSpace: WorkSpace){
@@ -39,7 +40,6 @@ class HomeViewController: UIViewController {
     func setWorkRecordFromServer(_ workSpace: WorkSpace){
         ServerClient.getWorkRecord(workSpace: workSpace){ workRecord in
             DispatchQueue.main.async {
-                print(workRecord)
                 self.workRecord = workRecord
                 self.workTimeLabel.text = "\(workRecord.totalHour)"
                 self.payPerTime = workRecord.hourlyWage
@@ -104,32 +104,25 @@ class HomeViewController: UIViewController {
         
         self.circularGraph.percentage = CGFloat.init(Double(today)/Double(lastday))
         let d_day = lastday - today
-        print(d_day)
         self.dDayLabel.text = "\(d_day)일"
         
         //그래프 끝에 동그라미 그리기 - 개어렵다.
-        let degree = CGFloat(Double.pi * 2) *  self.circularGraph.percentage - CGFloat(Double.pi/2)
-        let x = graphCenterPos.x + cos(degree) * self.circularGraph.radius
-        let y = graphCenterPos.y + sin(degree) * self.circularGraph.radius
-        let rect: CGRect = CGRect.init(x: x-20, y: y-20, width: 40, height: 40)
+        let rect = getGraphPointRect(center: graphCenterPos)
         self.circleNumber = UILabel.init(frame: rect)
-        self.circleNumber.layer.masksToBounds = true
-        self.circleNumber.layer.cornerRadius = 20
-        self.circleNumber.text = "\(today)일"
-        self.circleNumber.font = UIFont.systemFont(ofSize: 14)
-        self.circleNumber.textAlignment = .center
-        self.circleNumber.textColor = UIColor.white
-        self.circleNumber.backgroundColor = UIColor.init(red: 48/255, green: 79/255, blue: 254/255, alpha: 1.0)
+        drawGraphPoint(day: today, center: graphCenterPos)
         view.addSubview(circleNumber)
 
         self.payLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(payLabelClicked)))
     }
-
-    func drawGraphPoint(day: Int, center: CGPoint){
+    func getGraphPointRect(center: CGPoint) -> CGRect{
         let degree = CGFloat(Double.pi * 2) *  self.circularGraph.percentage - CGFloat(Double.pi/2)
         let x = center.x + cos(degree) * self.circularGraph.radius
         let y = center.y + sin(degree) * self.circularGraph.radius
         let rect: CGRect = CGRect.init(x: x-20, y: y-20, width: 40, height: 40)
+        return rect
+    }
+    func drawGraphPoint(day: Int, center: CGPoint){
+        let rect: CGRect = getGraphPointRect(center: center)
         self.circleNumber.frame = rect
         circleNumber.layer.masksToBounds = true
         circleNumber.layer.cornerRadius = 20

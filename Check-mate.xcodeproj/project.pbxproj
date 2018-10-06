@@ -761,7 +761,7 @@
 					"-ObjC",
 					"-lxml2",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "mash-up-kr.Check-mate";
+				PRODUCT_BUNDLE_IDENTIFIER = "mash-up-kr.Checkmate";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Check-mate/Check-mate-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -795,7 +795,7 @@
 					"-ObjC",
 					"-lxml2",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "mash-up-kr.Check-mate";
+				PRODUCT_BUNDLE_IDENTIFIER = "mash-up-kr.Checkmate";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Check-mate/Check-mate-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

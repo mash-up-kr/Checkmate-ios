@@ -45,22 +45,7 @@ class LoginViewController: UIViewController {
             session.close()
         }
         
-        session.open(completionHandler: { error in
-            if self.session.isOpen() {
-                KOSessionTask.userMeTask(completion: { (error2, me) in
-                    guard let user = me,
-                          let userId = user.id,
-                          let nickName = user.nickname else {
-                        print("KOSessionTask.userMeTask failed \(String(describing: error2))")
-                        return
-                    }
-                    
-                    self.login(userId: userId, nickName: nickName)
-                })
-            } else {
-                print("loginBtnClicked - Session Open 실패 \(String(describing: error))")
-            }
-        })
+        login(userId: "jobata", nickName: "123456789")
     }
     
     func login(userId: String, nickName: String) {
@@ -70,7 +55,6 @@ class LoginViewController: UIViewController {
                     let vc = UIStoryboard.instantiate(TabBarController.self, storyboardName: "TabBarController")
                     self.present(vc, animated: false)
 //                    let vc = UIStoryboard.instantiate(MapViewController.self, storyboardName: "MapViewController")
-//                    self.present(vc, animated: false)
                 } else {
                     print("ServerClient.login failed")
                 }
